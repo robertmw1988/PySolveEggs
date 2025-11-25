@@ -191,6 +191,24 @@ def _artifact_column_sort_key(label: str) -> tuple[int, int, int]:
     return ARTIFACT_LABEL_ORDER.get(label, (999, 99, 99))
 
 
+# ---------------------------------------------------------------------------
+# Cached DataFrame factory
+# ---------------------------------------------------------------------------
+_CACHED_DROPS_DF: Optional[pd.DataFrame] = None
+
+
+def load_cleaned_drops(force_reload: bool = False) -> pd.DataFrame:
+    """Return cleaned drop pivot table, cached across calls."""
+    global _CACHED_DROPS_DF
+    if _CACHED_DROPS_DF is None or force_reload:
+        payload = _load_json(ALL_DROPS_PATH)
+        if not isinstance(payload, list) or not payload:
+            raise RuntimeError(f"No drop data available in {ALL_DROPS_PATH}")
+        raw = pd.DataFrame(payload)
+        _CACHED_DROPS_DF = clean_data(raw)
+    return _CACHED_DROPS_DF
+
+
 def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     config_column = next((col for col in ("shipConfiguration", "missionConfiguration") if col in df.columns), None)
     if config_column is None:
