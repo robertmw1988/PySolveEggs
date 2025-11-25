@@ -1,0 +1,33 @@
+missions:
+	CHICKEN_ONE:
+		missionLevel: 0
+	CHICKEN_NINE:
+		missionLevel: 0
+	CHICKEN_HEAVY:
+		missionLevel: 0
+	BCR:
+		missionLevel: 0
+	MILLENIUM_CHICKEN:
+		missionLevel: 0
+	CORELLIHEN_CORVETTE:
+		missionLevel: 0
+	GALEGGTICA:
+		missionLevel: 0
+	CHICKFIANT:
+		missionLevel: 0
+	VOYEGGER:
+		missionLevel: 0
+	HENERPRISE:
+		missionLevel: 0
+	ATREGGIES:
+		missionLevel: 0
+
+'Epic Researches':
+	'FTL Drive Upgrades':
+		level: 0
+		effect: "Reduce Artifact mission time of FTL ships (Quintillion Chickens and Above) by 1% per level."
+		maxBonus: "-60%"
+	'Zero-G Quantum Containment':
+		level: 0
+		effect: "Increase Artifact mission capacity by 5% per level."
+		maxBonus: "+50%"

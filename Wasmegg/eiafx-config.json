@@ -1,0 +1,3893 @@
+{
+  "missionParameters": [
+    {
+      "ship": "CHICKEN_ONE",
+      "durations": [
+        {
+          "durationType": "TUTORIAL",
+          "seconds": 60,
+          "quality": 0.9,
+          "minQuality": 0,
+          "maxQuality": 1.3,
+          "capacity": 4,
+          "levelCapacityBump": 0,
+          "levelQualityBump": 0
+        },
+        {
+          "durationType": "SHORT",
+          "seconds": 1200,
+          "quality": 1,
+          "minQuality": 0,
+          "maxQuality": 1.4,
+          "capacity": 4,
+          "levelCapacityBump": 0,
+          "levelQualityBump": 0.1
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 3600,
+          "quality": 1.1,
+          "minQuality": 0,
+          "maxQuality": 1.7,
+          "capacity": 5,
+          "levelCapacityBump": 1,
+          "levelQualityBump": 0.14
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 7200,
+          "quality": 1.2,
+          "minQuality": 0,
+          "maxQuality": 2.2,
+          "capacity": 6,
+          "levelCapacityBump": 1,
+          "levelQualityBump": 0.17
+        }
+      ],
+      "levelMissionRequirements": []
+    },
+    {
+      "ship": "CHICKEN_NINE",
+      "durations": [
+        {
+          "durationType": "SHORT",
+          "seconds": 1800,
+          "quality": 1.4,
+          "minQuality": 0,
+          "maxQuality": 1.9,
+          "capacity": 7,
+          "levelCapacityBump": 1,
+          "levelQualityBump": 0.1
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 3600,
+          "quality": 1.6,
+          "minQuality": 0,
+          "maxQuality": 2.35,
+          "capacity": 8,
+          "levelCapacityBump": 1,
+          "levelQualityBump": 0.18
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 10800,
+          "quality": 1.75,
+          "minQuality": 0,
+          "maxQuality": 2.7,
+          "capacity": 9,
+          "levelCapacityBump": 1,
+          "levelQualityBump": 0.2
+        }
+      ],
+      "levelMissionRequirements": [
+        4,
+        10
+      ]
+    },
+    {
+      "ship": "CHICKEN_HEAVY",
+      "durations": [
+        {
+          "durationType": "SHORT",
+          "seconds": 2700,
+          "quality": 1.9,
+          "minQuality": 0,
+          "maxQuality": 3.1,
+          "capacity": 12,
+          "levelCapacityBump": 1,
+          "levelQualityBump": 0.2
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 5400,
+          "quality": 2.1,
+          "minQuality": 0,
+          "maxQuality": 3.3,
+          "capacity": 14,
+          "levelCapacityBump": 2,
+          "levelQualityBump": 0.22
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 14400,
+          "quality": 2.4,
+          "minQuality": 0,
+          "maxQuality": 3.6,
+          "capacity": 15,
+          "levelCapacityBump": 2,
+          "levelQualityBump": 0.25
+        }
+      ],
+      "levelMissionRequirements": [
+        5,
+        15,
+        25
+      ]
+    },
+    {
+      "ship": "BCR",
+      "durations": [
+        {
+          "durationType": "SHORT",
+          "seconds": 5400,
+          "quality": 2.5,
+          "minQuality": 0,
+          "maxQuality": 3.2,
+          "capacity": 18,
+          "levelCapacityBump": 2,
+          "levelQualityBump": 0.22
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 14400,
+          "quality": 2.7,
+          "minQuality": 0,
+          "maxQuality": 3.6,
+          "capacity": 20,
+          "levelCapacityBump": 2,
+          "levelQualityBump": 0.25
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 28800,
+          "quality": 2.9,
+          "minQuality": 0,
+          "maxQuality": 4.2,
+          "capacity": 22,
+          "levelCapacityBump": 3,
+          "levelQualityBump": 0.27
+        }
+      ],
+      "levelMissionRequirements": [
+        5,
+        15,
+        25,
+        40
+      ]
+    },
+    {
+      "ship": "MILLENIUM_CHICKEN",
+      "durations": [
+        {
+          "durationType": "SHORT",
+          "seconds": 10800,
+          "quality": 3,
+          "minQuality": 0.5,
+          "maxQuality": 4.1,
+          "capacity": 10,
+          "levelCapacityBump": 1,
+          "levelQualityBump": 0.25
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 21600,
+          "quality": 3.3,
+          "minQuality": 0.5,
+          "maxQuality": 4.5,
+          "capacity": 12,
+          "levelCapacityBump": 2,
+          "levelQualityBump": 0.25
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 43200,
+          "quality": 3.5,
+          "minQuality": 0.5,
+          "maxQuality": 5.4,
+          "capacity": 14,
+          "levelCapacityBump": 2,
+          "levelQualityBump": 0.25
+        }
+      ],
+      "levelMissionRequirements": [
+        10,
+        25,
+        40,
+        50
+      ]
+    },
+    {
+      "ship": "CORELLIHEN_CORVETTE",
+      "durations": [
+        {
+          "durationType": "SHORT",
+          "seconds": 14400,
+          "quality": 3.5,
+          "minQuality": 1.5,
+          "maxQuality": 4.3,
+          "capacity": 18,
+          "levelCapacityBump": 3,
+          "levelQualityBump": 0.27
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 43200,
+          "quality": 3.8,
+          "minQuality": 1.6,
+          "maxQuality": 5,
+          "capacity": 21,
+          "levelCapacityBump": 3,
+          "levelQualityBump": 0.27
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 86400,
+          "quality": 4.1,
+          "minQuality": 1.75,
+          "maxQuality": 5.9,
+          "capacity": 24,
+          "levelCapacityBump": 4,
+          "levelQualityBump": 0.27
+        }
+      ],
+      "levelMissionRequirements": [
+        10,
+        25,
+        40,
+        50
+      ]
+    },
+    {
+      "ship": "GALEGGTICA",
+      "durations": [
+        {
+          "durationType": "SHORT",
+          "seconds": 21600,
+          "quality": 4,
+          "minQuality": 2,
+          "maxQuality": 5.2,
+          "capacity": 27,
+          "levelCapacityBump": 4,
+          "levelQualityBump": 0.28
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 57600,
+          "quality": 4.3,
+          "minQuality": 2.3,
+          "maxQuality": 6.1,
+          "capacity": 30,
+          "levelCapacityBump": 5,
+          "levelQualityBump": 0.28
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 108000,
+          "quality": 4.6,
+          "minQuality": 2.5,
+          "maxQuality": 7.2,
+          "capacity": 35,
+          "levelCapacityBump": 6,
+          "levelQualityBump": 0.28
+        }
+      ],
+      "levelMissionRequirements": [
+        10,
+        25,
+        40,
+        50,
+        60
+      ]
+    },
+    {
+      "ship": "CHICKFIANT",
+      "durations": [
+        {
+          "durationType": "SHORT",
+          "seconds": 28800,
+          "quality": 5,
+          "minQuality": 3,
+          "maxQuality": 7.2,
+          "capacity": 20,
+          "levelCapacityBump": 3,
+          "levelQualityBump": 0.29
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 86400,
+          "quality": 5.6,
+          "minQuality": 3.2,
+          "maxQuality": 8,
+          "capacity": 24,
+          "levelCapacityBump": 4,
+          "levelQualityBump": 0.29
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 172800,
+          "quality": 6.3,
+          "minQuality": 3.4,
+          "maxQuality": 9.2,
+          "capacity": 28,
+          "levelCapacityBump": 5,
+          "levelQualityBump": 0.29
+        }
+      ],
+      "levelMissionRequirements": [
+        10,
+        25,
+        40,
+        50,
+        60
+      ]
+    },
+    {
+      "ship": "VOYEGGER",
+      "durations": [
+        {
+          "durationType": "SHORT",
+          "seconds": 43200,
+          "quality": 5.8,
+          "minQuality": 3.3,
+          "maxQuality": 8.5,
+          "capacity": 30,
+          "levelCapacityBump": 4,
+          "levelQualityBump": 0.3
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 129600,
+          "quality": 6.4,
+          "minQuality": 3.8,
+          "maxQuality": 9.7,
+          "capacity": 35,
+          "levelCapacityBump": 5,
+          "levelQualityBump": 0.3
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 259200,
+          "quality": 7.1,
+          "minQuality": 3.9,
+          "maxQuality": 12,
+          "capacity": 40,
+          "levelCapacityBump": 6,
+          "levelQualityBump": 0.3
+        }
+      ],
+      "levelMissionRequirements": [
+        10,
+        25,
+        40,
+        50,
+        60,
+        70
+      ]
+    },
+    {
+      "ship": "HENERPRISE",
+      "durations": [
+        {
+          "durationType": "SHORT",
+          "seconds": 86400,
+          "quality": 6.6,
+          "minQuality": 3.8,
+          "maxQuality": 9.5,
+          "capacity": 45,
+          "levelCapacityBump": 5,
+          "levelQualityBump": 0.31
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 172800,
+          "quality": 7.3,
+          "minQuality": 4.1,
+          "maxQuality": 11.5,
+          "capacity": 50,
+          "levelCapacityBump": 6,
+          "levelQualityBump": 0.31
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 345600,
+          "quality": 8,
+          "minQuality": 4.5,
+          "maxQuality": 14,
+          "capacity": 56,
+          "levelCapacityBump": 7,
+          "levelQualityBump": 0.31
+        }
+      ],
+      "levelMissionRequirements": [
+        10,
+        25,
+        40,
+        50,
+        60,
+        70,
+        80,
+        100
+      ]
+    },
+    {
+      "ship": "ATREGGIES",
+      "durations": [
+        {
+          "durationType": "SHORT",
+          "seconds": 172800,
+          "quality": 6.7,
+          "minQuality": 3.2,
+          "maxQuality": 9.5,
+          "capacity": 60,
+          "levelCapacityBump": 7,
+          "levelQualityBump": 0.31
+        },
+        {
+          "durationType": "LONG",
+          "seconds": 259200,
+          "quality": 7.4,
+          "minQuality": 4,
+          "maxQuality": 11.5,
+          "capacity": 78,
+          "levelCapacityBump": 8,
+          "levelQualityBump": 0.31
+        },
+        {
+          "durationType": "EPIC",
+          "seconds": 345600,
+          "quality": 8.1,
+          "minQuality": 4,
+          "maxQuality": 14,
+          "capacity": 86,
+          "levelCapacityBump": 10,
+          "levelQualityBump": 0.31
+        }
+      ],
+      "levelMissionRequirements": [
+        20,
+        40,
+        80,
+        120,
+        160,
+        200,
+        300,
+        500
+      ]
+    }
+  ],
+  "artifactParameters": [
+    {
+      "spec": {
+        "name": "LUNAR_TOTEM",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 0.7,
+      "value": 58.666074,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 10.884288,
+      "craftingPriceLow": 1.088429,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1
+    },
+    {
+      "spec": {
+        "name": "LUNAR_TOTEM",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3.4,
+      "value": 5316.895747,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 553.063621,
+      "craftingPriceLow": 55.306362,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 273
+    },
+    {
+      "spec": {
+        "name": "LUNAR_TOTEM",
+        "level": "LESSER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 3.4,
+      "value": 29009.906728,
+      "oddsMultiplier": 0.03,
+      "craftingPrice": 2224.071895,
+      "craftingPriceLow": 222.407189,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 273
+    },
+    {
+      "spec": {
+        "name": "LUNAR_TOTEM",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.5,
+      "value": 42117.186554,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 12234.403015,
+      "craftingPriceLow": 1223.440301,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 13972
+    },
+    {
+      "spec": {
+        "name": "LUNAR_TOTEM",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 6.5,
+      "value": 188266.980912,
+      "oddsMultiplier": 0.045,
+      "craftingPrice": 45364.805374,
+      "craftingPriceLow": 4536.480537,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 13972
+    },
+    {
+      "spec": {
+        "name": "LUNAR_TOTEM",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 11.1,
+      "value": 233323.677759,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 91819.475854,
+      "craftingPriceLow": 9181.947585,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 210070
+    },
+    {
+      "spec": {
+        "name": "LUNAR_TOTEM",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 11.1,
+      "value": 1277854.484446,
+      "oddsMultiplier": 0.03,
+      "craftingPrice": 374317.488459,
+      "craftingPriceLow": 37431.748846,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 210070
+    },
+    {
+      "spec": {
+        "name": "LUNAR_TOTEM",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 11.1,
+      "value": 3688800.984116,
+      "oddsMultiplier": 0.0036,
+      "craftingPrice": 550423.185354,
+      "craftingPriceLow": 55042.318535,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 210070
+    },
+    {
+      "spec": {
+        "name": "LUNAR_TOTEM",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 11.1,
+      "value": 9035643.936518,
+      "oddsMultiplier": 0.0006,
+      "craftingPrice": 699243.860053,
+      "craftingPriceLow": 69924.386005,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 210070
+    },
+    {
+      "spec": {
+        "name": "NEODYMIUM_MEDALLION",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3,
+      "value": 3570.412409,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 252.847705,
+      "craftingPriceLow": 25.284771,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 106
+    },
+    {
+      "spec": {
+        "name": "NEODYMIUM_MEDALLION",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5,
+      "value": 18204.534523,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 3982.334085,
+      "craftingPriceLow": 398.233409,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 3236
+    },
+    {
+      "spec": {
+        "name": "NEODYMIUM_MEDALLION",
+        "level": "LESSER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 5,
+      "value": 63000.754903,
+      "oddsMultiplier": 0.075,
+      "craftingPrice": 12912.343112,
+      "craftingPriceLow": 1291.234311,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 3236
+    },
+    {
+      "spec": {
+        "name": "NEODYMIUM_MEDALLION",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7,
+      "value": 53382.131454,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 16466.275749,
+      "craftingPriceLow": 1646.627575,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 20703
+    },
+    {
+      "spec": {
+        "name": "NEODYMIUM_MEDALLION",
+        "level": "NORMAL",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 7,
+      "value": 653513.73101,
+      "oddsMultiplier": 0.006,
+      "craftingPrice": 91063.110817,
+      "craftingPriceLow": 9106.311082,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 20703
+    },
+    {
+      "spec": {
+        "name": "NEODYMIUM_MEDALLION",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 9.8,
+      "value": 156628.760864,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 58753.38978,
+      "craftingPriceLow": 5875.338978,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 114342
+    },
+    {
+      "spec": {
+        "name": "NEODYMIUM_MEDALLION",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 9.8,
+      "value": 990474.148954,
+      "oddsMultiplier": 0.0225,
+      "craftingPrice": 254795.568378,
+      "craftingPriceLow": 25479.556838,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 114342
+    },
+    {
+      "spec": {
+        "name": "NEODYMIUM_MEDALLION",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 9.8,
+      "value": 2214736.625319,
+      "oddsMultiplier": 0.0045,
+      "craftingPrice": 340327.69774,
+      "craftingPriceLow": 34032.769774,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 114342
+    },
+    {
+      "spec": {
+        "name": "NEODYMIUM_MEDALLION",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 9.8,
+      "value": 4952270.744771,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 425859.827102,
+      "craftingPriceLow": 42585.98271,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 114342
+    },
+    {
+      "spec": {
+        "name": "BEAK_OF_MIDAS",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3.5,
+      "value": 5831.260105,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 654.646253,
+      "craftingPriceLow": 65.464625,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 335
+    },
+    {
+      "spec": {
+        "name": "BEAK_OF_MIDAS",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5.5,
+      "value": 24687.627965,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 6075.334222,
+      "craftingPriceLow": 607.533422,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 5586
+    },
+    {
+      "spec": {
+        "name": "BEAK_OF_MIDAS",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7.7,
+      "value": 72410.081186,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 23885.787138,
+      "craftingPriceLow": 2388.578714,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 33987
+    },
+    {
+      "spec": {
+        "name": "BEAK_OF_MIDAS",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 7.7,
+      "value": 240099.154712,
+      "oddsMultiplier": 0.081818,
+      "craftingPrice": 75680.325031,
+      "craftingPriceLow": 7568.032503,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 33987
+    },
+    {
+      "spec": {
+        "name": "BEAK_OF_MIDAS",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 10.9,
+      "value": 220136.90814,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 86083.096922,
+      "craftingPriceLow": 8608.309692,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 192350
+    },
+    {
+      "spec": {
+        "name": "BEAK_OF_MIDAS",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 10.9,
+      "value": 1556451.22866,
+      "oddsMultiplier": 0.018,
+      "craftingPrice": 390707.633927,
+      "craftingPriceLow": 39070.763393,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 192350
+    },
+    {
+      "spec": {
+        "name": "BEAK_OF_MIDAS",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 10.9,
+      "value": 8524922.545295,
+      "oddsMultiplier": 0.0006,
+      "craftingPrice": 655554.7926,
+      "craftingPriceLow": 65555.47926,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 192350
+    },
+    {
+      "spec": {
+        "name": "LIGHT_OF_EGGENDIL",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8.2,
+      "value": 88553.49331,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 30365.963161,
+      "craftingPriceLow": 3036.596316,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 46885
+    },
+    {
+      "spec": {
+        "name": "LIGHT_OF_EGGENDIL",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 10.2,
+      "value": 178016.513068,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 67892.952668,
+      "craftingPriceLow": 6789.295267,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 139175
+    },
+    {
+      "spec": {
+        "name": "LIGHT_OF_EGGENDIL",
+        "level": "LESSER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 10.2,
+      "value": 689383.16588,
+      "oddsMultiplier": 0.06,
+      "craftingPrice": 234201.085643,
+      "craftingPriceLow": 23420.108564,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 139175
+    },
+    {
+      "spec": {
+        "name": "LIGHT_OF_EGGENDIL",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13.2,
+      "value": 406201.997701,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 168121.517425,
+      "craftingPriceLow": 16812.151743,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 481723
+    },
+    {
+      "spec": {
+        "name": "LIGHT_OF_EGGENDIL",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 13.2,
+      "value": 1284469.445905,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 518315.927756,
+      "craftingPriceLow": 51831.592776,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 481723
+    },
+    {
+      "spec": {
+        "name": "LIGHT_OF_EGGENDIL",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 16.1,
+      "value": 766894.647031,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 330068.881399,
+      "craftingPriceLow": 33006.88814,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1224134
+    },
+    {
+      "spec": {
+        "name": "LIGHT_OF_EGGENDIL",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 16.1,
+      "value": 7668721.47031,
+      "oddsMultiplier": 0.009,
+      "craftingPrice": 1705165.330662,
+      "craftingPriceLow": 170516.533066,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1224134
+    },
+    {
+      "spec": {
+        "name": "LIGHT_OF_EGGENDIL",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 16.1,
+      "value": 24250572.530675,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 2392713.555294,
+      "craftingPriceLow": 239271.355529,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1224134
+    },
+    {
+      "spec": {
+        "name": "DEMETERS_NECKLACE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 1.2,
+      "value": 213.911646,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 10.884288,
+      "craftingPriceLow": 1.088429,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 2
+    },
+    {
+      "spec": {
+        "name": "DEMETERS_NECKLACE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3.2,
+      "value": 4383.717036,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 383.059174,
+      "craftingPriceLow": 38.305917,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 175
+    },
+    {
+      "spec": {
+        "name": "DEMETERS_NECKLACE",
+        "level": "LESSER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 3.2,
+      "value": 23898.676423,
+      "oddsMultiplier": 0.03,
+      "craftingPrice": 1530.96329,
+      "craftingPriceLow": 153.096329,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 175
+    },
+    {
+      "spec": {
+        "name": "DEMETERS_NECKLACE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5.8,
+      "value": 29256.313096,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 7628.25521,
+      "craftingPriceLow": 762.825521,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 7514
+    },
+    {
+      "spec": {
+        "name": "DEMETERS_NECKLACE",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 5.8,
+      "value": 130751.406309,
+      "oddsMultiplier": 0.045,
+      "craftingPrice": 28275.141613,
+      "craftingPriceLow": 2827.514161,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 7514
+    },
+    {
+      "spec": {
+        "name": "DEMETERS_NECKLACE",
+        "level": "NORMAL",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 5.8,
+      "value": 292338.13096,
+      "oddsMultiplier": 0.009,
+      "craftingPrice": 39367.548649,
+      "craftingPriceLow": 3936.754865,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 7514
+    },
+    {
+      "spec": {
+        "name": "DEMETERS_NECKLACE",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8.9,
+      "value": 115085.635013,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 41267.360175,
+      "craftingPriceLow": 4126.736017,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 70868
+    },
+    {
+      "spec": {
+        "name": "DEMETERS_NECKLACE",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 8.9,
+      "value": 727732.351336,
+      "oddsMultiplier": 0.0225,
+      "craftingPrice": 178954.048024,
+      "craftingPriceLow": 17895.404802,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 70868
+    },
+    {
+      "spec": {
+        "name": "DEMETERS_NECKLACE",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 8.9,
+      "value": 1361440.793268,
+      "oddsMultiplier": 0.006429,
+      "craftingPrice": 225713.17527,
+      "craftingPriceLow": 22571.317527,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 70868
+    },
+    {
+      "spec": {
+        "name": "DEMETERS_NECKLACE",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 8.9,
+      "value": 3638561.756679,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 299097.944412,
+      "craftingPriceLow": 29909.794441,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 70868
+    },
+    {
+      "spec": {
+        "name": "VIAL_MARTIAN_DUST",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 1.75,
+      "value": 656.830376,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 10.884288,
+      "craftingPriceLow": 1.088429,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 3
+    },
+    {
+      "spec": {
+        "name": "VIAL_MARTIAN_DUST",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 4.8,
+      "value": 15978.306346,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 3302.979512,
+      "craftingPriceLow": 330.297951,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 2546
+    },
+    {
+      "spec": {
+        "name": "VIAL_MARTIAN_DUST",
+        "level": "LESSER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 4.8,
+      "value": 50473.784263,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 10162.610763,
+      "craftingPriceLow": 1016.261076,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 2546
+    },
+    {
+      "spec": {
+        "name": "VIAL_MARTIAN_DUST",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7.9,
+      "value": 78600.18956,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 26353.836098,
+      "craftingPriceLow": 2635.38361,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 38768
+    },
+    {
+      "spec": {
+        "name": "VIAL_MARTIAN_DUST",
+        "level": "NORMAL",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 7.9,
+      "value": 785776.895596,
+      "oddsMultiplier": 0.009,
+      "craftingPrice": 136107.936106,
+      "craftingPriceLow": 13610.793611,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 38768
+    },
+    {
+      "spec": {
+        "name": "VIAL_MARTIAN_DUST",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 12.5,
+      "value": 341210.673655,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 139253.59059,
+      "craftingPriceLow": 13925.359059,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 371742
+    },
+    {
+      "spec": {
+        "name": "VIAL_MARTIAN_DUST",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 12.5,
+      "value": 2157872.667539,
+      "oddsMultiplier": 0.0225,
+      "craftingPrice": 603946.16208,
+      "craftingPriceLow": 60394.616208,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 371742
+    },
+    {
+      "spec": {
+        "name": "VIAL_MARTIAN_DUST",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 12.5,
+      "value": 10789263.337695,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 1009431.81239,
+      "craftingPriceLow": 100943.181239,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 371742
+    },
+    {
+      "spec": {
+        "name": "ORNATE_GUSSET",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 2.5,
+      "value": 2003.275502,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 66.594458,
+      "craftingPriceLow": 6.659446,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 23
+    },
+    {
+      "spec": {
+        "name": "ORNATE_GUSSET",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5.3,
+      "value": 21930.921549,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 5167.170022,
+      "craftingPriceLow": 516.717002,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 4528
+    },
+    {
+      "spec": {
+        "name": "ORNATE_GUSSET",
+        "level": "LESSER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 5.3,
+      "value": 219084.215486,
+      "oddsMultiplier": 0.009,
+      "craftingPrice": 26653.052042,
+      "craftingPriceLow": 2665.305204,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 4528
+    },
+    {
+      "spec": {
+        "name": "ORNATE_GUSSET",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8.1,
+      "value": 85144.841389,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 28986.362702,
+      "craftingPriceLow": 2898.63627,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 44048
+    },
+    {
+      "spec": {
+        "name": "ORNATE_GUSSET",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 8.1,
+      "value": 269197.57286,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 89347.249363,
+      "craftingPriceLow": 8934.724936,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 44048
+    },
+    {
+      "spec": {
+        "name": "ORNATE_GUSSET",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13.1,
+      "value": 396437.090005,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 163774.023981,
+      "craftingPriceLow": 16377.402398,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 464653
+    },
+    {
+      "spec": {
+        "name": "ORNATE_GUSSET",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 13.1,
+      "value": 4855061.741907,
+      "oddsMultiplier": 0.006,
+      "craftingPrice": 906121.689597,
+      "craftingPriceLow": 90612.16896,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 464653
+    },
+    {
+      "spec": {
+        "name": "ORNATE_GUSSET",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 13.1,
+      "value": 12535675.96442,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 1187188.362685,
+      "craftingPriceLow": 118718.836269,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 464653
+    },
+    {
+      "spec": {
+        "name": "THE_CHALICE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 4.5,
+      "value": 13001.536402,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 2436.487404,
+      "craftingPriceLow": 243.64874,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1727
+    },
+    {
+      "spec": {
+        "name": "THE_CHALICE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6,
+      "value": 32605.875215,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 8798.389852,
+      "craftingPriceLow": 879.838985,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 9057
+    },
+    {
+      "spec": {
+        "name": "THE_CHALICE",
+        "level": "LESSER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 6,
+      "value": 291437.206984,
+      "oddsMultiplier": 0.01125,
+      "craftingPrice": 43638.569016,
+      "craftingPriceLow": 4363.856902,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 9057
+    },
+    {
+      "spec": {
+        "name": "THE_CHALICE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8.2,
+      "value": 88553.49331,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 30365.963161,
+      "craftingPriceLow": 3036.596316,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 46885
+    },
+    {
+      "spec": {
+        "name": "THE_CHALICE",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 8.2,
+      "value": 279976.676682,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 93600.706278,
+      "craftingPriceLow": 9360.070628,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 46885
+    },
+    {
+      "spec": {
+        "name": "THE_CHALICE",
+        "level": "NORMAL",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 8.2,
+      "value": 885309.933098,
+      "oddsMultiplier": 0.009,
+      "craftingPrice": 156835.449394,
+      "craftingPriceLow": 15683.544939,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 46885
+    },
+    {
+      "spec": {
+        "name": "THE_CHALICE",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 12.5,
+      "value": 341210.673655,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 139253.59059,
+      "craftingPriceLow": 13925.359059,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 371742
+    },
+    {
+      "spec": {
+        "name": "THE_CHALICE",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 12.5,
+      "value": 4178679.040016,
+      "oddsMultiplier": 0.006,
+      "craftingPrice": 770449.33135,
+      "craftingPriceLow": 77044.933135,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 371742
+    },
+    {
+      "spec": {
+        "name": "THE_CHALICE",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 12.5,
+      "value": 10789263.337695,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 1009431.81239,
+      "craftingPriceLow": 100943.181239,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 371742
+    },
+    {
+      "spec": {
+        "name": "BOOK_OF_BASAN",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8,
+      "value": 81827.523945,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 27649.208086,
+      "craftingPriceLow": 2764.920809,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 41344
+    },
+    {
+      "spec": {
+        "name": "BOOK_OF_BASAN",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 10.3,
+      "value": 259725.545682,
+      "oddsMultiplier": 0.45,
+      "craftingPrice": 114405.161123,
+      "craftingPriceLow": 11440.516112,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 237510
+    },
+    {
+      "spec": {
+        "name": "BOOK_OF_BASAN",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13.3,
+      "value": 759727.17367,
+      "oddsMultiplier": 0.27,
+      "craftingPrice": 360472.914183,
+      "craftingPriceLow": 36047.291418,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1043048
+    },
+    {
+      "spec": {
+        "name": "BOOK_OF_BASAN",
+        "level": "NORMAL",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 13.3,
+      "value": 7597046.736699,
+      "oddsMultiplier": 0.0027,
+      "craftingPrice": 1079292.086446,
+      "craftingPriceLow": 107929.208645,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1043048
+    },
+    {
+      "spec": {
+        "name": "BOOK_OF_BASAN",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 16.8,
+      "value": 1964983.800784,
+      "oddsMultiplier": 0.18,
+      "craftingPrice": 934701.79628,
+      "craftingPriceLow": 93470.179628,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 3663626
+    },
+    {
+      "spec": {
+        "name": "BOOK_OF_BASAN",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 16.8,
+      "value": 24065757.137559,
+      "oddsMultiplier": 0.0012,
+      "craftingPrice": 2659838.975924,
+      "craftingPriceLow": 265983.897592,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 3663626
+    },
+    {
+      "spec": {
+        "name": "BOOK_OF_BASAN",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 16.8,
+      "value": 62137478.188703,
+      "oddsMultiplier": 0.00018,
+      "craftingPrice": 3313008.090832,
+      "craftingPriceLow": 331300.809083,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 3663626
+    },
+    {
+      "spec": {
+        "name": "PHOENIX_FEATHER",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5,
+      "value": 18204.534523,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 3982.334085,
+      "craftingPriceLow": 398.233409,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 3236
+    },
+    {
+      "spec": {
+        "name": "PHOENIX_FEATHER",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7,
+      "value": 53382.131454,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 16466.275749,
+      "craftingPriceLow": 1646.627575,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 20703
+    },
+    {
+      "spec": {
+        "name": "PHOENIX_FEATHER",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 9.4,
+      "value": 137077.78869,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 50473.355229,
+      "craftingPriceLow": 5047.335523,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 93053
+    },
+    {
+      "spec": {
+        "name": "PHOENIX_FEATHER",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 9.4,
+      "value": 433423.971939,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 155593.963255,
+      "craftingPriceLow": 15559.396326,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 93053
+    },
+    {
+      "spec": {
+        "name": "PHOENIX_FEATHER",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 14.6,
+      "value": 560824.843537,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 237296.526,
+      "craftingPriceLow": 23729.6526,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 775063
+    },
+    {
+      "spec": {
+        "name": "PHOENIX_FEATHER",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 14.6,
+      "value": 3546834.634086,
+      "oddsMultiplier": 0.0225,
+      "craftingPrice": 1029184.220647,
+      "craftingPriceLow": 102918.422065,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 775063
+    },
+    {
+      "spec": {
+        "name": "PHOENIX_FEATHER",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 14.6,
+      "value": 17734073.170428,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 1720176.753208,
+      "craftingPriceLow": 172017.675321,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 775063
+    },
+    {
+      "spec": {
+        "name": "TUNGSTEN_ANKH",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 2,
+      "value": 993.667506,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 12.984473,
+      "craftingPriceLow": 1.298447,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 4
+    },
+    {
+      "spec": {
+        "name": "TUNGSTEN_ANKH",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5,
+      "value": 18204.534523,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 3982.334085,
+      "craftingPriceLow": 398.233409,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 3236
+    },
+    {
+      "spec": {
+        "name": "TUNGSTEN_ANKH",
+        "level": "LESSER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 5,
+      "value": 90922.672615,
+      "oddsMultiplier": 0.036,
+      "craftingPrice": 15550.008137,
+      "craftingPriceLow": 1555.000814,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 3236
+    },
+    {
+      "spec": {
+        "name": "TUNGSTEN_ANKH",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7.8,
+      "value": 75461.490186,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 25099.58352,
+      "craftingPriceLow": 2509.958352,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 36318
+    },
+    {
+      "spec": {
+        "name": "TUNGSTEN_ANKH",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 7.8,
+      "value": 238576.127675,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 77363.89022,
+      "craftingPriceLow": 7736.389022,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 36318
+    },
+    {
+      "spec": {
+        "name": "TUNGSTEN_ANKH",
+        "level": "NORMAL",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 7.8,
+      "value": 2385536.276752,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 181892.503618,
+      "craftingPriceLow": 18189.250362,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 36318
+    },
+    {
+      "spec": {
+        "name": "TUNGSTEN_ANKH",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 11.7,
+      "value": 276129.51142,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 110546.051566,
+      "craftingPriceLow": 11054.605157,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 270812
+    },
+    {
+      "spec": {
+        "name": "TUNGSTEN_ANKH",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 11.7,
+      "value": 1746263.25667,
+      "oddsMultiplier": 0.0225,
+      "craftingPrice": 479433.996977,
+      "craftingPriceLow": 47943.399698,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 270812
+    },
+    {
+      "spec": {
+        "name": "TUNGSTEN_ANKH",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 11.7,
+      "value": 8731216.283349,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 801321.579464,
+      "craftingPriceLow": 80132.157946,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 270812
+    },
+    {
+      "spec": {
+        "name": "AURELIAN_BROOCH",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 1.9,
+      "value": 847.034923,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 10.884288,
+      "craftingPriceLow": 1.088429,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 3
+    },
+    {
+      "spec": {
+        "name": "AURELIAN_BROOCH",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3.9,
+      "value": 8233.909878,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 1186.987877,
+      "craftingPriceLow": 118.698788,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 699
+    },
+    {
+      "spec": {
+        "name": "AURELIAN_BROOCH",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.7,
+      "value": 46403.651172,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 13827.006446,
+      "craftingPriceLow": 1382.700645,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 16424
+    },
+    {
+      "spec": {
+        "name": "AURELIAN_BROOCH",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 6.7,
+      "value": 146687.172511,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 42609.320108,
+      "craftingPriceLow": 4260.932011,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 16424
+    },
+    {
+      "spec": {
+        "name": "AURELIAN_BROOCH",
+        "level": "NORMAL",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 6.7,
+      "value": 463811.511722,
+      "oddsMultiplier": 0.009,
+      "craftingPrice": 71391.633771,
+      "craftingPriceLow": 7139.163377,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 16424
+    },
+    {
+      "spec": {
+        "name": "AURELIAN_BROOCH",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 9.8,
+      "value": 156628.760864,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 58753.38978,
+      "craftingPriceLow": 5875.338978,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 114342
+    },
+    {
+      "spec": {
+        "name": "AURELIAN_BROOCH",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 9.8,
+      "value": 990474.148954,
+      "oddsMultiplier": 0.0225,
+      "craftingPrice": 254795.568378,
+      "craftingPriceLow": 25479.556838,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 114342
+    },
+    {
+      "spec": {
+        "name": "AURELIAN_BROOCH",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 9.8,
+      "value": 2101084.928938,
+      "oddsMultiplier": 0.005,
+      "craftingPrice": 334728.40796,
+      "craftingPriceLow": 33472.840796,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 114342
+    },
+    {
+      "spec": {
+        "name": "AURELIAN_BROOCH",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 9.8,
+      "value": 4952270.744771,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 425859.827102,
+      "craftingPriceLow": 42585.98271,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 114342
+    },
+    {
+      "spec": {
+        "name": "CARVED_RAINSTICK",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 4.2,
+      "value": 10430.823962,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 1737.125806,
+      "craftingPriceLow": 173.712581,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1126
+    },
+    {
+      "spec": {
+        "name": "CARVED_RAINSTICK",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.2,
+      "value": 36210.297843,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 10082.597699,
+      "craftingPriceLow": 1008.25977,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 10830
+    },
+    {
+      "spec": {
+        "name": "CARVED_RAINSTICK",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8.8,
+      "value": 110999.525346,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 39572.068752,
+      "craftingPriceLow": 3957.206875,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 66967
+    },
+    {
+      "spec": {
+        "name": "CARVED_RAINSTICK",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13.2,
+      "value": 406201.997701,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 168121.517425,
+      "craftingPriceLow": 16812.151743,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 481723
+    },
+    {
+      "spec": {
+        "name": "CARVED_RAINSTICK",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 13.2,
+      "value": 5295925.120705,
+      "oddsMultiplier": 0.005294,
+      "craftingPrice": 949212.26222,
+      "craftingPriceLow": 94921.226222,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 481723
+    },
+    {
+      "spec": {
+        "name": "CARVED_RAINSTICK",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 13.2,
+      "value": 12844469.459051,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 1218704.748417,
+      "craftingPriceLow": 121870.474842,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 481723
+    },
+    {
+      "spec": {
+        "name": "PUZZLE_CUBE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 0.5,
+      "value": 36.470511,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 10.884288,
+      "craftingPriceLow": 1.088429,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1
+    },
+    {
+      "spec": {
+        "name": "PUZZLE_CUBE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 2.6,
+      "value": 2267.815035,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 90.580782,
+      "craftingPriceLow": 9.058078,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 32
+    },
+    {
+      "spec": {
+        "name": "PUZZLE_CUBE",
+        "level": "LESSER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 2.6,
+      "value": 20085.347517,
+      "oddsMultiplier": 0.01125,
+      "craftingPrice": 410.030523,
+      "craftingPriceLow": 41.003052,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 32
+    },
+    {
+      "spec": {
+        "name": "PUZZLE_CUBE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.8,
+      "value": 48655.335519,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 14672.717776,
+      "craftingPriceLow": 1467.271778,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 17767
+    },
+    {
+      "spec": {
+        "name": "PUZZLE_CUBE",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 6.8,
+      "value": 153807.623618,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 45216.739293,
+      "craftingPriceLow": 4521.673929,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 17767
+    },
+    {
+      "spec": {
+        "name": "PUZZLE_CUBE",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 11.1,
+      "value": 260860.851265,
+      "oddsMultiplier": 0.72,
+      "craftingPrice": 110353.422196,
+      "craftingPriceLow": 11035.34222,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 252473
+    },
+    {
+      "spec": {
+        "name": "PUZZLE_CUBE",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 11.1,
+      "value": 1844412.992058,
+      "oddsMultiplier": 0.0144,
+      "craftingPrice": 435279.79379,
+      "craftingPriceLow": 43527.979379,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 252473
+    },
+    {
+      "spec": {
+        "name": "PUZZLE_CUBE",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 11.1,
+      "value": 3400908.417855,
+      "oddsMultiplier": 0.004235,
+      "craftingPrice": 536924.6231,
+      "craftingPriceLow": 53692.46231,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 252473
+    },
+    {
+      "spec": {
+        "name": "PUZZLE_CUBE",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 11.1,
+      "value": 8248378.854253,
+      "oddsMultiplier": 0.00072,
+      "craftingPrice": 684100.52326,
+      "craftingPriceLow": 68410.052326,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 252473
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_METRONOME",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5.3,
+      "value": 21930.921549,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 5167.170022,
+      "craftingPriceLow": 516.717002,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 4528
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_METRONOME",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7.2,
+      "value": 58415.572564,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 18400.435579,
+      "craftingPriceLow": 1840.043558,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 23997
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_METRONOME",
+        "level": "LESSER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 7.2,
+      "value": 226170.715116,
+      "oddsMultiplier": 0.06,
+      "craftingPrice": 63455.6208,
+      "craftingPriceLow": 6345.56208,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 23997
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_METRONOME",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 10.2,
+      "value": 178016.513068,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 67892.952668,
+      "craftingPriceLow": 6789.295267,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 139175
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_METRONOME",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 10.2,
+      "value": 562883.585475,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 209300.459691,
+      "craftingPriceLow": 20930.045969,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 139175
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_METRONOME",
+        "level": "NORMAL",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 10.2,
+      "value": 1592029.490555,
+      "oddsMultiplier": 0.01125,
+      "craftingPrice": 337004.16337,
+      "craftingPriceLow": 33700.416337,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 139175
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_METRONOME",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 14.5,
+      "value": 655728.244215,
+      "oddsMultiplier": 0.63,
+      "craftingPrice": 306621.058816,
+      "craftingPriceLow": 30662.105882,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 992590
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_METRONOME",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 14.5,
+      "value": 3766753.363929,
+      "oddsMultiplier": 0.019091,
+      "craftingPrice": 1039891.841371,
+      "craftingPriceLow": 103989.184137,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 992590
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_METRONOME",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 14.5,
+      "value": 8294087.883519,
+      "oddsMultiplier": 0.003938,
+      "craftingPrice": 1370962.150513,
+      "craftingPriceLow": 137096.215051,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 992590
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_METRONOME",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 14.5,
+      "value": 20735182.208798,
+      "oddsMultiplier": 0.00063,
+      "craftingPrice": 1755282.338699,
+      "craftingPriceLow": 175528.23387,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 992590
+    },
+    {
+      "spec": {
+        "name": "SHIP_IN_A_BOTTLE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.2,
+      "value": 36210.297843,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 10082.597699,
+      "craftingPriceLow": 1008.25977,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 10830
+    },
+    {
+      "spec": {
+        "name": "SHIP_IN_A_BOTTLE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8.6,
+      "value": 103128.590442,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 36322.087764,
+      "craftingPriceLow": 3632.208776,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 59659
+    },
+    {
+      "spec": {
+        "name": "SHIP_IN_A_BOTTLE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 11.8,
+      "value": 283752.328358,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 113895.404464,
+      "craftingPriceLow": 11389.540446,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 282119
+    },
+    {
+      "spec": {
+        "name": "SHIP_IN_A_BOTTLE",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 11.8,
+      "value": 897249.592046,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 351130.976854,
+      "craftingPriceLow": 35113.097685,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 282119
+    },
+    {
+      "spec": {
+        "name": "SHIP_IN_A_BOTTLE",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 15.2,
+      "value": 902205.06094,
+      "oddsMultiplier": 0.45,
+      "craftingPrice": 442510.337308,
+      "craftingPriceLow": 44251.033731,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1522971
+    },
+    {
+      "spec": {
+        "name": "SHIP_IN_A_BOTTLE",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 15.2,
+      "value": 9021825.609396,
+      "oddsMultiplier": 0.0045,
+      "craftingPrice": 1575554.896943,
+      "craftingPriceLow": 157555.489694,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1522971
+    },
+    {
+      "spec": {
+        "name": "SHIP_IN_A_BOTTLE",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 15.2,
+      "value": 18043626.218793,
+      "oddsMultiplier": 0.001125,
+      "craftingPrice": 1916635.295817,
+      "craftingPriceLow": 191663.529582,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1522971
+    },
+    {
+      "spec": {
+        "name": "SHIP_IN_A_BOTTLE",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 15.2,
+      "value": 31252459.062461,
+      "oddsMultiplier": 0.000375,
+      "craftingPrice": 2186935.11679,
+      "craftingPriceLow": 218693.511679,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1522971
+    },
+    {
+      "spec": {
+        "name": "TACHYON_DEFLECTOR",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7.25,
+      "value": 71377.853576,
+      "oddsMultiplier": 0.63,
+      "craftingPrice": 25004.062721,
+      "craftingPriceLow": 2500.406272,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 32903
+    },
+    {
+      "spec": {
+        "name": "TACHYON_DEFLECTOR",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 9.25,
+      "value": 184122.244366,
+      "oddsMultiplier": 0.45,
+      "craftingPrice": 77412.17339,
+      "craftingPriceLow": 7741.217339,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 139767
+    },
+    {
+      "spec": {
+        "name": "TACHYON_DEFLECTOR",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13,
+      "value": 547056.67034,
+      "oddsMultiplier": 0.45,
+      "craftingPrice": 259516.135935,
+      "craftingPriceLow": 25951.613593,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 728996
+    },
+    {
+      "spec": {
+        "name": "TACHYON_DEFLECTOR",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 13,
+      "value": 1729891.030522,
+      "oddsMultiplier": 0.045,
+      "craftingPrice": 591755.448228,
+      "craftingPriceLow": 59175.544823,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 728996
+    },
+    {
+      "spec": {
+        "name": "TACHYON_DEFLECTOR",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 17,
+      "value": 2886151.042967,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 1220591.96092,
+      "craftingPriceLow": 122059.196092,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 4858320
+    },
+    {
+      "spec": {
+        "name": "TACHYON_DEFLECTOR",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 17,
+      "value": 31615951.75072,
+      "oddsMultiplier": 0.00075,
+      "craftingPrice": 2935268.992284,
+      "craftingPriceLow": 293526.899228,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 4858320
+    },
+    {
+      "spec": {
+        "name": "TACHYON_DEFLECTOR",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 17,
+      "value": 64535765.237061,
+      "oddsMultiplier": 0.00018,
+      "craftingPrice": 3446401.703852,
+      "craftingPriceLow": 344640.170385,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 4858320
+    },
+    {
+      "spec": {
+        "name": "TACHYON_DEFLECTOR",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 17,
+      "value": 99978363.869322,
+      "oddsMultiplier": 0.000075,
+      "craftingPrice": 3759957.573245,
+      "craftingPriceLow": 375995.757324,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 4858320
+    },
+    {
+      "spec": {
+        "name": "INTERSTELLAR_COMPASS",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 4.32,
+      "value": 11412.456608,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 1997.960822,
+      "craftingPriceLow": 199.796082,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1343
+    },
+    {
+      "spec": {
+        "name": "INTERSTELLAR_COMPASS",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.1,
+      "value": 34375.591304,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 9425.903017,
+      "craftingPriceLow": 942.590302,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 9913
+    },
+    {
+      "spec": {
+        "name": "INTERSTELLAR_COMPASS",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8.7,
+      "value": 107014.301871,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 37923.865687,
+      "craftingPriceLow": 3792.386569,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 63232
+    },
+    {
+      "spec": {
+        "name": "INTERSTELLAR_COMPASS",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 8.7,
+      "value": 338354.879183,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 116902.534377,
+      "craftingPriceLow": 11690.253438,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 63232
+    },
+    {
+      "spec": {
+        "name": "INTERSTELLAR_COMPASS",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 12.5,
+      "value": 482534.406971,
+      "oddsMultiplier": 0.45,
+      "craftingPrice": 226570.172702,
+      "craftingPriceLow": 22657.01727,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 604836
+    },
+    {
+      "spec": {
+        "name": "INTERSTELLAR_COMPASS",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 12.5,
+      "value": 3051682.436969,
+      "oddsMultiplier": 0.01125,
+      "craftingPrice": 691262.744192,
+      "craftingPriceLow": 69126.274419,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 604836
+    },
+    {
+      "spec": {
+        "name": "INTERSTELLAR_COMPASS",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 12.5,
+      "value": 6823738.473105,
+      "oddsMultiplier": 0.00225,
+      "craftingPrice": 894005.569347,
+      "craftingPriceLow": 89400.556935,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 604836
+    },
+    {
+      "spec": {
+        "name": "INTERSTELLAR_COMPASS",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 12.5,
+      "value": 15258312.184844,
+      "oddsMultiplier": 0.00045,
+      "craftingPrice": 1096748.394502,
+      "craftingPriceLow": 109674.83945,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 604836
+    },
+    {
+      "spec": {
+        "name": "DILITHIUM_MONOCLE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5.45,
+      "value": 23977.318202,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 5839.049594,
+      "craftingPriceLow": 583.904959,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 5306
+    },
+    {
+      "spec": {
+        "name": "DILITHIUM_MONOCLE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7.75,
+      "value": 73924.958295,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 24487.669756,
+      "craftingPriceLow": 2448.766976,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 35138
+    },
+    {
+      "spec": {
+        "name": "DILITHIUM_MONOCLE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 10.7,
+      "value": 207471.844866,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 80590.781591,
+      "craftingPriceLow": 8059.078159,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 175798
+    },
+    {
+      "spec": {
+        "name": "DILITHIUM_MONOCLE",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 15.2,
+      "value": 637962.638942,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 271970.137871,
+      "craftingPriceLow": 27197.013787,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 936029
+    },
+    {
+      "spec": {
+        "name": "DILITHIUM_MONOCLE",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 15.2,
+      "value": 7813133.515615,
+      "oddsMultiplier": 0.006,
+      "craftingPrice": 1504774.319042,
+      "craftingPriceLow": 150477.431904,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 936029
+    },
+    {
+      "spec": {
+        "name": "DILITHIUM_MONOCLE",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 15.2,
+      "value": 20173384.442059,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 1971536.977324,
+      "craftingPriceLow": 197153.697732,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 936029
+    },
+    {
+      "spec": {
+        "name": "TITANIUM_ACTUATOR",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5.5,
+      "value": 24687.627965,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 6075.334222,
+      "craftingPriceLow": 607.533422,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 5586
+    },
+    {
+      "spec": {
+        "name": "TITANIUM_ACTUATOR",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7.9,
+      "value": 78600.18956,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 26353.836098,
+      "craftingPriceLow": 2635.38361,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 38768
+    },
+    {
+      "spec": {
+        "name": "TITANIUM_ACTUATOR",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 11,
+      "value": 226664.36139,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 88920.446829,
+      "craftingPriceLow": 8892.044683,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 201060
+    },
+    {
+      "spec": {
+        "name": "TITANIUM_ACTUATOR",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 11,
+      "value": 716721.589438,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 274130.490594,
+      "craftingPriceLow": 27413.049059,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 201060
+    },
+    {
+      "spec": {
+        "name": "TITANIUM_ACTUATOR",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 14.2,
+      "value": 513124.329702,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 215900.725714,
+      "craftingPriceLow": 21590.072571,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 680184
+    },
+    {
+      "spec": {
+        "name": "TITANIUM_ACTUATOR",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 14.2,
+      "value": 7256345.309091,
+      "oddsMultiplier": 0.0045,
+      "craftingPrice": 1250728.336368,
+      "craftingPriceLow": 125072.833637,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 680184
+    },
+    {
+      "spec": {
+        "name": "TITANIUM_ACTUATOR",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 14.2,
+      "value": 16225650.47764,
+      "oddsMultiplier": 0.0009,
+      "craftingPrice": 1565071.678641,
+      "craftingPriceLow": 156507.167864,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 680184
+    },
+    {
+      "spec": {
+        "name": "MERCURYS_LENS",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3.3,
+      "value": 4834.759409,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 462.755667,
+      "craftingPriceLow": 46.275567,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 220
+    },
+    {
+      "spec": {
+        "name": "MERCURYS_LENS",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5.7,
+      "value": 27673.9271,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 7084.3073,
+      "craftingPriceLow": 708.43073,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 6823
+    },
+    {
+      "spec": {
+        "name": "MERCURYS_LENS",
+        "level": "LESSER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 5.7,
+      "value": 87458.584496,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 21820.851895,
+      "craftingPriceLow": 2182.08519,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 6823
+    },
+    {
+      "spec": {
+        "name": "MERCURYS_LENS",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8.2,
+      "value": 88553.49331,
+      "oddsMultiplier": 0.9,
+      "craftingPrice": 30365.963161,
+      "craftingPriceLow": 3036.596316,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 46885
+    },
+    {
+      "spec": {
+        "name": "MERCURYS_LENS",
+        "level": "NORMAL",
+        "rarity": "RARE"
+      },
+      "baseQuality": 8.2,
+      "value": 279976.676682,
+      "oddsMultiplier": 0.09,
+      "craftingPrice": 93600.706278,
+      "craftingPriceLow": 9360.070628,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 46885
+    },
+    {
+      "spec": {
+        "name": "MERCURYS_LENS",
+        "level": "GREATER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13.5,
+      "value": 617276.000138,
+      "oddsMultiplier": 0.45,
+      "craftingPrice": 295510.569713,
+      "craftingPriceLow": 29551.056971,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 871817
+    },
+    {
+      "spec": {
+        "name": "MERCURYS_LENS",
+        "level": "GREATER",
+        "rarity": "RARE"
+      },
+      "baseQuality": 13.5,
+      "value": 3903863.096907,
+      "oddsMultiplier": 0.01125,
+      "craftingPrice": 901605.268438,
+      "craftingPriceLow": 90160.526844,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 871817
+    },
+    {
+      "spec": {
+        "name": "MERCURYS_LENS",
+        "level": "GREATER",
+        "rarity": "EPIC"
+      },
+      "baseQuality": 13.5,
+      "value": 9759620.242267,
+      "oddsMultiplier": 0.0018,
+      "craftingPrice": 1202704.267193,
+      "craftingPriceLow": 120270.426719,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 871817
+    },
+    {
+      "spec": {
+        "name": "MERCURYS_LENS",
+        "level": "GREATER",
+        "rarity": "LEGENDARY"
+      },
+      "baseQuality": 13.5,
+      "value": 19519215.484534,
+      "oddsMultiplier": 0.00045,
+      "craftingPrice": 1430476.866867,
+      "craftingPriceLow": 143047.686687,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 871817
+    },
+    {
+      "spec": {
+        "name": "TACHYON_STONE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3.25,
+      "value": 13766.266268,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 495.936563,
+      "craftingPriceLow": 49.593656,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 93
+    },
+    {
+      "spec": {
+        "name": "TACHYON_STONE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.85,
+      "value": 149376.582539,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 18048.119505,
+      "craftingPriceLow": 1804.81195,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 8825
+    },
+    {
+      "spec": {
+        "name": "TACHYON_STONE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13.85,
+      "value": 1421172.890927,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 236946.431795,
+      "craftingPriceLow": 23694.643179,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 289070
+    },
+    {
+      "spec": {
+        "name": "DILITHIUM_STONE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7,
+      "value": 160096.394363,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 19671.158436,
+      "craftingPriceLow": 1967.115844,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 9893
+    },
+    {
+      "spec": {
+        "name": "DILITHIUM_STONE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 10.25,
+      "value": 542420.864079,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 82572.111552,
+      "craftingPriceLow": 8257.211155,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 68138
+    },
+    {
+      "spec": {
+        "name": "DILITHIUM_STONE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 16.85,
+      "value": 2661483.487963,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 459362.657726,
+      "craftingPriceLow": 45936.265773,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 722988
+    },
+    {
+      "spec": {
+        "name": "SHELL_STONE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 2.95,
+      "value": 10104.301843,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 262.01446,
+      "craftingPriceLow": 26.201446,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 43
+    },
+    {
+      "spec": {
+        "name": "SHELL_STONE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.85,
+      "value": 149376.582539,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 18048.119505,
+      "craftingPriceLow": 1804.81195,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 8825
+    },
+    {
+      "spec": {
+        "name": "SHELL_STONE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 12.85,
+      "value": 1118149.100504,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 183125.19331,
+      "craftingPriceLow": 18312.519331,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 202685
+    },
+    {
+      "spec": {
+        "name": "LUNAR_STONE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3.5,
+      "value": 17443.780316,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 774.42705,
+      "craftingPriceLow": 77.442705,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 159
+    },
+    {
+      "spec": {
+        "name": "LUNAR_STONE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7.25,
+      "value": 179119.241098,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 22587.588767,
+      "craftingPriceLow": 2258.758877,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 11890
+    },
+    {
+      "spec": {
+        "name": "LUNAR_STONE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13.25,
+      "value": 1233387.70098,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 203548.775835,
+      "craftingPriceLow": 20354.877584,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 234442
+    },
+    {
+      "spec": {
+        "name": "SOUL_STONE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5.1,
+      "value": 58131.479486,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 5196.19218,
+      "craftingPriceLow": 519.619218,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1733
+    },
+    {
+      "spec": {
+        "name": "SOUL_STONE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 9.1,
+      "value": 524165.1797,
+      "oddsMultiplier": 0.05,
+      "craftingPrice": 64770.664593,
+      "craftingPriceLow": 6477.066459,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 45795
+    },
+    {
+      "spec": {
+        "name": "SOUL_STONE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13.1,
+      "value": 1880372.644663,
+      "oddsMultiplier": 0.04,
+      "craftingPrice": 250022.006603,
+      "craftingPriceLow": 25002.20066,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 283741
+    },
+    {
+      "spec": {
+        "name": "PROPHECY_STONE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8.5,
+      "value": 421387.187621,
+      "oddsMultiplier": 0.05,
+      "craftingPrice": 50259.44361,
+      "craftingPriceLow": 5025.944361,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 32523
+    },
+    {
+      "spec": {
+        "name": "PROPHECY_STONE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 12.8,
+      "value": 2016121.313549,
+      "oddsMultiplier": 0.03,
+      "craftingPrice": 246536.331347,
+      "craftingPriceLow": 24653.633135,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 271491
+    },
+    {
+      "spec": {
+        "name": "PROPHECY_STONE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 17.2,
+      "value": 6355910.022815,
+      "oddsMultiplier": 0.02,
+      "craftingPrice": 731674.386774,
+      "craftingPriceLow": 73167.438677,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1182751
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_STONE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5.5,
+      "value": 74012.883896,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 7252.777969,
+      "craftingPriceLow": 725.277797,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 2668
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_STONE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7.45,
+      "value": 195413.983179,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 25118.095517,
+      "craftingPriceLow": 2511.809552,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 13697
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_STONE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13.7,
+      "value": 1372504.337427,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 228278.681628,
+      "craftingPriceLow": 22827.868163,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 274584
+    },
+    {
+      "spec": {
+        "name": "TERRA_STONE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 5.1,
+      "value": 58131.479486,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 5196.19218,
+      "craftingPriceLow": 519.619218,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1733
+    },
+    {
+      "spec": {
+        "name": "TERRA_STONE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 7.8,
+      "value": 226334.470557,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 29988.96268,
+      "craftingPriceLow": 2998.896268,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 17357
+    },
+    {
+      "spec": {
+        "name": "TERRA_STONE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 14.9,
+      "value": 1795569.028501,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 303837.601247,
+      "craftingPriceLow": 30383.760125,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 407589
+    },
+    {
+      "spec": {
+        "name": "LIFE_STONE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6,
+      "value": 97767.625644,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 10507.14532,
+      "craftingPriceLow": 1050.714532,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 4326
+    },
+    {
+      "spec": {
+        "name": "LIFE_STONE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 9.52,
+      "value": 428216.690225,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 63177.402252,
+      "craftingPriceLow": 6317.740225,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 47364
+    },
+    {
+      "spec": {
+        "name": "LIFE_STONE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 15.2,
+      "value": 1913837.916825,
+      "oddsMultiplier": 0.1,
+      "craftingPrice": 325027.911927,
+      "craftingPriceLow": 32502.791193,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 447455
+    },
+    {
+      "spec": {
+        "name": "CLARITY_STONE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8,
+      "value": 293343.150806,
+      "oddsMultiplier": 0.07,
+      "craftingPrice": 36603.479778,
+      "craftingPriceLow": 3660.347978,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 21893
+    },
+    {
+      "spec": {
+        "name": "CLARITY_STONE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 12.2,
+      "value": 1339289.804938,
+      "oddsMultiplier": 0.05,
+      "craftingPrice": 185026.382927,
+      "craftingPriceLow": 18502.638293,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 191437
+    },
+    {
+      "spec": {
+        "name": "CLARITY_STONE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 17.5,
+      "value": 6717510.81403,
+      "oddsMultiplier": 0.02,
+      "craftingPrice": 774986.051383,
+      "craftingPriceLow": 77498.605138,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1281227
+    },
+    {
+      "spec": {
+        "name": "TACHYON_STONE_FRAGMENT",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3,
+      "value": 3291.894295,
+      "oddsMultiplier": 1.06,
+      "craftingPrice": 229.7,
+      "craftingPriceLow": 22.97,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 25
+    },
+    {
+      "spec": {
+        "name": "DILITHIUM_STONE_FRAGMENT",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 4.1,
+      "value": 8901.779025,
+      "oddsMultiplier": 1.06,
+      "craftingPrice": 1392.4,
+      "craftingPriceLow": 139.24,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 219
+    },
+    {
+      "spec": {
+        "name": "SHELL_STONE_FRAGMENT",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 2,
+      "value": 917.571578,
+      "oddsMultiplier": 1.06,
+      "craftingPrice": 12.7,
+      "craftingPriceLow": 1.27,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1
+    },
+    {
+      "spec": {
+        "name": "LUNAR_STONE_FRAGMENT",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 1.9,
+      "value": 643.461915,
+      "oddsMultiplier": 1.59,
+      "craftingPrice": 10.8,
+      "craftingPriceLow": 1.08,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1
+    },
+    {
+      "spec": {
+        "name": "SOUL_STONE_FRAGMENT",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3.9,
+      "value": 7589.039879,
+      "oddsMultiplier": 1.06,
+      "craftingPrice": 1074.8,
+      "craftingPriceLow": 107.48,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 159
+    },
+    {
+      "spec": {
+        "name": "PROPHECY_STONE_FRAGMENT",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.2,
+      "value": 33367.677649,
+      "oddsMultiplier": 1.06,
+      "craftingPrice": 9122.5,
+      "craftingPriceLow": 912.25,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 2450
+    },
+    {
+      "spec": {
+        "name": "QUANTUM_STONE_FRAGMENT",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3.8,
+      "value": 6985.726607,
+      "oddsMultiplier": 1.06,
+      "craftingPrice": 936.1,
+      "craftingPriceLow": 93.61,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 134
+    },
+    {
+      "spec": {
+        "name": "TERRA_STONE_FRAGMENT",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 4.2,
+      "value": 9613.37027,
+      "oddsMultiplier": 1.06,
+      "craftingPrice": 1572.5,
+      "craftingPriceLow": 157.25,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 255
+    },
+    {
+      "spec": {
+        "name": "LIFE_STONE_FRAGMENT",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 4.3,
+      "value": 10363.22846,
+      "oddsMultiplier": 1.06,
+      "craftingPrice": 1767.6,
+      "craftingPriceLow": 176.76,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 296
+    },
+    {
+      "spec": {
+        "name": "CLARITY_STONE_FRAGMENT",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6,
+      "value": 30046.40882,
+      "oddsMultiplier": 1.06,
+      "craftingPrice": 7960.7,
+      "craftingPriceLow": 796.07,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 2049
+    },
+    {
+      "spec": {
+        "name": "GOLD_METEORITE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 1.8,
+      "value": 311.280894,
+      "oddsMultiplier": 5.25,
+      "craftingPrice": 3.24,
+      "craftingPriceLow": 0.324,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1
+    },
+    {
+      "spec": {
+        "name": "GOLD_METEORITE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.8,
+      "value": 26660.931743,
+      "oddsMultiplier": 3,
+      "craftingPrice": 3982.53,
+      "craftingPriceLow": 398.253,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 483
+    },
+    {
+      "spec": {
+        "name": "GOLD_METEORITE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 11.85,
+      "value": 181914.430031,
+      "oddsMultiplier": 2.25,
+      "craftingPrice": 31373.35125,
+      "craftingPriceLow": 3137.335125,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 7814
+    },
+    {
+      "spec": {
+        "name": "TAU_CETI_GEODE",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 2.8,
+      "value": 1582.202431,
+      "oddsMultiplier": 3,
+      "craftingPrice": 42.93,
+      "craftingPriceLow": 4.293,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 2
+    },
+    {
+      "spec": {
+        "name": "TAU_CETI_GEODE",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 8.1,
+      "value": 60213.817059,
+      "oddsMultiplier": 1.8,
+      "craftingPrice": 7867.32,
+      "craftingPriceLow": 786.732,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 1196
+    },
+    {
+      "spec": {
+        "name": "TAU_CETI_GEODE",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 13.8,
+      "value": 296181.874046,
+      "oddsMultiplier": 2.25,
+      "craftingPrice": 53149.83,
+      "craftingPriceLow": 5314.983,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 16135
+    },
+    {
+      "spec": {
+        "name": "SOLAR_TITANIUM",
+        "level": "INFERIOR",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 3.2,
+      "value": 2412.367642,
+      "oddsMultiplier": 3,
+      "craftingPrice": 104.25,
+      "craftingPriceLow": 10.425,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 5
+    },
+    {
+      "spec": {
+        "name": "SOLAR_TITANIUM",
+        "level": "LESSER",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 6.7,
+      "value": 34277.903934,
+      "oddsMultiplier": 1.65,
+      "craftingPrice": 3753,
+      "craftingPriceLow": 375.3,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 446
+    },
+    {
+      "spec": {
+        "name": "SOLAR_TITANIUM",
+        "level": "NORMAL",
+        "rarity": "COMMON"
+      },
+      "baseQuality": 12.5,
+      "value": 202719.493881,
+      "oddsMultiplier": 2.55,
+      "craftingPrice": 37794.36,
+      "craftingPriceLow": 3779.436,
+      "craftingPriceDomain": 300,
+      "craftingPriceCurve": 0.2,
+      "craftingXp": 10090
+    }
+  ],
+  "craftingLevelInfos": [
+    {
+      "xpRequired": 500,
+      "rarityMult": 1
+    },
+    {
+      "xpRequired": 2500,
+      "rarityMult": 1.05
+    },
+    {
+      "xpRequired": 5000,
+      "rarityMult": 1.1
+    },
+    {
+      "xpRequired": 10000,
+      "rarityMult": 1.15
+    },
+    {
+      "xpRequired": 25000,
+      "rarityMult": 1.2
+    },
+    {
+      "xpRequired": 50000,
+      "rarityMult": 1.25
+    },
+    {
+      "xpRequired": 100000,
+      "rarityMult": 1.3
+    },
+    {
+      "xpRequired": 250000,
+      "rarityMult": 1.35
+    },
+    {
+      "xpRequired": 500000,
+      "rarityMult": 1.4
+    },
+    {
+      "xpRequired": 1000000,
+      "rarityMult": 1.45
+    },
+    {
+      "xpRequired": 2000000,
+      "rarityMult": 1.5
+    },
+    {
+      "xpRequired": 4000000,
+      "rarityMult": 1.55
+    },
+    {
+      "xpRequired": 8000000,
+      "rarityMult": 1.6
+    },
+    {
+      "xpRequired": 15000000,
+      "rarityMult": 1.65
+    },
+    {
+      "xpRequired": 20000000,
+      "rarityMult": 1.7
+    },
+    {
+      "xpRequired": 35000000,
+      "rarityMult": 1.75
+    },
+    {
+      "xpRequired": 60000000,
+      "rarityMult": 1.85
+    },
+    {
+      "xpRequired": 100000000,
+      "rarityMult": 2
+    },
+    {
+      "xpRequired": 150000000,
+      "rarityMult": 2.25
+    },
+    {
+      "xpRequired": 200000000,
+      "rarityMult": 2.5
+    },
+    {
+      "xpRequired": 250000000,
+      "rarityMult": 3
+    },
+    {
+      "xpRequired": 300000000,
+      "rarityMult": 3.5
+    },
+    {
+      "xpRequired": 325000000,
+      "rarityMult": 4
+    },
+    {
+      "xpRequired": 350000000,
+      "rarityMult": 4.5
+    },
+    {
+      "xpRequired": 400000000,
+      "rarityMult": 5
+    },
+    {
+      "xpRequired": 500000000,
+      "rarityMult": 6
+    },
+    {
+      "xpRequired": 600000000,
+      "rarityMult": 7
+    },
+    {
+      "xpRequired": 750000000,
+      "rarityMult": 8
+    },
+    {
+      "xpRequired": 1000000000,
+      "rarityMult": 9
+    },
+    {
+      "xpRequired": 1,
+      "rarityMult": 10
+    }
+  ]
+}

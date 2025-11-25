@@ -1,0 +1,33 @@
+# Data Fetch Configuration
+#
+# Recognized top-level keys:
+#   endpoint            - API endpoint segment under /api/ (default: GetFilteredData)
+#   outputFile          - Relative/absolute path for the JSON output (default: egginc_data_User.json)
+#   baseUrl             - Override base API URL
+#   timeoutSeconds      - Request timeout in seconds (default: 30)
+#   maxRetries          - Number of retry attempts after the first request (default: 3)
+#   cacheEnabled        - Enable on-disk caching (default: true)
+#   cacheExpireSeconds  - Cache expiration in seconds, or none for no expiration (default: 3600)
+#   cacheName           - Cache namespace / file prefix (default: eggship_cache)
+#   csvOutput           - Optional CSV export path
+#   pandasSummary       - Enable pandas summary output (default: true)
+#   params              - Mapping of query parameters sent to the API
+#
+# Any additional top-level keys that are not listed above will be treated as query
+# parameters automatically.
+
+endpoint: GetAllData
+outputFile: egginc_data_All.json
+cacheEnabled: true
+timeoutSeconds: 45
+maxRetries: 2
+cacheExpireSeconds: 3600
+cacheName: eggship_cache
+csvOutput: egginc_data_User.csv
+pandasSummary: true
+
+params:
+  # shipType: henerprise
+  # shipDurationType: EPIC
+  # artifactLevel: 0
+  # includeArtifactParameters: true

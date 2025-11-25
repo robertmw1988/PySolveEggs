@@ -1,0 +1,210 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://eggincdatacollection.azurewebsites.net/schemas/eiafx-config.schema.json",
+  "title": "Egg Inc. Mission and Artifact Configuration",
+  "type": "object",
+  "definitions": {
+    "missionName": {
+      "type": "string",
+      "pattern": "^[A-Z0-9_]+$",
+      "description": "Uppercase Egg Inc. ship identifier as used in mission parameters."
+    },
+    "missionDuration": {
+      "type": "object",
+      "properties": {
+        "durationType": {
+          "type": "string",
+          "enum": ["TUTORIAL", "SHORT", "LONG", "EPIC"],
+          "description": "Discrete mission duration category."
+        },
+        "seconds": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Mission length in seconds for the durationType."
+        },
+        "quality": {
+          "type": "number",
+          "description": "Base quality multiplier for rewards at this duration."
+        },
+        "minQuality": {
+          "type": "number",
+          "description": "Minimum possible quality roll for this duration."
+        },
+        "maxQuality": {
+          "type": "number",
+          "description": "Maximum possible quality roll for this duration."
+        },
+        "capacity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total cargo capacity (slots) for this duration."
+        },
+        "levelCapacityBump": {
+          "type": "integer",
+          "description": "Capacity increase per mission control level for this duration."
+        },
+        "levelQualityBump": {
+          "type": "number",
+          "description": "Quality increase per mission control level for this duration."
+        }
+      },
+      "required": [
+        "durationType",
+        "seconds",
+        "quality",
+        "minQuality",
+        "maxQuality",
+        "capacity",
+        "levelCapacityBump",
+        "levelQualityBump"
+      ],
+      "additionalProperties": false
+    },
+    "missionParametersEntry": {
+      "type": "object",
+      "properties": {
+        "mission": {
+          "$ref": "#/definitions/missionName",
+          "description": "Ship identifier these mission parameters apply to."
+        },
+        "durations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/missionDuration"
+          },
+          "description": "Collection of duration configurations available for the ship."
+        },
+        "levelMissionRequirements": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": "Mission launch points value at which this mission level unlocks (Base level = 0)."
+        }
+      },
+      "required": ["mission", "durations", "levelMissionRequirements"],
+      "additionalProperties": false
+    },
+    "artifactSpec": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Z0-9_]+$",
+          "description": "Artifact family name matching API identifiers."
+        },
+        "level": {
+          "type": "string",
+          "enum": ["INFERIOR", "LESSER", "NORMAL", "GREATER"],
+          "description": "Artifact tier level."
+        },
+        "rarity": {
+          "type": "string",
+          "enum": ["COMMON", "RARE", "EPIC", "LEGENDARY"],
+          "description": "Artifact rarity classification."
+        }
+      },
+      "required": ["name", "level", "rarity"],
+      "additionalProperties": false
+    },
+    "artifactParameter": {
+      "type": "object",
+      "properties": {
+        "spec": {
+          "$ref": "#/definitions/artifactSpec",
+          "description": "Artifact tier identification tuple."
+        },
+        "baseQuality": {
+          "type": "number",
+          "description": "Base quality assigned to this artifact tier."
+        },
+        "value": {
+          "type": "number",
+          "description": "Nominal value metric for this artifact tier."
+        },
+        "oddsMultiplier": {
+          "type": "number",
+          "description": "Relative probability multiplier for this artifact tier."
+        },
+        "craftingPrice": {
+          "type": "number",
+          "description": "Base golden egg cost to craft this artifact tier."
+        },
+        "craftingPriceLow": {
+          "type": "number",
+          "description": "Minimum possible golden egg cost when crafting discounts apply."
+        },
+        "craftingPriceDomain": {
+          "type": "integer",
+          "description": "Crafting price domain value from the API."
+        },
+        "craftingPriceCurve": {
+          "type": "number",
+          "description": "Curve parameter controlling crafting cost falloff."
+        },
+        "craftingXp": {
+          "type": "number",
+          "description": "Crafting experience awarded for creating this tier."
+        }
+      },
+      "required": [
+        "spec",
+        "baseQuality",
+        "value",
+        "oddsMultiplier",
+        "craftingPrice",
+        "craftingPriceLow",
+        "craftingPriceDomain",
+        "craftingPriceCurve",
+        "craftingXp"
+      ],
+      "additionalProperties": false
+    },
+    "craftingLevelInfo": {
+      "type": "object",
+      "properties": {
+        "xpRequired": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Cumulative XP threshold for reaching the crafting level."
+        },
+        "rarityMult": {
+          "type": "number",
+          "description": "Rarity multiplier applied at this crafting level."
+        }
+      },
+      "required": ["xpRequired", "rarityMult"],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "missionParameters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/missionParametersEntry"
+      },
+      "description": "Mission configuration for each spaceship."
+    },
+    "artifactParameters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/artifactParameter"
+      },
+      "description": "Stat block defining every artifact tier and rarity combination."
+    },
+    "craftingLevelInfos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/craftingLevelInfo"
+      },
+      "description": "Progression table mapping crafting XP to rarity multipliers."
+    }
+  },
+  "required": [
+    "missionParameters",
+    "artifactParameters",
+    "craftingLevelInfos"
+  ],
+  "additionalProperties": false
+}
