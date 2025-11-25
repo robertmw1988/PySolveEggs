@@ -31,3 +31,26 @@ missions:
 		level: 0
 		effect: "Increase Artifact mission capacity by 5% per level."
 		maxBonus: "+50%"
+
+constraints:
+  fuelTankCapacity: 500T
+  maxTime: 336
+
+costFunctionWeights:
+  missionTime: 1.0
+    default: 1.0
+    min: 0.1
+    max: 100.0
+  fuelEfficiency: 1.0
+    default: 1.0
+    min: 0.1
+    max: 100.0
+  artifactGain: 10.0
+    default: 10.0
+    min: 0.1
+    max: 100.0
+  slackRatio: 1.0
+    default: 1.0
+    min: 0.1
+    max: 100.0
+  
