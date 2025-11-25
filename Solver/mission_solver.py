@@ -4,7 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 
-import pulp
+import pulp # type: ignore
 
 from .config import CostWeights, Constraints, EpicResearch, UserConfig
 from .mission_data import FTL_SHIPS, MissionOption, build_mission_inventory, filter_inventory_by_level

@@ -72,7 +72,7 @@ def _get_drops_df() -> pd.DataFrame:
     if _DROPS_DF is None:
         # Import here to avoid circular import at module load time
         sys.path.insert(0, str(BASE_DIR.parent / "FetchData"))
-        from sortJSONAlltoCSV import load_cleaned_drops
+        from sortJSONAlltoCSV import load_cleaned_drops # type: ignore
 
         _DROPS_DF = load_cleaned_drops()
     return _DROPS_DF
