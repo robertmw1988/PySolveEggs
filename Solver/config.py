@@ -15,8 +15,8 @@ DEFAULT_CONFIG_PATH = SOLVER_DIR / "DefaultUserConfig.yaml"
 @dataclass
 class EpicResearch:
     level: int = 0
-    effect: str = ""
-    max_bonus: str = ""
+    effect: float = 0.0
+    maxLevel: int = 0
 
 
 @dataclass
@@ -52,7 +52,7 @@ def _parse_unit_value(raw: Any) -> float:
         if match:
             num = float(match.group(1))
             unit = match.group(2).upper()
-            multipliers = {"T": 1.0, "B": 1e-3, "M": 1e-6, "K": 1e-9}
+            multipliers = {"B": 1.0, "B": 1e-3, "M": 1e-6, "K": 1e-9}
             return num * multipliers.get(unit, 1.0)
     return 0.0
 
