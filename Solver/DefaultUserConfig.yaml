@@ -40,7 +40,8 @@ costFunctionWeights:
   missionTime: 1.0
   fuelEfficiency: 1.0
   artifactGain: 10.0
-  slackRatio: 1.0
+  slackPenalty: 1.0  # Penalty for unwanted artifacts (0.0=ignore, 1.0=default, max 100.0)
+                     # Artifacts with weight <= 0 incur a fuel-weighted penalty
 
 craftedArtifactTargetWeights:
   "Ancient puzzle cube": 1.0

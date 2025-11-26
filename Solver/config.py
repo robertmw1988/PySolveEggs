@@ -30,7 +30,7 @@ class CostWeights:
     mission_time: float = 1.0
     fuel_efficiency: float = 1.0
     artifact_gain: float = 10.0
-    slack_ratio: float = 1.0
+    slack_penalty: float = 1.0  # 0.0 = ignore slack, 1.0 = default, up to 100.0 max
 
 
 @dataclass
@@ -104,11 +104,14 @@ def load_config(path: Optional[Path] = None) -> UserConfig:
 
     # Cost weights
     weights_raw = raw.get("costFunctionWeights", {})
+    slack_penalty_raw = _extract_weight(weights_raw.get("slackPenalty", 1.0))
+    # Clamp slack penalty to [0.0, 100.0]
+    slack_penalty_clamped = max(0.0, min(100.0, slack_penalty_raw))
     cost_weights = CostWeights(
         mission_time=_extract_weight(weights_raw.get("missionTime", 1.0)),
         fuel_efficiency=_extract_weight(weights_raw.get("fuelEfficiency", 1.0)),
         artifact_gain=_extract_weight(weights_raw.get("artifactGain", 10.0)),
-        slack_ratio=_extract_weight(weights_raw.get("slackRatio", 1.0)),
+        slack_penalty=slack_penalty_clamped,
     )
 
     # Artifact weights
