@@ -1,0 +1,170 @@
+{
+  "$schema": "./mission-fuels.schema.json",
+  "description": "Mission fuel requirements by ship and duration type (Virtue Egg fuels)",
+  "eggTypes": {
+    "HUMILITY": "Humility Egg",
+    "INTEGRITY": "Integrity Egg",
+    "CURIOSITY": "Curiosity Egg",
+    "KINDNESS": "Kindness Egg",
+    "RESILIENCE": "Resilience Egg"
+  },
+  "missionFuels": {
+    "CHICKEN_ONE": {
+      "TUTORIAL": [],
+      "SHORT": [{"egg": "HUMILITY", "amount": 5000000}],
+      "LONG": [{"egg": "HUMILITY", "amount": 10000000}],
+      "EPIC": [{"egg": "HUMILITY", "amount": 20000000}]
+    },
+    "CHICKEN_NINE": {
+      "TUTORIAL": [],
+      "SHORT": [{"egg": "HUMILITY", "amount": 10000000}],
+      "LONG": [{"egg": "HUMILITY", "amount": 20000000}],
+      "EPIC": [{"egg": "HUMILITY", "amount": 50000000}]
+    },
+    "CHICKEN_HEAVY": {
+      "TUTORIAL": [],
+      "SHORT": [{"egg": "HUMILITY", "amount": 50000000}],
+      "LONG": [{"egg": "HUMILITY", "amount": 100000000}],
+      "EPIC": [{"egg": "HUMILITY", "amount": 150000000}]
+    },
+    "BCR": {
+      "TUTORIAL": [],
+      "SHORT": [
+        {"egg": "HUMILITY", "amount": 100000000},
+        {"egg": "INTEGRITY", "amount": 10000000}
+      ],
+      "LONG": [
+        {"egg": "HUMILITY", "amount": 150000000},
+        {"egg": "INTEGRITY", "amount": 20000000}
+      ],
+      "EPIC": [
+        {"egg": "HUMILITY", "amount": 200000000},
+        {"egg": "INTEGRITY", "amount": 30000000}
+      ]
+    },
+    "MILLENIUM_CHICKEN": {
+      "TUTORIAL": [],
+      "SHORT": [
+        {"egg": "HUMILITY", "amount": 10000000000},
+        {"egg": "INTEGRITY", "amount": 10000000000}
+      ],
+      "LONG": [
+        {"egg": "HUMILITY", "amount": 20000000000},
+        {"egg": "INTEGRITY", "amount": 20000000000}
+      ],
+      "EPIC": [
+        {"egg": "HUMILITY", "amount": 50000000000},
+        {"egg": "INTEGRITY", "amount": 50000000000}
+      ]
+    },
+    "CORELLIHEN_CORVETTE": {
+      "TUTORIAL": [],
+      "SHORT": [
+        {"egg": "HUMILITY", "amount": 20000000000},
+        {"egg": "INTEGRITY", "amount": 5000000000}
+      ],
+      "LONG": [
+        {"egg": "HUMILITY", "amount": 40000000000},
+        {"egg": "INTEGRITY", "amount": 8000000000}
+      ],
+      "EPIC": [
+        {"egg": "HUMILITY", "amount": 70000000000},
+        {"egg": "INTEGRITY", "amount": 10000000000}
+      ]
+    },
+    "GALEGGTICA": {
+      "TUTORIAL": [],
+      "SHORT": [
+        {"egg": "HUMILITY", "amount": 200000000000},
+        {"egg": "INTEGRITY", "amount": 200000000000},
+        {"egg": "CURIOSITY", "amount": 200000000000}
+      ],
+      "LONG": [
+        {"egg": "HUMILITY", "amount": 400000000000},
+        {"egg": "INTEGRITY", "amount": 400000000000},
+        {"egg": "CURIOSITY", "amount": 400000000000}
+      ],
+      "EPIC": [
+        {"egg": "HUMILITY", "amount": 600000000000},
+        {"egg": "INTEGRITY", "amount": 600000000000},
+        {"egg": "CURIOSITY", "amount": 600000000000}
+      ]
+    },
+    "CHICKFIANT": {
+      "TUTORIAL": [],
+      "SHORT": [
+        {"egg": "HUMILITY", "amount": 1000000000000},
+        {"egg": "CURIOSITY", "amount": 1000000000000},
+        {"egg": "KINDNESS", "amount": 1000000000000}
+      ],
+      "LONG": [
+        {"egg": "HUMILITY", "amount": 2000000000000},
+        {"egg": "CURIOSITY", "amount": 2000000000000},
+        {"egg": "KINDNESS", "amount": 2000000000000}
+      ],
+      "EPIC": [
+        {"egg": "HUMILITY", "amount": 3000000000000},
+        {"egg": "CURIOSITY", "amount": 3000000000000},
+        {"egg": "KINDNESS", "amount": 3000000000000}
+      ]
+    },
+    "VOYEGGER": {
+      "TUTORIAL": [],
+      "SHORT": [
+        {"egg": "HUMILITY", "amount": 5000000000000},
+        {"egg": "CURIOSITY", "amount": 10000000000000},
+        {"egg": "KINDNESS", "amount": 5000000000000}
+      ],
+      "LONG": [
+        {"egg": "HUMILITY", "amount": 10000000000000},
+        {"egg": "CURIOSITY", "amount": 20000000000000},
+        {"egg": "KINDNESS", "amount": 10000000000000}
+      ],
+      "EPIC": [
+        {"egg": "HUMILITY", "amount": 15000000000000},
+        {"egg": "CURIOSITY", "amount": 25000000000000},
+        {"egg": "KINDNESS", "amount": 15000000000000}
+      ]
+    },
+    "HENERPRISE": {
+      "TUTORIAL": [],
+      "SHORT": [
+        {"egg": "HUMILITY", "amount": 10000000000000},
+        {"egg": "CURIOSITY", "amount": 15000000000000},
+        {"egg": "KINDNESS", "amount": 10000000000000}
+      ],
+      "LONG": [
+        {"egg": "HUMILITY", "amount": 15000000000000},
+        {"egg": "CURIOSITY", "amount": 20000000000000},
+        {"egg": "KINDNESS", "amount": 15000000000000},
+        {"egg": "RESILIENCE", "amount": 10000000000000}
+      ],
+      "EPIC": [
+        {"egg": "HUMILITY", "amount": 25000000000000},
+        {"egg": "CURIOSITY", "amount": 25000000000000},
+        {"egg": "KINDNESS", "amount": 25000000000000},
+        {"egg": "RESILIENCE", "amount": 20000000000000}
+      ]
+    },
+    "ATREGGIES": {
+      "TUTORIAL": [],
+      "SHORT": [
+        {"egg": "HUMILITY", "amount": 20000000000000},
+        {"egg": "CURIOSITY", "amount": 25000000000000},
+        {"egg": "KINDNESS", "amount": 20000000000000}
+      ],
+      "LONG": [
+        {"egg": "HUMILITY", "amount": 30000000000000},
+        {"egg": "CURIOSITY", "amount": 40000000000000},
+        {"egg": "KINDNESS", "amount": 30000000000000},
+        {"egg": "RESILIENCE", "amount": 20000000000000}
+      ],
+      "EPIC": [
+        {"egg": "HUMILITY", "amount": 75000000000000},
+        {"egg": "CURIOSITY", "amount": 50000000000000},
+        {"egg": "KINDNESS", "amount": 75000000000000},
+        {"egg": "RESILIENCE", "amount": 40000000000000}
+      ]
+    }
+  }
+}

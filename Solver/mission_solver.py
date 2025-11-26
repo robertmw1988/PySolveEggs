@@ -25,10 +25,9 @@ class SolverResult:
     total_time_hours: float
 
 
-def _compute_research_bonuses(epic: Dict[str, EpicResearch]) -> Tuple[float, float, float]:
-    """Return (capacity_bonus, ftl_capacity_bonus, ftl_time_reduction) from epic research."""
+def _compute_research_bonuses(epic: Dict[str, EpicResearch]) -> Tuple[float, float]:
+    """Return (capacity_bonus, ftl_time_reduction) from epic research."""
     capacity_bonus = 0.0
-    ftl_capacity_bonus = 0.0
     ftl_time_reduction = 0.0
 
     zgqc = epic.get("Zero-G Quantum Containment")
@@ -41,7 +40,7 @@ def _compute_research_bonuses(epic: Dict[str, EpicResearch]) -> Tuple[float, flo
         # effect is per-level multiplier (e.g. 0.01 = 1%)
         ftl_time_reduction = ftl.level * ftl.effect
 
-    return capacity_bonus, ftl_capacity_bonus, ftl_time_reduction
+    return capacity_bonus, ftl_time_reduction
 
 
 def solve(
@@ -71,7 +70,7 @@ def solve(
             total_time_hours=0.0,
         )
 
-    capacity_bonus, ftl_capacity_bonus, ftl_reduction = _compute_research_bonuses(config.epic_researches)
+    capacity_bonus, ftl_reduction = _compute_research_bonuses(config.epic_researches)
 
     # Pre-compute effective values for each mission
     effective_caps: List[int] = []
@@ -80,9 +79,7 @@ def solve(
     for m in inventory:
         mission_level = config.missions.get(m.ship, 0)
         is_ftl = m.ship in FTL_SHIPS
-        effective_caps.append(
-            m.effective_capacity(mission_level, capacity_bonus, ftl_capacity_bonus, is_ftl)
-        )
+        effective_caps.append(m.effective_capacity(mission_level, capacity_bonus))
         effective_secs.append(m.effective_seconds(ftl_reduction, is_ftl))
         drop_ratios_list.append(m.drop_ratios())
 

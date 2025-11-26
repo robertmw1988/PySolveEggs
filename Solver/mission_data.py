@@ -14,9 +14,11 @@ import pandas as pd
 BASE_DIR = Path(__file__).resolve().parent
 WASMEGG_DIR = BASE_DIR.parent / "Wasmegg"
 EIAFX_CONFIG_PATH = WASMEGG_DIR / "eiafx-config.json"
+MISSION_FUELS_PATH = WASMEGG_DIR / "mission-fuels.json"
 
 # Lazy import to avoid circular dependency
 _DROPS_DF: Optional[pd.DataFrame] = None
+_FUEL_DATA: Optional[Dict[str, Any]] = None
 
 
 def _load_json(path: Path) -> Any:
@@ -42,31 +44,23 @@ class MissionOption:
     level_capacity_bump: int
     seconds: int
     drop_vector: Dict[str, float] = field(default_factory=dict)
+    fuel_requirements: Dict[str, int] = field(default_factory=dict)  # {egg_name: amount}
 
     def effective_capacity(
         self,
         mission_level: int,
         capacity_bonus: float,
-        ftl_bonus: float = 0.0,
-        is_ftl: bool = False,
     ) -> int:
         """
-        Capacity = floor((base + level * levelCapacityBump)
-                         * (1 + Zero-G bonus)
-                         * (1 + FTL bonus if FTL ship))
+        Capacity = floor((base + level * levelCapacityBump) * (1 + Zero-G bonus))
 
         Parameters
         ----------
         mission_level : user's mission level for this ship
         capacity_bonus : Zero-G Quantum Containment bonus (level * effect)
-        ftl_bonus : FTL Drive Upgrades bonus (level * effect)
-        is_ftl : whether this ship qualifies for FTL bonuses
         """
         base = self.base_capacity + self.level_capacity_bump * mission_level
-        capacity = base * (1.0 + capacity_bonus)
-        if is_ftl:
-            capacity *= (1.0 + ftl_bonus)
-        return math.floor(capacity)
+        return math.floor(base * (1.0 + capacity_bonus))
 
     def effective_seconds(self, time_reduction: float, is_ftl: bool) -> int:
         """Seconds adjusted for FTL research (time_reduction is level * effect)."""
@@ -85,13 +79,11 @@ class MissionOption:
         self,
         mission_level: int,
         capacity_bonus: float,
-        ftl_bonus: float = 0.0,
-        is_ftl: bool = False,
     ) -> Dict[str, float]:
         """
         Expected drops per mission = drop_ratio * effective_capacity.
         """
-        cap = self.effective_capacity(mission_level, capacity_bonus, ftl_bonus, is_ftl)
+        cap = self.effective_capacity(mission_level, capacity_bonus)
         ratios = self.drop_ratios()
         return {art: ratio * cap for art, ratio in ratios.items()}
 
@@ -117,6 +109,38 @@ def _get_drops_df() -> pd.DataFrame:
 
         _DROPS_DF = load_cleaned_drops()
     return _DROPS_DF
+
+
+def _get_fuel_data() -> Dict[str, Any]:
+    """Load and cache mission fuel requirements data."""
+    global _FUEL_DATA
+    if _FUEL_DATA is None:
+        _FUEL_DATA = _load_json(MISSION_FUELS_PATH)
+    return _FUEL_DATA
+
+
+def get_fuel_requirements(ship: str, duration_type: str) -> Dict[str, int]:
+    """
+    Get fuel requirements for a specific ship and duration type.
+    
+    Parameters
+    ----------
+    ship : str
+        Ship API name, e.g. "HENERPRISE"
+    duration_type : str
+        Duration type, e.g. "SHORT", "LONG", "EPIC", "TUTORIAL"
+    
+    Returns
+    -------
+    Dict[str, int]
+        Mapping of egg name to required amount, e.g. {"HUMILITY": 10000000000}
+    """
+    fuel_data = _get_fuel_data()
+    mission_fuels = fuel_data.get("missionFuels", {})
+    ship_fuels = mission_fuels.get(ship, {})
+    duration_fuels = ship_fuels.get(duration_type, [])
+    
+    return {entry["egg"]: entry["amount"] for entry in duration_fuels}
 
 
 def build_mission_inventory(allowed_ships: Optional[Dict[str, int]] = None) -> List[MissionOption]:
@@ -163,6 +187,7 @@ def build_mission_inventory(allowed_ships: Optional[Dict[str, int]] = None) -> L
 
             if matched.empty:
                 # If no drop data, still add option with zero drops
+                fuel_reqs = get_fuel_requirements(ship_api, dur_type)
                 inventory.append(
                     MissionOption(
                         ship=ship_api,
@@ -174,6 +199,7 @@ def build_mission_inventory(allowed_ships: Optional[Dict[str, int]] = None) -> L
                         level_capacity_bump=level_bump,
                         seconds=seconds,
                         drop_vector={},
+                        fuel_requirements=fuel_reqs,
                     )
                 )
                 continue
@@ -182,6 +208,7 @@ def build_mission_inventory(allowed_ships: Optional[Dict[str, int]] = None) -> L
                 level = int(row.get("Level", 0))
                 target = row.get("Target Artifact")
                 drop_vec = {col: float(row[col]) for col in artifact_cols if row[col] != 0}
+                fuel_reqs = get_fuel_requirements(ship_api, dur_type)
                 inventory.append(
                     MissionOption(
                         ship=ship_api,
@@ -193,6 +220,7 @@ def build_mission_inventory(allowed_ships: Optional[Dict[str, int]] = None) -> L
                         level_capacity_bump=level_bump,
                         seconds=seconds,
                         drop_vector=drop_vec,
+                        fuel_requirements=fuel_reqs,
                     )
                 )
 
@@ -206,14 +234,13 @@ def filter_inventory_by_level(
     return [m for m in inventory if m.level <= ship_levels.get(m.ship, 0)]
 
 
-def compute_research_bonuses(epic_researches: Dict[str, Any]) -> tuple[float, float, float]:
+def compute_research_bonuses(epic_researches: Dict[str, Any]) -> tuple[float, float]:
     """
-    Compute (capacity_bonus, ftl_capacity_bonus, ftl_time_reduction) from epic research.
+    Compute (capacity_bonus, ftl_time_reduction) from epic research.
 
     Returns multipliers (not percentages), e.g. 0.50 for 50% bonus.
     """
     capacity_bonus = 0.0
-    ftl_capacity_bonus = 0.0
     ftl_time_reduction = 0.0
 
     zgqc = epic_researches.get("Zero-G Quantum Containment")
@@ -225,4 +252,4 @@ def compute_research_bonuses(epic_researches: Dict[str, Any]) -> tuple[float, fl
     if ftl:
         ftl_time_reduction = ftl.level * ftl.effect
 
-    return capacity_bonus, ftl_capacity_bonus, ftl_time_reduction
+    return capacity_bonus, ftl_time_reduction

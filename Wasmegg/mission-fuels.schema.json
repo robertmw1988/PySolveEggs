@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mission-fuels.schema.json",
+  "title": "Mission Fuels Configuration",
+  "description": "Fuel requirements for each spaceship mission by duration type",
+  "type": "object",
+  "required": ["missionFuels"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this schema file"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of the file contents"
+    },
+    "eggTypes": {
+      "type": "object",
+      "description": "Mapping of egg type IDs to display names",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "missionFuels": {
+      "type": "object",
+      "description": "Fuel requirements by ship and duration",
+      "propertyNames": {
+        "enum": [
+          "CHICKEN_ONE",
+          "CHICKEN_NINE",
+          "CHICKEN_HEAVY",
+          "BCR",
+          "MILLENIUM_CHICKEN",
+          "CORELLIHEN_CORVETTE",
+          "GALEGGTICA",
+          "CHICKFIANT",
+          "VOYEGGER",
+          "HENERPRISE",
+          "ATREGGIES"
+        ]
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/shipFuels"
+      }
+    }
+  },
+  "definitions": {
+    "shipFuels": {
+      "type": "object",
+      "description": "Fuel requirements for a single ship by duration type",
+      "properties": {
+        "TUTORIAL": { "$ref": "#/definitions/fuelList" },
+        "SHORT": { "$ref": "#/definitions/fuelList" },
+        "LONG": { "$ref": "#/definitions/fuelList" },
+        "EPIC": { "$ref": "#/definitions/fuelList" }
+      },
+      "additionalProperties": false
+    },
+    "fuelList": {
+      "type": "array",
+      "description": "List of fuel requirements for a mission duration",
+      "items": {
+        "$ref": "#/definitions/fuelRequirement"
+      }
+    },
+    "fuelRequirement": {
+      "type": "object",
+      "description": "A single fuel requirement (egg type and amount)",
+      "required": ["egg", "amount"],
+      "properties": {
+        "egg": {
+          "type": "string",
+          "description": "Virtue egg type",
+          "enum": ["HUMILITY", "INTEGRITY", "CURIOSITY", "KINDNESS", "RESILIENCE"]
+        },
+        "amount": {
+          "type": "integer",
+          "description": "Number of eggs required",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
