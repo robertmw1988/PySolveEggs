@@ -15,8 +15,8 @@ DEFAULT_CONFIG_PATH = SOLVER_DIR / "DefaultUserConfig.yaml"
 @dataclass
 class EpicResearch:
     level: int = 0
-    effect: float = 0.0
-    maxLevel: int = 0
+    effect: float = 0.0  # per-level multiplier (e.g. 0.05 = 5%)
+    max_level: int = 0
 
 
 @dataclass
@@ -91,8 +91,8 @@ def load_config(path: Optional[Path] = None) -> UserConfig:
         if isinstance(block, dict):
             epic_researches[name] = EpicResearch(
                 level=int(block.get("level", 0)),
-                effect=str(block.get("effect", "")),
-                max_bonus=str(block.get("maxBonus", "")),
+                effect=float(block.get("effect", 0.0)),
+                max_level=int(block.get("maxLevel", 0)),
             )
 
     # Constraints

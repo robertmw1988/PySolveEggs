@@ -7,7 +7,13 @@ from typing import Dict, List, Optional, Tuple
 import pulp # type: ignore
 
 from .config import CostWeights, Constraints, EpicResearch, UserConfig
-from .mission_data import FTL_SHIPS, MissionOption, build_mission_inventory, filter_inventory_by_level
+from .mission_data import (
+    FTL_SHIPS,
+    MissionOption,
+    build_mission_inventory,
+    compute_research_bonuses,
+    filter_inventory_by_level,
+)
 
 
 @dataclass
@@ -19,22 +25,23 @@ class SolverResult:
     total_time_hours: float
 
 
-def _compute_research_bonuses(epic: Dict[str, EpicResearch]) -> Tuple[float, float]:
-    """Return (capacity_bonus_pct, ftl_time_reduction_pct) from epic research."""
+def _compute_research_bonuses(epic: Dict[str, EpicResearch]) -> Tuple[float, float, float]:
+    """Return (capacity_bonus, ftl_capacity_bonus, ftl_time_reduction) from epic research."""
     capacity_bonus = 0.0
-    ftl_reduction = 0.0
+    ftl_capacity_bonus = 0.0
+    ftl_time_reduction = 0.0
 
     zgqc = epic.get("Zero-G Quantum Containment")
     if zgqc:
-        # 5% per level, max 50%
-        capacity_bonus = min(zgqc.level * 5.0, 50.0)
+        # effect is per-level multiplier (e.g. 0.05 = 5%)
+        capacity_bonus = zgqc.level * zgqc.effect
 
     ftl = epic.get("FTL Drive Upgrades")
     if ftl:
-        # 1% per level, max 60%
-        ftl_reduction = min(ftl.level * 1.0, 60.0)
+        # effect is per-level multiplier (e.g. 0.01 = 1%)
+        ftl_time_reduction = ftl.level * ftl.effect
 
-    return capacity_bonus, ftl_reduction
+    return capacity_bonus, ftl_capacity_bonus, ftl_time_reduction
 
 
 def solve(
@@ -64,16 +71,20 @@ def solve(
             total_time_hours=0.0,
         )
 
-    capacity_bonus, ftl_reduction = _compute_research_bonuses(config.epic_researches)
+    capacity_bonus, ftl_capacity_bonus, ftl_reduction = _compute_research_bonuses(config.epic_researches)
 
     # Pre-compute effective values for each mission
     effective_caps: List[int] = []
     effective_secs: List[int] = []
+    drop_ratios_list: List[Dict[str, float]] = []
     for m in inventory:
         mission_level = config.missions.get(m.ship, 0)
-        effective_caps.append(m.effective_capacity(mission_level, capacity_bonus))
         is_ftl = m.ship in FTL_SHIPS
+        effective_caps.append(
+            m.effective_capacity(mission_level, capacity_bonus, ftl_capacity_bonus, is_ftl)
+        )
         effective_secs.append(m.effective_seconds(ftl_reduction, is_ftl))
+        drop_ratios_list.append(m.drop_ratios())
 
     # Collect all artifact columns present in any mission
     all_artifacts_set: set[str] = set()
@@ -93,18 +104,19 @@ def solve(
         for i in range(len(inventory))
     ]
 
-    # Objective: weighted artifact gain / capacity (avg drops) - time penalty
+    # Objective: weighted expected drops per mission - time penalty
     obj_terms = []
     weights = config.cost_weights
     for i, m in enumerate(inventory):
         cap = effective_caps[i] if effective_caps[i] > 0 else 1
-        artifact_gain = sum(
-            m.drop_vector.get(art, 0.0) * art_weights.get(art, 1.0) for art in all_artifacts
+        ratios = drop_ratios_list[i]
+        # Expected drops = ratio * capacity, weighted by artifact preferences
+        expected_gain = sum(
+            ratios.get(art, 0.0) * cap * art_weights.get(art, 1.0) for art in all_artifacts
         )
-        avg_drops = artifact_gain / cap
         time_hours = effective_secs[i] / 3600.0
         # Objective contribution per mission run
-        contrib = weights.artifact_gain * avg_drops - weights.mission_time * time_hours
+        contrib = weights.artifact_gain * expected_gain - weights.mission_time * time_hours
         obj_terms.append(contrib * x[i])
 
     prob += pulp.lpSum(obj_terms), "TotalObjective"
@@ -134,9 +146,11 @@ def solve(
         count = int(pulp.value(x[i]) or 0)
         if count > 0:
             selected.append((m, count))
-            for art, amt in m.drop_vector.items():
-                cap = effective_caps[i] if effective_caps[i] > 0 else 1
-                total_drops[art] += (amt / cap) * count
+            cap = effective_caps[i] if effective_caps[i] > 0 else 1
+            ratios = drop_ratios_list[i]
+            for art, ratio in ratios.items():
+                # Expected drops = ratio * capacity * count
+                total_drops[art] += ratio * cap * count
             total_time_hours += (effective_secs[i] / 3600.0) * count
 
     return SolverResult(

@@ -43,16 +43,57 @@ class MissionOption:
     seconds: int
     drop_vector: Dict[str, float] = field(default_factory=dict)
 
-    def effective_capacity(self, mission_level: int, capacity_bonus_pct: float) -> int:
-        """Capacity adjusted for mission level and epic research."""
-        base = self.base_capacity + self.level_capacity_bump * mission_level
-        return math.floor(base * (1.0 + capacity_bonus_pct / 100.0))
+    def effective_capacity(
+        self,
+        mission_level: int,
+        capacity_bonus: float,
+        ftl_bonus: float = 0.0,
+        is_ftl: bool = False,
+    ) -> int:
+        """
+        Capacity = floor((base + level * levelCapacityBump)
+                         * (1 + Zero-G bonus)
+                         * (1 + FTL bonus if FTL ship))
 
-    def effective_seconds(self, time_reduction_pct: float, is_ftl: bool) -> int:
-        """Seconds adjusted for FTL research."""
+        Parameters
+        ----------
+        mission_level : user's mission level for this ship
+        capacity_bonus : Zero-G Quantum Containment bonus (level * effect)
+        ftl_bonus : FTL Drive Upgrades bonus (level * effect)
+        is_ftl : whether this ship qualifies for FTL bonuses
+        """
+        base = self.base_capacity + self.level_capacity_bump * mission_level
+        capacity = base * (1.0 + capacity_bonus)
         if is_ftl:
-            return math.ceil(self.seconds * (1.0 - time_reduction_pct / 100.0))
+            capacity *= (1.0 + ftl_bonus)
+        return math.floor(capacity)
+
+    def effective_seconds(self, time_reduction: float, is_ftl: bool) -> int:
+        """Seconds adjusted for FTL research (time_reduction is level * effect)."""
+        if is_ftl:
+            return math.ceil(self.seconds * (1.0 - time_reduction))
         return self.seconds
+
+    def drop_ratios(self) -> Dict[str, float]:
+        """Return per-artifact drop ratios (each artifact / total drops)."""
+        total = sum(self.drop_vector.values())
+        if total == 0:
+            return {}
+        return {art: count / total for art, count in self.drop_vector.items()}
+
+    def expected_drops(
+        self,
+        mission_level: int,
+        capacity_bonus: float,
+        ftl_bonus: float = 0.0,
+        is_ftl: bool = False,
+    ) -> Dict[str, float]:
+        """
+        Expected drops per mission = drop_ratio * effective_capacity.
+        """
+        cap = self.effective_capacity(mission_level, capacity_bonus, ftl_bonus, is_ftl)
+        ratios = self.drop_ratios()
+        return {art: ratio * cap for art, ratio in ratios.items()}
 
 
 def _friendly_ship_name(api_name: str) -> str:
@@ -64,7 +105,7 @@ def _friendly_ship_name(api_name: str) -> str:
 
 
 # Ships that qualify for FTL Drive Upgrades (Quintillion Chickens and above)
-FTL_SHIPS = {"HENERPRISE", "ATREGGIES"}
+FTL_SHIPS = {"MILLENIUM_CHICKEN","CORELLIHEN_CORVETTE", "GALEGGTICA", "CHICKFIANT", "VOYEGGER", "HENERPRISE", "ATREGGIES"}
 
 
 def _get_drops_df() -> pd.DataFrame:
@@ -163,3 +204,25 @@ def filter_inventory_by_level(
 ) -> List[MissionOption]:
     """Keep only missions whose level <= user's mission level for that ship."""
     return [m for m in inventory if m.level <= ship_levels.get(m.ship, 0)]
+
+
+def compute_research_bonuses(epic_researches: Dict[str, Any]) -> tuple[float, float, float]:
+    """
+    Compute (capacity_bonus, ftl_capacity_bonus, ftl_time_reduction) from epic research.
+
+    Returns multipliers (not percentages), e.g. 0.50 for 50% bonus.
+    """
+    capacity_bonus = 0.0
+    ftl_capacity_bonus = 0.0
+    ftl_time_reduction = 0.0
+
+    zgqc = epic_researches.get("Zero-G Quantum Containment")
+    if zgqc:
+        # effect is per-level multiplier (e.g. 0.05), level is user's current level
+        capacity_bonus = zgqc.level * zgqc.effect
+
+    ftl = epic_researches.get("FTL Drive Upgrades")
+    if ftl:
+        ftl_time_reduction = ftl.level * ftl.effect
+
+    return capacity_bonus, ftl_capacity_bonus, ftl_time_reduction
