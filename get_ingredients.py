@@ -26,7 +26,7 @@ def get_all_ingredients_recursive(artifact_id, visited=None):
         return set()
     
     result = set()
-    for ing_id, count in recipe.ingredients.items():
+    for ing_id, ing_name, count in recipe.ingredients:
         name = engine.id_to_name(ing_id)
         result.add(name)
         result.update(get_all_ingredients_recursive(ing_id, visited))

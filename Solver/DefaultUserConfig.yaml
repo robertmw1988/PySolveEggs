@@ -44,218 +44,225 @@ costFunctionWeights:
                      # Artifacts with weight <= 0 incur a fuel-weighted penalty
 
 craftedArtifactTargetWeights:
-  "Ancient puzzle cube": 1.0
-  "Puzzle cube": 1.0
-  "Puzzle cube (Epic)": 1.0
-  "Mystical puzzle cube": 1.0
-  "Mystical puzzle cube (Rare)": 1.0
+  # === TARGET ARTIFACTS (desired final products) ===
   "Unsolvable puzzle cube": 1.0
   "Unsolvable puzzle cube (Rare)": 1.0
   "Unsolvable puzzle cube (Epic)": 1.0
   "Unsolvable puzzle cube (Legendary)": 1.0
-  "Basic lunar totem": 1.0
-  "Lunar totem": 1.0
-  "Lunar totem (Rare)": 1.0
-  "Powerful lunar totem": 1.0
-  "Powerful lunar totem (Rare)": 1.0
   "Eggceptional lunar totem": 1.0
   "Eggceptional lunar totem (Rare)": 1.0
   "Eggceptional lunar totem (Epic)": 1.0
   "Eggceptional lunar totem (Legendary)": 1.0
-  "Simple Demeters necklace": 1.0
-  "Jeweled Demeters necklace": 1.0
-  "Jeweled Demeters necklace (Rare)": 1.0
-  "Pristine Demeters necklace": 1.0
-  "Pristine Demeters necklace (Rare)": 1.0
-  "Pristine Demeters necklace (Epic)": 1.0
   "Beggspoke Demeters necklace": 1.0
   "Beggspoke Demeters necklace (Rare)": 1.0
   "Beggspoke Demeters necklace (Epic)": 1.0
   "Beggspoke Demeters necklace (Legendary)": 1.0
-  "Tiny vial of Martian dust": 1.0
-  "Vial of Martian dust": 1.0
-  "Vial of Martian dust (Rare)": 1.0
-  "Hermetic vial of Martian dust": 1.0
-  "Hermetic vial of Martian dust (Epic)": 1.0
-  "Prime vial of Martian dust": 1.0
-  "Prime vial of Martian dust (Rare)": 1.0
-  "Prime vial of Martian dust (Legendary)": 1.0
-  "Plain Aurelian brooch": 1.0
-  "Aurelian brooch": 1.0
-  "Jeweled Aurelian brooch": 1.0
-  "Jeweled Aurelian brooch (Rare)": 1.0
-  "Jeweled Aurelian brooch (Epic)": 1.0
-  "Eggceptional Aurelian brooch": 1.0
-  "Eggceptional Aurelian brooch (Rare)": 1.0
-  "Eggceptional Aurelian brooch (Epic)": 1.0
-  "Eggceptional Aurelian brooch (Legendary)": 1.0
-  "Crude tungsten ankh": 1.0
-  "Tungsten ankh": 1.0
-  "Tungsten ankh (Rare)": 1.0
-  "Polished tungsten ankh": 1.0
-  "Polished tungsten ankh (Rare)": 1.0
-  "Polished tungsten ankh (Legendary)": 1.0
   "Brilliant tungsten ankh": 1.0
   "Brilliant tungsten ankh (Rare)": 1.0
   "Brilliant tungsten ankh (Legendary)": 1.0
-  "Plain gusset": 1.0
-  "Ornate gusset": 1.0
-  "Ornate gusset (Epic)": 1.0
-  "Distegguished gusset": 1.0
-  "Distegguished gusset (Rare)": 1.0
   "Jeweled gusset": 1.0
   "Jeweled gusset (Epic)": 1.0
   "Jeweled gusset (Legendary)": 1.0
-  "Weak neodymium medallion": 1.0
-  "Neodymium medallion": 1.0
-  "Neodymium medallion (Rare)": 1.0
-  "Precise neodymium medallion": 1.0
-  "Precise neodymium medallion (Epic)": 1.0
-  "Eggceptional neodymium medallion": 1.0
-  "Eggceptional neodymium medallion (Rare)": 1.0
-  "Eggceptional neodymium medallion (Epic)": 1.0
-  "Eggceptional neodymium medallion (Legendary)": 1.0
-  "Misaligned Mercury's lens": 1.0
-  "Mercury's lens": 1.0
-  "Mercury's lens (Rare)": 1.0
-  "Precise Mercury's lens": 1.0
-  "Precise Mercury's lens (Rare)": 1.0
-  "Meggnificent Mercury's lens": 1.0
-  "Meggnificent Mercury's lens (Rare)": 1.0
-  "Meggnificent Mercury's lens (Epic)": 1.0
-  "Meggnificent Mercury's lens (Legendary)": 1.0
-  "Dull beak of Midas": 1.0
-  "Beak of Midas": 1.0
-  "Jeweled beak of Midas": 1.0
-  "Jeweled beak of Midas (Rare)": 1.0
-  "Glistening beak of Midas": 1.0
-  "Glistening beak of Midas (Rare)": 1.0
-  "Glistening beak of Midas (Legendary)": 1.0
-  "Simple carved rainstick": 1.0
-  "Carved rainstick": 1.0
-  "Ornate carved rainstick": 1.0
-  "Meggnificent carved rainstick": 1.0
-  "Meggnificent carved rainstick (Epic)": 1.0
-  "Meggnificent carved rainstick (Legendary)": 1.0
-  "Miscalibrated interstellar compass": 1.0
-  "Interstellar compass": 1.0
-  "Precise interstellar compass": 1.0
-  "Precise interstellar compass (Rare)": 1.0
   "Clairvoyant interstellar compass": 1.0
   "Clairvoyant interstellar compass (Rare)": 1.0
   "Clairvoyant interstellar compass (Epic)": 1.0
   "Clairvoyant interstellar compass (Legendary)": 1.0
-  "Plain chalice": 1.0
-  "Polished chalice": 1.0
-  "Polished chalice (Epic)": 1.0
-  "Jeweled chalice": 1.0
-  "Jeweled chalice (Rare)": 1.0
-  "Jeweled chalice (Epic)": 1.0
-  "Eggceptional chalice": 1.0
-  "Eggceptional chalice (Epic)": 1.0
-  "Eggceptional chalice (Legendary)": 1.0
-  "Tattered phoenix feather": 1.0
-  "Phoenix feather": 1.0
-  "Brilliant phoenix feather": 1.0
-  "Brilliant phoenix feather (Rare)": 1.0
-  "Blazing phoenix feather": 1.0
-  "Blazing phoenix feather (Rare)": 1.0
-  "Blazing phoenix feather (Legendary)": 1.0
-  "Misaligned quantum metronome": 1.0
-  "Adequate quantum metronome": 1.0
-  "Adequate quantum metronome (Rare)": 1.0
-  "Perfect quantum metronome": 1.0
-  "Perfect quantum metronome (Rare)": 1.0
-  "Perfect quantum metronome (Epic)": 1.0
   "Reggreference quantum metronome": 1.0
   "Reggreference quantum metronome (Rare)": 1.0
   "Reggreference quantum metronome (Epic)": 1.0
   "Reggreference quantum metronome (Legendary)": 1.0
-  "Dilithium monocle": 1.0
-  "Precise dilithium monocle": 1.0
-  "Eggsacting dilithium monocle": 1.0
-  "Flawless dilithium monocle": 1.0
-  "Flawless dilithium monocle (Epic)": 1.0
-  "Flawless dilithium monocle (Legendary)": 1.0
-  "Inconsistent titanium actuator": 1.0
-  "Titanium actuator": 1.0
-  "Precise titanium actuator": 1.0
-  "Precise titanium actuator (Rare)": 1.0
-  "Reggreference titanium actuator": 1.0
-  "Reggreference titanium actuator (Epic)": 1.0
-  "Reggreference titanium actuator (Legendary)": 1.0
-  "Ship in a bottle": 1.0
-  "Detailed ship in a bottle": 1.0
-  "Complex ship in a bottle": 1.0
-  "Complex ship in a bottle (Rare)": 1.0
-  "Eggquisite ship in a bottle": 1.0
-  "Eggquisite ship in a bottle (Rare)": 1.0
-  "Eggquisite ship in a bottle (Epic)": 1.0
-  "Eggquisite ship in a bottle (Legendary)": 1.0
-  "Weak tachyon deflector": 1.0
-  "Tachyon deflector": 1.0
-  "Robust tachyon deflector": 1.0
-  "Robust tachyon deflector (Rare)": 1.0
-  "Book of Basan": 1.0
-  "Collectors book of Basan": 1.0
-  "Fortified book of Basan": 1.0
-  "Fortified book of Basan (Epic)": 1.0
-  "Dim light of Eggendil": 1.0
-  "Shimmering light of Eggendil": 1.0
-  "Shimmering light of Eggendil (Rare)": 1.0
-  "Glowing light of Eggendil": 1.0
-  "Glowing light of Eggendil (Rare)": 1.0
-  "Brilliant light of Eggendil": 1.0
-  "Brilliant light of Eggendil (Epic)": 1.0
-  "Brilliant light of Eggendil (Legendary)": 1.0
-  "Lunar stone": 1.0
-  "Eggsquisite lunar stone": 1.0
-  "Meggnificent lunar stone": 1.0
-  "Shell stone": 1.0
-  "Eggsquisite shell stone": 1.0
-  "Flawless shell stone": 1.0
-  "Tachyon stone": 1.0
-  "Eggsquisite tachyon stone": 1.0
-  "Brilliant tachyon stone": 1.0
-  "Terra stone": 1.0
-  "Rich terra stone": 1.0
-  "Eggceptional terra stone": 1.0
-  "Soul stone": 1.0
-  "Eggsquisite soul stone": 1.0
-  "Radiant soul stone": 1.0
-  "Dilithium stone": 1.0
-  "Eggsquisite dilithium stone": 1.0
-  "Quantum stone": 1.0
-  "Phased quantum stone": 1.0
-  "Meggnificent quantum stone": 1.0
-  "Life stone": 1.0
-  "Good life stone": 1.0
-  "Eggceptional life stone": 1.0
-  "Clarity stone": 1.0
-  "Eggsquisite clarity stone": 1.0
-  "Prophecy stone": 1.0
-  "Eggsquisite prophecy stone": 1.0
-  "Tiny gold meteorite": 1.0
-  "Enriched gold meteorite": 1.0
-  "Solid gold meteorite": 1.0
-  "Tau Ceti geode piece": 1.0
-  "Glimmering Tau Ceti geode": 1.0
-  "Radiant Tau Ceti geode": 1.0
-  "Solar titanium ore": 1.0
-  "Solar titanium bar": 1.0
-  "Solar titanium geogon": 1.0
-  "Clarity Stone Fragment": 1.0
-  "Dilithium Stone Fragment": 1.0
-  "Life Stone Fragment": 1.0
-  "Lunar Stone Fragment": 1.0
-  "Prophecy Stone Fragment": 1.0
-  "Quantum Stone Fragment": 1.0
-  "Shell Stone Fragment": 1.0
-  "Soul Stone Fragment": 1.0
-  "Tachyon Stone Fragment": 1.0
-  "Terra Stone Fragment": 1.0
+  
+  # === INGREDIENTS (used to craft targets, not crafted as targets) ===
+  "Ancient puzzle cube": 0.0
+  "Puzzle cube": 0.0
+  "Puzzle cube (Epic)": 0.0
+  "Mystical puzzle cube": 0.0
+  "Mystical puzzle cube (Rare)": 0.0
+  "Basic lunar totem": 0.0
+  "Lunar totem": 0.0
+  "Lunar totem (Rare)": 0.0
+  "Powerful lunar totem": 0.0
+  "Powerful lunar totem (Rare)": 0.0
+  "Simple Demeters necklace": 0.0
+  "Jeweled Demeters necklace": 0.0
+  "Jeweled Demeters necklace (Rare)": 0.0
+  "Pristine Demeters necklace": 0.0
+  "Pristine Demeters necklace (Rare)": 0.0
+  "Pristine Demeters necklace (Epic)": 0.0
+  "Crude tungsten ankh": 0.0
+  "Tungsten ankh": 0.0
+  "Tungsten ankh (Rare)": 0.0
+  "Polished tungsten ankh": 0.0
+  "Polished tungsten ankh (Rare)": 0.0
+  "Polished tungsten ankh (Legendary)": 0.0
+  "Plain gusset": 0.0
+  "Ornate gusset": 0.0
+  "Ornate gusset (Epic)": 0.0
+  "Distegguished gusset": 0.0
+  "Distegguished gusset (Rare)": 0.0
+  "Misaligned Mercury's lens": 0.0
+  "Mercury's lens": 0.0
+  "Mercury's lens (Rare)": 0.0
+  "Miscalibrated interstellar compass": 0.0
+  "Interstellar compass": 0.0
+  "Precise interstellar compass": 0.0
+  "Precise interstellar compass (Rare)": 0.0
+  "Misaligned quantum metronome": 0.0
+  "Adequate quantum metronome": 0.0
+  "Adequate quantum metronome (Rare)": 0.0
+  "Perfect quantum metronome": 0.0
+  "Perfect quantum metronome (Rare)": 0.0
+  "Perfect quantum metronome (Epic)": 0.0
+  "Tiny gold meteorite": 0.0
+  "Enriched gold meteorite": 0.0
+  "Solid gold meteorite": 0.0
+  "Solar titanium ore": 0.0
+  "Solar titanium bar": 0.0
+  "Solar titanium geogon": 0.0
+  "Tau Ceti geode piece": 0.0
+  "Glimmering Tau Ceti geode": 0.0
+  "Radiant Tau Ceti geode": 0.0
+  "Plain chalice": 0.0
+  
+  # === UNWANTED ARTIFACTS (not targets, not ingredients) ===
+  "Tiny vial of Martian dust": -1.0
+  "Vial of Martian dust": -1.0
+  "Vial of Martian dust (Rare)": -1.0
+  "Hermetic vial of Martian dust": -1.0
+  "Hermetic vial of Martian dust (Epic)": -1.0
+  "Prime vial of Martian dust": -1.0
+  "Prime vial of Martian dust (Rare)": -1.0
+  "Prime vial of Martian dust (Legendary)": -1.0
+  "Plain Aurelian brooch": -1.0
+  "Aurelian brooch": -1.0
+  "Jeweled Aurelian brooch": -1.0
+  "Jeweled Aurelian brooch (Rare)": -1.0
+  "Jeweled Aurelian brooch (Epic)": -1.0
+  "Eggceptional Aurelian brooch": -1.0
+  "Eggceptional Aurelian brooch (Rare)": -1.0
+  "Eggceptional Aurelian brooch (Epic)": -1.0
+  "Eggceptional Aurelian brooch (Legendary)": -1.0
+  "Weak neodymium medallion": -1.0
+  "Neodymium medallion": -1.0
+  "Neodymium medallion (Rare)": -1.0
+  "Precise neodymium medallion": -1.0
+  "Precise neodymium medallion (Epic)": -1.0
+  "Eggceptional neodymium medallion": -1.0
+  "Eggceptional neodymium medallion (Rare)": -1.0
+  "Eggceptional neodymium medallion (Epic)": -1.0
+  "Eggceptional neodymium medallion (Legendary)": -1.0
+  "Precise Mercury's lens": -1.0
+  "Precise Mercury's lens (Rare)": -1.0
+  "Meggnificent Mercury's lens": -1.0
+  "Meggnificent Mercury's lens (Rare)": -1.0
+  "Meggnificent Mercury's lens (Epic)": -1.0
+  "Meggnificent Mercury's lens (Legendary)": -1.0
+  "Dull beak of Midas": -1.0
+  "Beak of Midas": -1.0
+  "Jeweled beak of Midas": -1.0
+  "Jeweled beak of Midas (Rare)": -1.0
+  "Glistening beak of Midas": -1.0
+  "Glistening beak of Midas (Rare)": -1.0
+  "Glistening beak of Midas (Legendary)": -1.0
+  "Simple carved rainstick": -1.0
+  "Carved rainstick": -1.0
+  "Ornate carved rainstick": -1.0
+  "Meggnificent carved rainstick": -1.0
+  "Meggnificent carved rainstick (Epic)": -1.0
+  "Meggnificent carved rainstick (Legendary)": -1.0
+  "Polished chalice": -1.0
+  "Polished chalice (Epic)": -1.0
+  "Jeweled chalice": -1.0
+  "Jeweled chalice (Rare)": -1.0
+  "Jeweled chalice (Epic)": -1.0
+  "Eggceptional chalice": -1.0
+  "Eggceptional chalice (Epic)": -1.0
+  "Eggceptional chalice (Legendary)": -1.0
+  "Tattered phoenix feather": -1.0
+  "Phoenix feather": -1.0
+  "Brilliant phoenix feather": -1.0
+  "Brilliant phoenix feather (Rare)": -1.0
+  "Blazing phoenix feather": -1.0
+  "Blazing phoenix feather (Rare)": -1.0
+  "Blazing phoenix feather (Legendary)": -1.0
+  "Dilithium monocle": -1.0
+  "Precise dilithium monocle": -1.0
+  "Eggsacting dilithium monocle": -1.0
+  "Flawless dilithium monocle": -1.0
+  "Flawless dilithium monocle (Epic)": -1.0
+  "Flawless dilithium monocle (Legendary)": -1.0
+  "Inconsistent titanium actuator": -1.0
+  "Titanium actuator": -1.0
+  "Precise titanium actuator": -1.0
+  "Precise titanium actuator (Rare)": -1.0
+  "Reggreference titanium actuator": -1.0
+  "Reggreference titanium actuator (Epic)": -1.0
+  "Reggreference titanium actuator (Legendary)": -1.0
+  "Ship in a bottle": -1.0
+  "Detailed ship in a bottle": -1.0
+  "Complex ship in a bottle": -1.0
+  "Complex ship in a bottle (Rare)": -1.0
+  "Eggquisite ship in a bottle": -1.0
+  "Eggquisite ship in a bottle (Rare)": -1.0
+  "Eggquisite ship in a bottle (Epic)": -1.0
+  "Eggquisite ship in a bottle (Legendary)": -1.0
+  "Weak tachyon deflector": -1.0
+  "Tachyon deflector": -1.0
+  "Robust tachyon deflector": -1.0
+  "Robust tachyon deflector (Rare)": -1.0
+  "Book of Basan": -1.0
+  "Collectors book of Basan": -1.0
+  "Fortified book of Basan": -1.0
+  "Fortified book of Basan (Epic)": -1.0
+  "Dim light of Eggendil": -1.0
+  "Shimmering light of Eggendil": -1.0
+  "Shimmering light of Eggendil (Rare)": -1.0
+  "Glowing light of Eggendil": -1.0
+  "Glowing light of Eggendil (Rare)": -1.0
+  "Brilliant light of Eggendil": -1.0
+  "Brilliant light of Eggendil (Epic)": -1.0
+  "Brilliant light of Eggendil (Legendary)": -1.0
+  "Lunar stone": -1.0
+  "Eggsquisite lunar stone": -1.0
+  "Meggnificent lunar stone": -1.0
+  "Shell stone": -1.0
+  "Eggsquisite shell stone": -1.0
+  "Flawless shell stone": -1.0
+  "Tachyon stone": -1.0
+  "Eggsquisite tachyon stone": -1.0
+  "Brilliant tachyon stone": -1.0
+  "Terra stone": -1.0
+  "Rich terra stone": -1.0
+  "Eggceptional terra stone": -1.0
+  "Soul stone": -1.0
+  "Eggsquisite soul stone": -1.0
+  "Radiant soul stone": -1.0
+  "Dilithium stone": -1.0
+  "Eggsquisite dilithium stone": -1.0
+  "Quantum stone": -1.0
+  "Phased quantum stone": -1.0
+  "Meggnificent quantum stone": -1.0
+  "Life stone": -1.0
+  "Good life stone": -1.0
+  "Eggceptional life stone": -1.0
+  "Clarity stone": -1.0
+  "Eggsquisite clarity stone": -1.0
+  "Prophecy stone": -1.0
+  "Eggsquisite prophecy stone": -1.0
+  "Clarity Stone Fragment": -1.0
+  "Dilithium Stone Fragment": -1.0
+  "Life Stone Fragment": -1.0
+  "Lunar Stone Fragment": -1.0
+  "Prophecy Stone Fragment": -1.0
+  "Quantum Stone Fragment": -1.0
+  "Shell Stone Fragment": -1.0
+  "Soul Stone Fragment": -1.0
+  "Tachyon Stone Fragment": -1.0
+  "Terra Stone Fragment": -1.0
   
 missionArtifactTargetWeights:
+  # === INGREDIENTS FOR TARGET ARTIFACTS (desired from missions) ===
+  # Puzzle cube chain
   "Ancient puzzle cube": 1.0
   "Puzzle cube": 1.0
   "Puzzle cube (Epic)": 1.0
@@ -265,6 +272,7 @@ missionArtifactTargetWeights:
   "Unsolvable puzzle cube (Rare)": 1.0
   "Unsolvable puzzle cube (Epic)": 1.0
   "Unsolvable puzzle cube (Legendary)": 1.0
+  # Lunar totem chain
   "Basic lunar totem": 1.0
   "Lunar totem": 1.0
   "Lunar totem (Rare)": 1.0
@@ -274,6 +282,7 @@ missionArtifactTargetWeights:
   "Eggceptional lunar totem (Rare)": 1.0
   "Eggceptional lunar totem (Epic)": 1.0
   "Eggceptional lunar totem (Legendary)": 1.0
+  # Demeters necklace chain
   "Simple Demeters necklace": 1.0
   "Jeweled Demeters necklace": 1.0
   "Jeweled Demeters necklace (Rare)": 1.0
@@ -284,23 +293,7 @@ missionArtifactTargetWeights:
   "Beggspoke Demeters necklace (Rare)": 1.0
   "Beggspoke Demeters necklace (Epic)": 1.0
   "Beggspoke Demeters necklace (Legendary)": 1.0
-  "Tiny vial of Martian dust": 1.0
-  "Vial of Martian dust": 1.0
-  "Vial of Martian dust (Rare)": 1.0
-  "Hermetic vial of Martian dust": 1.0
-  "Hermetic vial of Martian dust (Epic)": 1.0
-  "Prime vial of Martian dust": 1.0
-  "Prime vial of Martian dust (Rare)": 1.0
-  "Prime vial of Martian dust (Legendary)": 1.0
-  "Plain Aurelian brooch": 1.0
-  "Aurelian brooch": 1.0
-  "Jeweled Aurelian brooch": 1.0
-  "Jeweled Aurelian brooch (Rare)": 1.0
-  "Jeweled Aurelian brooch (Epic)": 1.0
-  "Eggceptional Aurelian brooch": 1.0
-  "Eggceptional Aurelian brooch (Rare)": 1.0
-  "Eggceptional Aurelian brooch (Epic)": 1.0
-  "Eggceptional Aurelian brooch (Legendary)": 1.0
+  # Tungsten ankh chain
   "Crude tungsten ankh": 1.0
   "Tungsten ankh": 1.0
   "Tungsten ankh (Rare)": 1.0
@@ -310,6 +303,7 @@ missionArtifactTargetWeights:
   "Brilliant tungsten ankh": 1.0
   "Brilliant tungsten ankh (Rare)": 1.0
   "Brilliant tungsten ankh (Legendary)": 1.0
+  # Gusset chain
   "Plain gusset": 1.0
   "Ornate gusset": 1.0
   "Ornate gusset (Epic)": 1.0
@@ -318,37 +312,11 @@ missionArtifactTargetWeights:
   "Jeweled gusset": 1.0
   "Jeweled gusset (Epic)": 1.0
   "Jeweled gusset (Legendary)": 1.0
-  "Weak neodymium medallion": 1.0
-  "Neodymium medallion": 1.0
-  "Neodymium medallion (Rare)": 1.0
-  "Precise neodymium medallion": 1.0
-  "Precise neodymium medallion (Epic)": 1.0
-  "Eggceptional neodymium medallion": 1.0
-  "Eggceptional neodymium medallion (Rare)": 1.0
-  "Eggceptional neodymium medallion (Epic)": 1.0
-  "Eggceptional neodymium medallion (Legendary)": 1.0
+  # Mercury's lens chain (used for Jeweled gusset)
   "Misaligned Mercury's lens": 1.0
   "Mercury's lens": 1.0
   "Mercury's lens (Rare)": 1.0
-  "Precise Mercury's lens": 1.0
-  "Precise Mercury's lens (Rare)": 1.0
-  "Meggnificent Mercury's lens": 1.0
-  "Meggnificent Mercury's lens (Rare)": 1.0
-  "Meggnificent Mercury's lens (Epic)": 1.0
-  "Meggnificent Mercury's lens (Legendary)": 1.0
-  "Dull beak of Midas": 1.0
-  "Beak of Midas": 1.0
-  "Jeweled beak of Midas": 1.0
-  "Jeweled beak of Midas (Rare)": 1.0
-  "Glistening beak of Midas": 1.0
-  "Glistening beak of Midas (Rare)": 1.0
-  "Glistening beak of Midas (Legendary)": 1.0
-  "Simple carved rainstick": 1.0
-  "Carved rainstick": 1.0
-  "Ornate carved rainstick": 1.0
-  "Meggnificent carved rainstick": 1.0
-  "Meggnificent carved rainstick (Epic)": 1.0
-  "Meggnificent carved rainstick (Legendary)": 1.0
+  # Interstellar compass chain
   "Miscalibrated interstellar compass": 1.0
   "Interstellar compass": 1.0
   "Precise interstellar compass": 1.0
@@ -357,22 +325,7 @@ missionArtifactTargetWeights:
   "Clairvoyant interstellar compass (Rare)": 1.0
   "Clairvoyant interstellar compass (Epic)": 1.0
   "Clairvoyant interstellar compass (Legendary)": 1.0
-  "Plain chalice": 1.0
-  "Polished chalice": 1.0
-  "Polished chalice (Epic)": 1.0
-  "Jeweled chalice": 1.0
-  "Jeweled chalice (Rare)": 1.0
-  "Jeweled chalice (Epic)": 1.0
-  "Eggceptional chalice": 1.0
-  "Eggceptional chalice (Epic)": 1.0
-  "Eggceptional chalice (Legendary)": 1.0
-  "Tattered phoenix feather": 1.0
-  "Phoenix feather": 1.0
-  "Brilliant phoenix feather": 1.0
-  "Brilliant phoenix feather (Rare)": 1.0
-  "Blazing phoenix feather": 1.0
-  "Blazing phoenix feather (Rare)": 1.0
-  "Blazing phoenix feather (Legendary)": 1.0
+  # Quantum metronome chain
   "Misaligned quantum metronome": 1.0
   "Adequate quantum metronome": 1.0
   "Adequate quantum metronome (Rare)": 1.0
@@ -383,86 +336,150 @@ missionArtifactTargetWeights:
   "Reggreference quantum metronome (Rare)": 1.0
   "Reggreference quantum metronome (Epic)": 1.0
   "Reggreference quantum metronome (Legendary)": 1.0
-  "Dilithium monocle": 1.0
-  "Precise dilithium monocle": 1.0
-  "Eggsacting dilithium monocle": 1.0
-  "Flawless dilithium monocle": 1.0
-  "Flawless dilithium monocle (Epic)": 1.0
-  "Flawless dilithium monocle (Legendary)": 1.0
-  "Inconsistent titanium actuator": 1.0
-  "Titanium actuator": 1.0
-  "Precise titanium actuator": 1.0
-  "Precise titanium actuator (Rare)": 1.0
-  "Reggreference titanium actuator": 1.0
-  "Reggreference titanium actuator (Epic)": 1.0
-  "Reggreference titanium actuator (Legendary)": 1.0
-  "Ship in a bottle": 1.0
-  "Detailed ship in a bottle": 1.0
-  "Complex ship in a bottle": 1.0
-  "Complex ship in a bottle (Rare)": 1.0
-  "Eggquisite ship in a bottle": 1.0
-  "Eggquisite ship in a bottle (Rare)": 1.0
-  "Eggquisite ship in a bottle (Epic)": 1.0
-  "Eggquisite ship in a bottle (Legendary)": 1.0
-  "Weak tachyon deflector": 1.0
-  "Tachyon deflector": 1.0
-  "Robust tachyon deflector": 1.0
-  "Robust tachyon deflector (Rare)": 1.0
-  "Book of Basan": 1.0
-  "Collectors book of Basan": 1.0
-  "Fortified book of Basan": 1.0
-  "Fortified book of Basan (Epic)": 1.0
-  "Dim light of Eggendil": 1.0
-  "Shimmering light of Eggendil": 1.0
-  "Shimmering light of Eggendil (Rare)": 1.0
-  "Glowing light of Eggendil": 1.0
-  "Glowing light of Eggendil (Rare)": 1.0
-  "Brilliant light of Eggendil": 1.0
-  "Brilliant light of Eggendil (Epic)": 1.0
-  "Brilliant light of Eggendil (Legendary)": 1.0
-  "Lunar stone": 1.0
-  "Eggsquisite lunar stone": 1.0
-  "Meggnificent lunar stone": 1.0
-  "Shell stone": 1.0
-  "Eggsquisite shell stone": 1.0
-  "Flawless shell stone": 1.0
-  "Tachyon stone": 1.0
-  "Eggsquisite tachyon stone": 1.0
-  "Brilliant tachyon stone": 1.0
-  "Terra stone": 1.0
-  "Rich terra stone": 1.0
-  "Eggceptional terra stone": 1.0
-  "Soul stone": 1.0
-  "Eggsquisite soul stone": 1.0
-  "Radiant soul stone": 1.0
-  "Dilithium stone": 1.0
-  "Eggsquisite dilithium stone": 1.0
-  "Quantum stone": 1.0
-  "Phased quantum stone": 1.0
-  "Meggnificent quantum stone": 1.0
-  "Life stone": 1.0
-  "Good life stone": 1.0
-  "Eggceptional life stone": 1.0
-  "Clarity stone": 1.0
-  "Eggsquisite clarity stone": 1.0
-  "Prophecy stone": 1.0
-  "Eggsquisite prophecy stone": 1.0
+  # Crafting materials
   "Tiny gold meteorite": 1.0
   "Enriched gold meteorite": 1.0
   "Solid gold meteorite": 1.0
-  "Tau Ceti geode piece": 1.0
-  "Glimmering Tau Ceti geode": 1.0
-  "Radiant Tau Ceti geode": 1.0
   "Solar titanium ore": 1.0
   "Solar titanium bar": 1.0
   "Solar titanium geogon": 1.0
-  "Clarity Stone Fragment": 1.0
-  "Dilithium Stone Fragment": 1.0
-  "Life Stone Fragment": 1.0
-  "Lunar Stone Fragment": 1.0
-  "Prophecy Stone Fragment": 1.0
-  "Quantum Stone Fragment": 1.0
-  "Shell Stone Fragment": 1.0
-  "Soul Stone Fragment": 1.0
-  "Tachyon Stone Fragment": 1.0
-  "Terra Stone Fragment": 1.0
+  "Tau Ceti geode piece": 1.0
+  "Glimmering Tau Ceti geode": 1.0
+  "Radiant Tau Ceti geode": 1.0
+  "Plain chalice": 1.0
+  
+  # === UNWANTED ARTIFACTS (not targets, not ingredients) ===
+  "Tiny vial of Martian dust": -1.0
+  "Vial of Martian dust": -1.0
+  "Vial of Martian dust (Rare)": -1.0
+  "Hermetic vial of Martian dust": -1.0
+  "Hermetic vial of Martian dust (Epic)": -1.0
+  "Prime vial of Martian dust": -1.0
+  "Prime vial of Martian dust (Rare)": -1.0
+  "Prime vial of Martian dust (Legendary)": -1.0
+  "Plain Aurelian brooch": -1.0
+  "Aurelian brooch": -1.0
+  "Jeweled Aurelian brooch": -1.0
+  "Jeweled Aurelian brooch (Rare)": -1.0
+  "Jeweled Aurelian brooch (Epic)": -1.0
+  "Eggceptional Aurelian brooch": -1.0
+  "Eggceptional Aurelian brooch (Rare)": -1.0
+  "Eggceptional Aurelian brooch (Epic)": -1.0
+  "Eggceptional Aurelian brooch (Legendary)": -1.0
+  "Weak neodymium medallion": -1.0
+  "Neodymium medallion": -1.0
+  "Neodymium medallion (Rare)": -1.0
+  "Precise neodymium medallion": -1.0
+  "Precise neodymium medallion (Epic)": -1.0
+  "Eggceptional neodymium medallion": -1.0
+  "Eggceptional neodymium medallion (Rare)": -1.0
+  "Eggceptional neodymium medallion (Epic)": -1.0
+  "Eggceptional neodymium medallion (Legendary)": -1.0
+  "Precise Mercury's lens": -1.0
+  "Precise Mercury's lens (Rare)": -1.0
+  "Meggnificent Mercury's lens": -1.0
+  "Meggnificent Mercury's lens (Rare)": -1.0
+  "Meggnificent Mercury's lens (Epic)": -1.0
+  "Meggnificent Mercury's lens (Legendary)": -1.0
+  "Dull beak of Midas": -1.0
+  "Beak of Midas": -1.0
+  "Jeweled beak of Midas": -1.0
+  "Jeweled beak of Midas (Rare)": -1.0
+  "Glistening beak of Midas": -1.0
+  "Glistening beak of Midas (Rare)": -1.0
+  "Glistening beak of Midas (Legendary)": -1.0
+  "Simple carved rainstick": -1.0
+  "Carved rainstick": -1.0
+  "Ornate carved rainstick": -1.0
+  "Meggnificent carved rainstick": -1.0
+  "Meggnificent carved rainstick (Epic)": -1.0
+  "Meggnificent carved rainstick (Legendary)": -1.0
+  "Polished chalice": -1.0
+  "Polished chalice (Epic)": -1.0
+  "Jeweled chalice": -1.0
+  "Jeweled chalice (Rare)": -1.0
+  "Jeweled chalice (Epic)": -1.0
+  "Eggceptional chalice": -1.0
+  "Eggceptional chalice (Epic)": -1.0
+  "Eggceptional chalice (Legendary)": -1.0
+  "Tattered phoenix feather": -1.0
+  "Phoenix feather": -1.0
+  "Brilliant phoenix feather": -1.0
+  "Brilliant phoenix feather (Rare)": -1.0
+  "Blazing phoenix feather": -1.0
+  "Blazing phoenix feather (Rare)": -1.0
+  "Blazing phoenix feather (Legendary)": -1.0
+  "Dilithium monocle": -1.0
+  "Precise dilithium monocle": -1.0
+  "Eggsacting dilithium monocle": -1.0
+  "Flawless dilithium monocle": -1.0
+  "Flawless dilithium monocle (Epic)": -1.0
+  "Flawless dilithium monocle (Legendary)": -1.0
+  "Inconsistent titanium actuator": -1.0
+  "Titanium actuator": -1.0
+  "Precise titanium actuator": -1.0
+  "Precise titanium actuator (Rare)": -1.0
+  "Reggreference titanium actuator": -1.0
+  "Reggreference titanium actuator (Epic)": -1.0
+  "Reggreference titanium actuator (Legendary)": -1.0
+  "Ship in a bottle": -1.0
+  "Detailed ship in a bottle": -1.0
+  "Complex ship in a bottle": -1.0
+  "Complex ship in a bottle (Rare)": -1.0
+  "Eggquisite ship in a bottle": -1.0
+  "Eggquisite ship in a bottle (Rare)": -1.0
+  "Eggquisite ship in a bottle (Epic)": -1.0
+  "Eggquisite ship in a bottle (Legendary)": -1.0
+  "Weak tachyon deflector": -1.0
+  "Tachyon deflector": -1.0
+  "Robust tachyon deflector": -1.0
+  "Robust tachyon deflector (Rare)": -1.0
+  "Book of Basan": -1.0
+  "Collectors book of Basan": -1.0
+  "Fortified book of Basan": -1.0
+  "Fortified book of Basan (Epic)": -1.0
+  "Dim light of Eggendil": -1.0
+  "Shimmering light of Eggendil": -1.0
+  "Shimmering light of Eggendil (Rare)": -1.0
+  "Glowing light of Eggendil": -1.0
+  "Glowing light of Eggendil (Rare)": -1.0
+  "Brilliant light of Eggendil": -1.0
+  "Brilliant light of Eggendil (Epic)": -1.0
+  "Brilliant light of Eggendil (Legendary)": -1.0
+  "Lunar stone": -1.0
+  "Eggsquisite lunar stone": -1.0
+  "Meggnificent lunar stone": -1.0
+  "Shell stone": -1.0
+  "Eggsquisite shell stone": -1.0
+  "Flawless shell stone": -1.0
+  "Tachyon stone": -1.0
+  "Eggsquisite tachyon stone": -1.0
+  "Brilliant tachyon stone": -1.0
+  "Terra stone": -1.0
+  "Rich terra stone": -1.0
+  "Eggceptional terra stone": -1.0
+  "Soul stone": -1.0
+  "Eggsquisite soul stone": -1.0
+  "Radiant soul stone": -1.0
+  "Dilithium stone": -1.0
+  "Eggsquisite dilithium stone": -1.0
+  "Quantum stone": -1.0
+  "Phased quantum stone": -1.0
+  "Meggnificent quantum stone": -1.0
+  "Life stone": -1.0
+  "Good life stone": -1.0
+  "Eggceptional life stone": -1.0
+  "Clarity stone": -1.0
+  "Eggsquisite clarity stone": -1.0
+  "Prophecy stone": -1.0
+  "Eggsquisite prophecy stone": -1.0
+  "Clarity Stone Fragment": -1.0
+  "Dilithium Stone Fragment": -1.0
+  "Life Stone Fragment": -1.0
+  "Lunar Stone Fragment": -1.0
+  "Prophecy Stone Fragment": -1.0
+  "Quantum Stone Fragment": -1.0
+  "Shell Stone Fragment": -1.0
+  "Soul Stone Fragment": -1.0
+  "Tachyon Stone Fragment": -1.0
+  "Terra Stone Fragment": -1.0
