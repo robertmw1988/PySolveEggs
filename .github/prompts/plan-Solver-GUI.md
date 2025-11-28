@@ -318,8 +318,8 @@ class CostWeights:
     - Track dirty state for unsaved modifications
     - Acceptance: Modified config persists to YAML and reloads correctly
 
-3. **Ticket: BOM Rules & Inventory Roll-Up Engine**
-    - Create `Solver/bom.py` with `bom_rules.json` and `flatten_bom()` utility
+3. **Ticket: BOM Rules & Inventory Roll-Up Engine** (Implemented)
+    - Create `Solver/bom.py` and `flatten_bom()` utility
     - Build inventory delta calculator aggregating solver results
     - Add memoization for repeated artifact lookups
     - Acceptance: Given sample missions, engine outputs gross/net resource tables matching hand calculations

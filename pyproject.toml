@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pysolve-eggs"
+version = "0.1.0"
+description = "Egg Inc. mission optimizer with LP solver and GUI"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Robert", email = "robert@example.com"}
+]
+keywords = ["egginc", "solver", "optimization", "linear-programming"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment",
+]
+
+dependencies = [
+    "PySide6>=6.6.0",
+    "PuLP>=2.7.0",
+    "pandas>=2.0.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-qt>=4.2.0",
+    "ruff>=0.1.0",
+    "black>=23.0.0",
+    "mypy>=1.0.0",
+    "pyinstaller>=6.0.0",
+]
+
+[project.scripts]
+pysolve-eggs = "Solver.run_solver:main"
+pysolve-eggs-gui = "Solver.gui_app:main"
+
+[project.gui-scripts]
+pysolve-eggs-gui = "Solver.gui_app:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["Solver*", "FetchData*", "Wasmegg*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml", "*.json", "*.csv", "*.md"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4"]
+ignore = ["E501"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["Solver/tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]

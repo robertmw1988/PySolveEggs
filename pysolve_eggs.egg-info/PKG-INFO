@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: pysolve-eggs
+Version: 0.1.0
+Summary: Egg Inc. mission optimizer with LP solver and GUI
+Author-email: Robert <robert@example.com>
+License: MIT
+Keywords: egginc,solver,optimization,linear-programming
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Games/Entertainment
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: PySide6>=6.6.0
+Requires-Dist: PuLP>=2.7.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: pyyaml>=6.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-qt>=4.2.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: pyinstaller>=6.0.0; extra == "dev"

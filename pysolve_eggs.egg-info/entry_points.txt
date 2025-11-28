@@ -1,0 +1,6 @@
+[console_scripts]
+pysolve-eggs = Solver.run_solver:main
+pysolve-eggs-gui = Solver.gui_app:main
+
+[gui_scripts]
+pysolve-eggs-gui = Solver.gui_app:main
