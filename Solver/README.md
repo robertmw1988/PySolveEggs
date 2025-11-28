@@ -335,6 +335,245 @@ The `slackPenalty` weight in `costFunctionWeights` scales the overall slack pena
 
 ---
 
+## Debugging & Logging
+
+The solver includes a comprehensive logging system to help debug optimization results and verify that weights and constraints are being applied correctly.
+
+### Log Levels
+
+| Level | Value | Description |
+|-------|-------|-------------|
+| `MINIMAL` | 0 | Only final results: status, mission count, time, fuel |
+| `SUMMARY` | 1 | Config overview, solver timing, slack summary |
+| `DETAILED` | 2 | Full mission tables, drop tables, constraint details, BOM rollup |
+| `DEBUG` | 3 | Per-mission objective coefficients, CBC verbose output |
+| `TRACE` | 4 | Most detailed: consumed ingredients, iteration-level data |
+
+### Basic Usage
+
+```python
+from Solver import solve, LogLevel
+from Solver.config import load_config
+
+config = load_config()
+
+# Run with different log levels
+result = solve(config, log_level=LogLevel.MINIMAL)   # Quiet
+result = solve(config, log_level=LogLevel.SUMMARY)   # Default overview
+result = solve(config, log_level=LogLevel.DETAILED)  # Full tables
+result = solve(config, log_level=LogLevel.DEBUG)     # Coefficient breakdown
+result = solve(config, log_level=LogLevel.TRACE)     # Everything
+
+# You can also use string or integer values
+result = solve(config, log_level="DEBUG")
+result = solve(config, log_level=3)
+```
+
+### File Logging
+
+```python
+from pathlib import Path
+from Solver import solve, LogLevel
+from Solver.solver_logging import create_logger
+from Solver.config import load_config
+
+config = load_config()
+
+# Create logger with file output
+logger = create_logger(
+    level=LogLevel.DEBUG,
+    log_file=Path("solver_debug.log")
+)
+
+result = solve(config, logger=logger)
+
+# Log file contains timestamped entries
+# [2025-01-15 14:30:00.123] [DEBUG] [OBJECTIVE] Mission #42: +1.23 total...
+```
+
+### Programmatic Log Access
+
+```python
+from Solver import solve, LogLevel
+from Solver.solver_logging import SolverLogger
+from Solver.config import load_config
+
+config = load_config()
+
+# Create logger and capture entries
+logger = SolverLogger(level=LogLevel.DEBUG)
+result = solve(config, logger=logger)
+
+# Access log entries programmatically
+all_entries = logger.get_all_entries()
+print(f"Total log entries: {len(all_entries)}")
+
+# Filter by level
+summary_entries = logger.get_entries_by_level(LogLevel.SUMMARY)
+
+# Filter by category
+objective_logs = logger.get_entries_by_category("OBJECTIVE")
+solver_logs = logger.get_entries_by_category("SOLVER")
+
+# Export to string
+log_text = logger.to_string()
+```
+
+### Capture Logs to String Buffer
+
+```python
+from Solver import solve, LogLevel
+from Solver.solver_logging import create_string_logger
+from Solver.config import load_config
+
+config = load_config()
+
+# Create logger that writes to StringIO
+logger, buffer = create_string_logger(level=LogLevel.DETAILED)
+result = solve(config, logger=logger)
+
+# Get log output as string
+log_output = buffer.getvalue()
+print(log_output)
+```
+
+### What Each Level Shows
+
+**MINIMAL** — Essential results only:
+```
+[SOLVER] Starting solve with 3 ships
+[SOLUTION] Status: Optimal, Selected: 2 missions, Time: 38.4h, Tank fuel: 95.00T
+[SOLVER] Solve completed in 4311.0ms
+```
+
+**SUMMARY** — Adds config and timing:
+```
+[CONFIG] Fuel tank: 500.0T, Max time: 336.0h
+[CONFIG] Active ships: 10 (HENERPRISE, ATREGGIES, ...)
+[WEIGHTS] Cost weights - Time: 1.00, Fuel: 1.00, Artifact: 10.00, Slack: 1.00
+[INVENTORY] Built inventory: 5625 total missions, 5625 after level filtering
+[SOLVER] Invoking PULP_CBC_CMD (verbose=False)
+[SOLVER] Solver complete: status=Optimal, objective=2413.39, time=4311.0ms
+[SLACK] Slack artifacts: 200.0 total, fuel cost: 59.09T
+```
+
+**DETAILED** — Adds tables and BOM:
+```
+[RESEARCH] FTL Drive Upgrades: L60 (60.0% time reduction)
+[RESEARCH] Zero-G Quantum Containment: L10 (50.0% capacity bonus)
+
+[INVENTORY] Mission Inventory
+================================
+Ship       | Duration | Level | Base Cap | Eff. Cap | Time (h)
+---------------------------------------------------------
+HENERPRISE | SHORT    | 8     | 130      | 195      | 1.6
+HENERPRISE | STANDARD | 8     | 150      | 225      | 6.4
+...
+
+[DROPS] Expected Drops
+======================
+Artifact              | Weight | Expected | Value
+-------------------------------------------------
+Solid gold meteorite  | 1.00   | 15.50    | 15.50
+Book of Basan        | 0.80   | 8.20     | 6.56
+...
+
+[SLACK] Slack Artifacts
+=======================
+Artifact         | Expected | Fuel Cost (T)
+-------------------------------------------
+Ornate gusset    | 45.00    | 12.30
+Ancient puzzle   | 32.00    | 8.76
+...
+
+[BOM] BOM rollup: 5 items crafted, 12 ingredients consumed
+```
+
+**DEBUG** — Adds per-mission coefficient breakdown:
+```
+[OBJECTIVE] Mission Coefficients
+================================
+# | Ship       | Duration | +artifact | +total  | time_pen | slack_pen
+----------------------------------------------------------------------
+0 | HENERPRISE | SHORT    | 12.500    | 8.234   | 1.600    | 2.666
+1 | HENERPRISE | STANDARD | 18.750    | 11.521  | 6.400    | 0.829
+2 | HENERPRISE | EXTENDED | 25.000    | 14.108  | 12.800   | 0.000
+3 | HENERPRISE | EPIC     | 37.500    | 24.892  | 25.600   | 0.000
+...
+
+CBC solver verbose output (Optimal solution found, iterations, etc.)
+```
+
+**TRACE** — Most verbose, includes:
+- Consumed ingredients in BOM rollup
+- Ingredient shortfalls
+- All constraint additions
+- Iteration-level solver data
+
+### Debugging Weight Changes
+
+To verify that changing weights affects the solver correctly:
+
+```python
+from Solver import solve, LogLevel
+from Solver.config import load_config
+
+config = load_config()
+
+# Test with default weights
+result1 = solve(config, log_level=LogLevel.DEBUG)
+print(f"Default objective: {result1.objective_value:.2f}")
+
+# Boost a specific artifact weight
+config.mission_artifact_weights["Book of Basan"] = 50.0
+result2 = solve(config, log_level=LogLevel.DEBUG)
+print(f"Boosted objective: {result2.objective_value:.2f}")
+
+# Compare selected missions
+print("Default:", [(m.ship, m.duration_type) for m, c in result1.selected_missions])
+print("Boosted:", [(m.ship, m.duration_type) for m, c in result2.selected_missions])
+```
+
+### Debugging Constraint Issues
+
+```python
+from Solver import solve, LogLevel
+from Solver.config import load_config
+
+config = load_config()
+
+# Very tight fuel constraint
+config.constraints.fuel_tank_capacity = 50.0  # Only 50T
+
+result = solve(config, log_level=LogLevel.DETAILED)
+print(f"Status: {result.status}")
+print(f"Fuel used: {result.fuel_usage.total_tank / 1e12:.2f}T")
+
+# If infeasible, check constraint logs at DEBUG level
+if result.status != "Optimal":
+    result = solve(config, log_level=LogLevel.DEBUG)
+```
+
+### Log Categories
+
+Logs are organized by category for filtering:
+
+| Category | Description |
+|----------|-------------|
+| `SOLVER` | Solver initialization, timing, status |
+| `CONFIG` | Configuration loading and validation |
+| `RESEARCH` | Epic research bonuses applied |
+| `WEIGHTS` | Cost function weights |
+| `INVENTORY` | Mission inventory building |
+| `OBJECTIVE` | Objective coefficient calculations |
+| `CONSTRAINT` | Constraint building and values |
+| `SOLUTION` | Solution summary and details |
+| `DROPS` | Expected drop calculations |
+| `SLACK` | Slack artifact analysis |
+| `BOM` | BOM rollup results |
+
+---
+
 ## Testing
 
 ### Run All Tests
@@ -426,6 +665,7 @@ Solver/
 ├── config.py           # Configuration loading
 ├── mission_data.py     # Mission inventory and calculations
 ├── mission_solver.py   # LP solver
+├── solver_logging.py   # Debug logging system
 ├── run_solver.py       # CLI entry point
 ├── DefaultUserConfig.yaml
 ├── README.md

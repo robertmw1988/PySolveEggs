@@ -23,12 +23,14 @@ from PySide6.QtWidgets import (
     QMenu,
     QFileDialog,
     QApplication,
+    QTabWidget,
 )
 
 from ..config import (
     UserConfig,
     EpicResearch,
     Constraints,
+    CostWeights,
     load_config,
     save_config,
     DEFAULT_CONFIG_PATH,
@@ -40,6 +42,9 @@ from .widgets import (
     EpicResearchWidget,
     ConstraintsWidget,
     ResultsWidget,
+    MissionArtifactWeightsWidget,
+    CraftedArtifactWeightsWidget,
+    CostWeightsWidget,
 )
 
 
@@ -107,32 +112,72 @@ class MainWindow(QMainWindow):
         # Main splitter: left config, right results
         splitter = QSplitter(Qt.Orientation.Horizontal)
         
-        # Left panel - configuration
+        # Left panel - configuration with tabs + always-visible constraints
         left_panel = QWidget()
         left_layout = QVBoxLayout(left_panel)
         left_layout.setContentsMargins(0, 0, 0, 0)
-        left_layout.setSpacing(12)
+        left_layout.setSpacing(8)
+        
+        # Configuration tabs (top portion)
+        self._config_tabs = QTabWidget()
+        
+        # Tab 1: User Configuration (Ships + Epic Research)
+        user_config_tab = QWidget()
+        user_config_layout = QVBoxLayout(user_config_tab)
+        user_config_layout.setContentsMargins(4, 4, 4, 4)
+        user_config_layout.setSpacing(8)
         
         # Ship configuration
-        ship_group = QGroupBox("Ships")
+        ship_group = QGroupBox("Mission Configuration")
         ship_layout = QVBoxLayout(ship_group)
         self._ship_widget = ShipConfigWidget(self._config)
         ship_layout.addWidget(self._ship_widget)
-        left_layout.addWidget(ship_group, stretch=3)
+        user_config_layout.addWidget(ship_group, stretch=3)
         
         # Epic research
         research_group = QGroupBox("Epic Research")
         research_layout = QVBoxLayout(research_group)
         self._research_widget = EpicResearchWidget(self._config)
         research_layout.addWidget(self._research_widget)
-        left_layout.addWidget(research_group, stretch=1)
+        user_config_layout.addWidget(research_group, stretch=1)
         
-        # Constraints
-        constraints_group = QGroupBox("Constraints")
+        self._config_tabs.addTab(user_config_tab, "User Config")
+        
+        # Tab 2: Mission Artifact Collection Weights
+        mission_weights_tab = QWidget()
+        mission_weights_layout = QVBoxLayout(mission_weights_tab)
+        mission_weights_layout.setContentsMargins(4, 4, 4, 4)
+        self._mission_weights_widget = MissionArtifactWeightsWidget(self._config)
+        mission_weights_layout.addWidget(self._mission_weights_widget)
+        self._config_tabs.addTab(mission_weights_tab, "Collection Weights")
+        
+        # Tab 3: Crafted Artifact Target Weights
+        crafted_weights_tab = QWidget()
+        crafted_weights_layout = QVBoxLayout(crafted_weights_tab)
+        crafted_weights_layout.setContentsMargins(4, 4, 4, 4)
+        self._crafted_weights_widget = CraftedArtifactWeightsWidget(self._config)
+        crafted_weights_layout.addWidget(self._crafted_weights_widget)
+        self._config_tabs.addTab(crafted_weights_tab, "Crafting Weights")
+        
+        left_layout.addWidget(self._config_tabs, stretch=3)
+        
+        # Always-visible Constraints section (bottom portion)
+        constraints_group = QGroupBox("Constraints & Priorities")
         constraints_layout = QVBoxLayout(constraints_group)
+        constraints_layout.setSpacing(12)
+        
+        # Constraints widget (ships, fuel, time)
         self._constraints_widget = ConstraintsWidget(self._config, self._num_ships)
         constraints_layout.addWidget(self._constraints_widget)
-        left_layout.addWidget(constraints_group, stretch=1)
+        
+        # Cost function weights (priorities)
+        priorities_group = QGroupBox("Solver Priorities")
+        priorities_layout = QVBoxLayout(priorities_group)
+        self._cost_weights_widget = CostWeightsWidget(self._config)
+        priorities_layout.addWidget(self._cost_weights_widget)
+        constraints_layout.addWidget(priorities_group)
+        
+        left_layout.addWidget(constraints_group, stretch=2)
         
         splitter.addWidget(left_panel)
         
@@ -220,6 +265,9 @@ class MainWindow(QMainWindow):
         self._ship_widget.config_changed.connect(self._on_config_changed)
         self._research_widget.config_changed.connect(self._on_config_changed)
         self._constraints_widget.config_changed.connect(self._on_constraints_changed)
+        self._cost_weights_widget.weights_changed.connect(self._on_config_changed)
+        self._mission_weights_widget.weights_changed.connect(self._on_config_changed)
+        self._crafted_weights_widget.weights_changed.connect(self._on_config_changed)
     
     def _on_config_changed(self, *args) -> None:
         """Handle any configuration change."""
@@ -254,13 +302,20 @@ class MainWindow(QMainWindow):
         # Constraints
         constraints = self._constraints_widget.get_constraints()
         
+        # Cost weights from the new widget
+        cost_weights = self._cost_weights_widget.get_cost_weights()
+        
+        # Artifact weights from the new widgets
+        mission_artifact_weights = self._mission_weights_widget.get_weights()
+        crafted_artifact_weights = self._crafted_weights_widget.get_weights()
+        
         return UserConfig(
             missions=missions,
             epic_researches=epic_researches,
             constraints=constraints,
-            cost_weights=self._config.cost_weights,
-            crafted_artifact_weights=self._config.crafted_artifact_weights,
-            mission_artifact_weights=self._config.mission_artifact_weights,
+            cost_weights=cost_weights,
+            crafted_artifact_weights=crafted_artifact_weights,
+            mission_artifact_weights=mission_artifact_weights,
         )
     
     @Slot()
@@ -368,6 +423,9 @@ class MainWindow(QMainWindow):
                 self._ship_widget.update_from_user_config(self._config)
                 self._research_widget.update_from_user_config(self._config)
                 self._constraints_widget.update_from_user_config(self._config, self._num_ships)
+                self._cost_weights_widget.update_from_user_config(self._config)
+                self._mission_weights_widget.update_from_user_config(self._config)
+                self._crafted_weights_widget.update_from_user_config(self._config)
                 
                 self._dirty = False
                 self._update_window_title()
