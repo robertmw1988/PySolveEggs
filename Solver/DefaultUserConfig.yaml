@@ -25,9 +25,9 @@ Epic Researches:
     effect: 0.01
     maxLevel: 60
   Zero-G Quantum Containment:
-    level: 12
+    level: 10
     effect: 0.05
-    maxLevel: 12
+    maxLevel: 10
 constraints:
   fuelTankCapacity: 500T
   maxTime: 672.0

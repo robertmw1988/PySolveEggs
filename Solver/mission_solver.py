@@ -293,7 +293,28 @@ def solve(
         for i in range(len(inventory))
     ]
 
-    # Objective: weighted value of expected drops - time penalty - slack penalty
+    # Pre-compute fuel cost per mission (in trillions) for fuel bonus calculation
+    fuel_per_mission_T: List[float] = []
+    for i, m in enumerate(inventory):
+        mission_fuel = sum(m.fuel_requirements.values()) / 1e12  # Convert to trillions
+        fuel_per_mission_T.append(mission_fuel)
+
+    # Objective: weighted value of expected drops - time penalty
+    # 
+    # The objective function rewards missions that produce desired artifacts
+    # and penalizes missions that produce unwanted artifacts.
+    #
+    # For each artifact:
+    #   - Positive weight: contributes positively (fuel well spent)
+    #   - Zero weight: neutral (neither rewarded nor penalized)
+    #   - Negative weight: contributes negatively (capacity wasted)
+    #
+    # The slack_penalty weight provides ADDITIONAL penalty for unwanted artifacts
+    # beyond the negative contribution (scales with fuel cost of those drops).
+    # Set slack_penalty=0 if you only want the weight-based system.
+    #
+    # The fuel_usage_bonus encourages using more fuel when use_all_fuel is True.
+    
     obj_terms = []
     weights = config.cost_weights
     objective_coefficients: List[float] = []
@@ -303,9 +324,10 @@ def solve(
         cap = effective_caps[i] if effective_caps[i] > 0 else 1
         ratios = drop_ratios_list[i]
         
-        # Positive value: sum of (expected drops × user preference) per artifact
-        positive_value = 0.0
-        slack_penalty = 0.0
+        # Calculate weighted artifact value - all artifacts contribute based on their weight
+        # Positive weights = rewards, Negative weights = penalties
+        total_weighted_value = 0.0
+        slack_fuel_penalty = 0.0
         
         for art in all_artifacts:
             ratio = ratios.get(art, 0.0)
@@ -313,37 +335,44 @@ def solve(
                 continue
             
             expected_drops = ratio * cap
+            # Default to 1.0 for unspecified artifacts (neutral-positive)
+            # User can set to 0 for truly neutral, or negative for unwanted
             art_weight = art_weights.get(art, 1.0)
             
-            if art_weight > 0:
-                # Desirable artifact - adds to objective
-                contribution = expected_drops * art_weight
-                positive_value += contribution
-                logger.log_objective_artifact_detail(
-                    i, art, ratio, expected_drops, art_weight, contribution
-                )
-            else:
-                # Slack artifact (weight <= 0) - penalize by fuel cost
-                penalty_multiplier = 1.0 - art_weight  # 0 -> 1.0, -1 -> 2.0
-                penalty = expected_drops * fuel_per_artifact[i] * penalty_multiplier
-                slack_penalty += penalty
-                logger.log_objective_artifact_detail(
-                    i, art, ratio, expected_drops, art_weight, -penalty
-                )
+            # Weighted contribution: positive weights reward, negative penalize
+            contribution = expected_drops * art_weight
+            total_weighted_value += contribution
+            
+            # Additional slack penalty for negative-weight artifacts
+            # This is proportional to fuel "wasted" on unwanted drops
+            if art_weight < 0:
+                # Extra penalty = drops × |weight| × fuel_per_artifact
+                # This makes missions with expensive fuel + bad drops extra undesirable
+                slack_fuel_penalty += expected_drops * abs(art_weight) * fuel_per_artifact[i]
+            
+            logger.log_objective_artifact_detail(
+                i, art, ratio, expected_drops, art_weight, contribution
+            )
         
         time_hours = effective_secs[i] / 3600.0
         time_penalty = weights.mission_time * time_hours
-        scaled_slack = weights.slack_penalty * slack_penalty
-        artifact_value = weights.artifact_gain * positive_value
+        scaled_slack = weights.slack_penalty * slack_fuel_penalty
+        artifact_value = weights.artifact_gain * total_weighted_value
         
-        # Objective contribution per mission run
-        contrib = artifact_value - time_penalty - scaled_slack
+        # Fuel usage bonus: encourages using more fuel (helps fill the tank)
+        # Only applies meaningfully when use_all_fuel constraint is active
+        fuel_bonus = weights.fuel_usage_bonus * fuel_per_mission_T[i]
+        
+        # Objective contribution per mission run:
+        # = (artifact rewards - artifact penalties) - time cost - extra slack penalty + fuel bonus
+        contrib = artifact_value - time_penalty - scaled_slack + fuel_bonus
         obj_terms.append(contrib * x[i])
         objective_coefficients.append(contrib)
         objective_components.append({
             'artifact_value': artifact_value,
             'time_penalty': time_penalty,
             'slack_penalty': scaled_slack,
+            'fuel_bonus': fuel_bonus,
         })
         
         logger.log_objective_mission_contribution(
@@ -380,6 +409,7 @@ def solve(
     logger.log_fuel_coefficients(fuel_coeffs)
     
     # Sum of all tank fuels must not exceed capacity
+    tank_fuel_expr = None
     if fuel_coeffs:
         tank_fuel_expr = pulp.lpSum(
             fuel_coeffs[egg][i] * x[i]
@@ -390,6 +420,21 @@ def solve(
         logger.log_constraint_added("FuelTankCapacity",
                                     f"Tank fuel <= {config.constraints.fuel_tank_capacity}T",
                                     fuel_tank_capacity)
+        
+        # Minimum fuel constraint: use all fuel or minimum percentage
+        if config.constraints.use_all_fuel:
+            # Use at least 95% of tank (allows for discrete mission granularity)
+            min_fuel = fuel_tank_capacity * 0.95
+            prob += tank_fuel_expr >= min_fuel, "MinFuelUsage"
+            logger.log_constraint_added("MinFuelUsage",
+                                        f"Tank fuel >= 95% ({config.constraints.fuel_tank_capacity * 0.95:.1f}T)",
+                                        min_fuel)
+        elif config.constraints.min_fuel_percent > 0:
+            min_fuel = fuel_tank_capacity * (config.constraints.min_fuel_percent / 100.0)
+            prob += tank_fuel_expr >= min_fuel, "MinFuelUsage"
+            logger.log_constraint_added("MinFuelUsage",
+                                        f"Tank fuel >= {config.constraints.min_fuel_percent}% ({min_fuel/1e12:.1f}T)",
+                                        min_fuel)
 
     # ----- Solve -----
     solver_verbose = verbose or logger.level >= LogLevel.DEBUG

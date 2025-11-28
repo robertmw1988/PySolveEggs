@@ -5,6 +5,7 @@ Provides input controls for:
 - Number of concurrent ships
 - Fuel tank capacity (with presets)
 - Time budget (hours/days)
+- Use all fuel toggle
 """
 from __future__ import annotations
 
@@ -21,6 +22,7 @@ from PySide6.QtWidgets import (
     QComboBox,
     QGroupBox,
     QFrame,
+    QCheckBox,
 )
 
 from ...config import Constraints, UserConfig
@@ -284,6 +286,7 @@ class ConstraintsWidget(QWidget):
     - Number of concurrent ships
     - Fuel tank capacity
     - Time budget
+    - Use all fuel toggle
     
     Signals:
         config_changed(Constraints, int): Emitted when any constraint changes.
@@ -316,6 +319,16 @@ class ConstraintsWidget(QWidget):
         self._fuel_tank.value_changed.connect(self._on_changed)
         layout.addWidget(self._fuel_tank)
         
+        # Use all fuel checkbox
+        self._use_all_fuel = QCheckBox("Fill entire fuel tank")
+        self._use_all_fuel.setChecked(config.constraints.use_all_fuel)
+        self._use_all_fuel.setToolTip(
+            "When checked, solver will select missions to use at least 95% of fuel tank.\n"
+            "This ensures you don't leave fuel unused."
+        )
+        self._use_all_fuel.stateChanged.connect(self._on_changed)
+        layout.addWidget(self._use_all_fuel)
+        
         # Time budget
         self._time_budget = TimeBudgetWidget(initial_hours=config.constraints.max_time_hours)
         self._time_budget.value_changed.connect(self._on_changed)
@@ -332,6 +345,8 @@ class ConstraintsWidget(QWidget):
         return Constraints(
             fuel_tank_capacity=self._fuel_tank.value,
             max_time_hours=self._time_budget.hours,
+            use_all_fuel=self._use_all_fuel.isChecked(),
+            min_fuel_percent=0.0,
         )
     
     def get_num_ships(self) -> int:
@@ -342,4 +357,5 @@ class ConstraintsWidget(QWidget):
         """Update all constraints from a UserConfig."""
         self._fuel_tank.value = user_config.constraints.fuel_tank_capacity
         self._time_budget.hours = user_config.constraints.max_time_hours
+        self._use_all_fuel.setChecked(user_config.constraints.use_all_fuel)
         self._num_ships.value = num_ships

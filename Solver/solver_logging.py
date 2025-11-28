@@ -346,6 +346,7 @@ class SolverLogger:
                 comp = components[i]
                 row.extend([
                     f"{comp.get('artifact_value', 0):+.4f}",
+                    f"{comp.get('fuel_bonus', 0):+.4f}",
                     f"{comp.get('time_penalty', 0):-.4f}",
                     f"{comp.get('slack_penalty', 0):-.4f}",
                 ])
@@ -353,7 +354,7 @@ class SolverLogger:
         
         headers = ["#", "Ship", "Duration", "Total"]
         if components:
-            headers.extend(["ArtifactVal", "TimePen", "SlackPen"])
+            headers.extend(["ArtifactVal", "FuelBonus", "TimePen", "SlackPen"])
         
         self._log_table(LogLevel.DEBUG, "OBJECTIVE", headers, rows,
                        title="Objective Coefficients by Mission")

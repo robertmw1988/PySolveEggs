@@ -39,14 +39,17 @@ class EpicResearch:
 class Constraints:
     fuel_tank_capacity: float = 500.0  # in trillions
     max_time_hours: float = 336.0
+    use_all_fuel: bool = True  # If True, solver fills tank completely (or uses all time)
+    min_fuel_percent: float = 0.0  # Minimum % of tank to use (0-100), only if use_all_fuel=False
 
 
 @dataclass
 class CostWeights:
-    mission_time: float = 1.0
-    fuel_efficiency: float = 1.0
-    artifact_gain: float = 10.0
-    slack_penalty: float = 1.0  # 0.0 = ignore slack, 1.0 = default, up to 100.0 max
+    mission_time: float = 0.0  # Penalty per hour of mission time (0 = don't care about speed)
+    fuel_efficiency: float = 1.0  # Reserved for future use
+    artifact_gain: float = 10.0  # Multiplier for artifact weight contributions
+    slack_penalty: float = 0.5  # Extra penalty for unwanted artifacts (0 = just use weights)
+    fuel_usage_bonus: float = 1.0  # Bonus per trillion fuel used (encourages full tank usage)
 
 
 @dataclass
@@ -116,6 +119,8 @@ def load_config(path: Optional[Path] = None) -> UserConfig:
     constraints = Constraints(
         fuel_tank_capacity=_parse_unit_value(constraints_raw.get("fuelTankCapacity", 500)),
         max_time_hours=float(constraints_raw.get("maxTime", 336)),
+        use_all_fuel=bool(constraints_raw.get("useAllFuel", True)),
+        min_fuel_percent=float(constraints_raw.get("minFuelPercent", 0.0)),
     )
 
     # Cost weights
@@ -128,6 +133,7 @@ def load_config(path: Optional[Path] = None) -> UserConfig:
         fuel_efficiency=_extract_weight(weights_raw.get("fuelEfficiency", 1.0)),
         artifact_gain=_extract_weight(weights_raw.get("artifactGain", 10.0)),
         slack_penalty=slack_penalty_clamped,
+        fuel_usage_bonus=_extract_weight(weights_raw.get("fuelUsageBonus", 0.1)),
     )
 
     # Artifact weights
@@ -225,6 +231,8 @@ def save_config(config: UserConfig, path: Optional[Path] = None) -> None:
     data["constraints"] = {
         "fuelTankCapacity": _format_unit_value(config.constraints.fuel_tank_capacity),
         "maxTime": config.constraints.max_time_hours,
+        "useAllFuel": config.constraints.use_all_fuel,
+        "minFuelPercent": config.constraints.min_fuel_percent,
     }
     
     # Cost function weights
@@ -233,6 +241,7 @@ def save_config(config: UserConfig, path: Optional[Path] = None) -> None:
         "fuelEfficiency": config.cost_weights.fuel_efficiency,
         "artifactGain": config.cost_weights.artifact_gain,
         "slackPenalty": config.cost_weights.slack_penalty,
+        "fuelUsageBonus": config.cost_weights.fuel_usage_bonus,
     }
     
     # Artifact weights
