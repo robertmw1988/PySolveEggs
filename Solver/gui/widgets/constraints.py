@@ -59,7 +59,7 @@ class FuelTankWidget(QWidget):
         
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
-        layout.setSpacing(4)
+        layout.setSpacing(2)
         
         # Label
         label = QLabel("Fuel Tank Capacity")
@@ -160,7 +160,7 @@ class TimeBudgetWidget(QWidget):
         
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
-        layout.setSpacing(4)
+        layout.setSpacing(2)
         
         # Label
         label = QLabel("Time Budget")
@@ -307,7 +307,7 @@ class ConstraintsWidget(QWidget):
         
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
-        layout.setSpacing(12)
+        layout.setSpacing(8)
         
         # Number of ships
         self._num_ships = NumShipsWidget(initial_value=num_ships)

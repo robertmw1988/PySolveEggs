@@ -99,7 +99,8 @@ class MainWindow(QMainWindow):
         self._connect_signals()
         
         self.setWindowTitle("PySolve Eggs - Mission Optimizer")
-        self.resize(1200, 800)
+        self.resize(1000, 700)
+        self.setMinimumSize(800, 500)
     
     def _setup_ui(self) -> None:
         """Build the main UI layout."""
@@ -112,13 +113,13 @@ class MainWindow(QMainWindow):
         # Main splitter: left config, right results
         splitter = QSplitter(Qt.Orientation.Horizontal)
         
-        # Left panel - configuration with tabs + always-visible constraints
+        # Left panel - configuration tabs (all config in tabs)
         left_panel = QWidget()
         left_layout = QVBoxLayout(left_panel)
         left_layout.setContentsMargins(0, 0, 0, 0)
-        left_layout.setSpacing(8)
+        left_layout.setSpacing(0)
         
-        # Configuration tabs (top portion)
+        # Configuration tabs
         self._config_tabs = QTabWidget()
         
         # Tab 1: User Configuration (Ships + Epic Research)
@@ -159,25 +160,30 @@ class MainWindow(QMainWindow):
         crafted_weights_layout.addWidget(self._crafted_weights_widget)
         self._config_tabs.addTab(crafted_weights_tab, "Crafting Weights")
         
-        left_layout.addWidget(self._config_tabs, stretch=3)
+        # Tab 4: Solver Settings (Constraints + Priorities)
+        solver_settings_tab = QWidget()
+        solver_settings_layout = QVBoxLayout(solver_settings_tab)
+        solver_settings_layout.setContentsMargins(4, 4, 4, 4)
+        solver_settings_layout.setSpacing(12)
         
-        # Always-visible Constraints section (bottom portion)
-        constraints_group = QGroupBox("Constraints & Priorities")
-        constraints_layout = QVBoxLayout(constraints_group)
-        constraints_layout.setSpacing(12)
-        
-        # Constraints widget (ships, fuel, time)
+        # Constraints group
+        constraints_group = QGroupBox("Constraints")
+        constraints_group_layout = QVBoxLayout(constraints_group)
         self._constraints_widget = ConstraintsWidget(self._config, self._num_ships)
-        constraints_layout.addWidget(self._constraints_widget)
+        constraints_group_layout.addWidget(self._constraints_widget)
+        solver_settings_layout.addWidget(constraints_group)
         
         # Cost function weights (priorities)
         priorities_group = QGroupBox("Solver Priorities")
         priorities_layout = QVBoxLayout(priorities_group)
         self._cost_weights_widget = CostWeightsWidget(self._config)
         priorities_layout.addWidget(self._cost_weights_widget)
-        constraints_layout.addWidget(priorities_group)
+        solver_settings_layout.addWidget(priorities_group)
         
-        left_layout.addWidget(constraints_group, stretch=2)
+        solver_settings_layout.addStretch()
+        self._config_tabs.addTab(solver_settings_tab, "Solver Settings")
+        
+        left_layout.addWidget(self._config_tabs)
         
         splitter.addWidget(left_panel)
         
@@ -187,15 +193,19 @@ class MainWindow(QMainWindow):
         right_layout.setContentsMargins(0, 0, 0, 0)
         
         results_group = QGroupBox("Results")
+        results_group.setMinimumWidth(280)
         results_layout = QVBoxLayout(results_group)
+        results_layout.setContentsMargins(4, 4, 4, 4)
         self._results_widget = ResultsWidget()
         results_layout.addWidget(self._results_widget)
         right_layout.addWidget(results_group)
         
         splitter.addWidget(right_panel)
         
-        # Set splitter proportions
-        splitter.setSizes([400, 800])
+        # Set splitter proportions - balanced split
+        splitter.setSizes([550, 450])
+        splitter.setStretchFactor(0, 1)
+        splitter.setStretchFactor(1, 1)
         main_layout.addWidget(splitter, stretch=1)
         
         # Bottom button row

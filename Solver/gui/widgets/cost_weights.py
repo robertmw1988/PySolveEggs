@@ -53,8 +53,8 @@ class WeightSliderWidget(QWidget):
         self._scale = 10 ** decimals
         
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(0, 0, 0, 8)
-        layout.setSpacing(4)
+        layout.setContentsMargins(0, 0, 0, 4)
+        layout.setSpacing(2)
         
         # Label row
         label_row = QHBoxLayout()
@@ -70,7 +70,7 @@ class WeightSliderWidget(QWidget):
         self._value_spin.setRange(min_val, max_val)
         self._value_spin.setDecimals(decimals)
         self._value_spin.setValue(initial)
-        self._value_spin.setFixedWidth(70)
+        self._value_spin.setFixedWidth(90)
         self._value_spin.valueChanged.connect(self._on_spin_changed)
         label_row.addWidget(self._value_spin)
         
@@ -146,7 +146,7 @@ class CostWeightsWidget(QWidget):
         
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
-        layout.setSpacing(16)
+        layout.setSpacing(8)
         
         # Mission Time
         self._time_weight = WeightSliderWidget(

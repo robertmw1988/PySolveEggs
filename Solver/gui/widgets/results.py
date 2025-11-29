@@ -4,8 +4,8 @@ Results display widgets.
 Displays solver output including:
 - Mission recommendations table
 - Expected artifact drops
+- BOM rollup (crafting summary)
 - Fuel usage summary
-- BOM rollup (if applicable)
 """
 from __future__ import annotations
 
@@ -29,6 +29,7 @@ from PySide6.QtWidgets import (
 )
 
 from ...mission_solver import SolverResult
+from ...bom import RollupResult
 
 
 class MissionTableWidget(QWidget):
@@ -149,17 +150,143 @@ class DropsTableWidget(QWidget):
             self._table.setItem(row, 1, amt_item)
 
 
-class SummaryWidget(QWidget):
+class BOMRollupWidget(QWidget):
     """
-    Summary panel showing solver status and key metrics.
+    Table displaying BOM rollup results - what can be crafted from drops.
+    
+    Shows:
+    - Crafted artifacts and quantities
+    - Consumed ingredients
+    - Remaining inventory
+    - Any shortfalls
     """
     
     def __init__(self, parent: Optional[QWidget] = None):
         super().__init__(parent)
         
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(8, 8, 8, 8)
+        layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(4)
+        
+        # Sub-tabs for different BOM sections
+        self._bom_tabs = QTabWidget()
+        
+        # Crafted artifacts tab
+        self._crafted_table = QTableWidget()
+        self._crafted_table.setColumnCount(2)
+        self._crafted_table.setHorizontalHeaderLabels(["Artifact", "Crafted"])
+        self._crafted_table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+        self._crafted_table.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.ResizeToContents)
+        self._crafted_table.setAlternatingRowColors(True)
+        self._crafted_table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
+        self._bom_tabs.addTab(self._crafted_table, "Crafted")
+        
+        # Consumed ingredients tab
+        self._consumed_table = QTableWidget()
+        self._consumed_table.setColumnCount(2)
+        self._consumed_table.setHorizontalHeaderLabels(["Ingredient", "Used"])
+        self._consumed_table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+        self._consumed_table.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.ResizeToContents)
+        self._consumed_table.setAlternatingRowColors(True)
+        self._consumed_table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
+        self._bom_tabs.addTab(self._consumed_table, "Consumed")
+        
+        # Remaining inventory tab
+        self._remaining_table = QTableWidget()
+        self._remaining_table.setColumnCount(2)
+        self._remaining_table.setHorizontalHeaderLabels(["Artifact", "Remaining"])
+        self._remaining_table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+        self._remaining_table.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.ResizeToContents)
+        self._remaining_table.setAlternatingRowColors(True)
+        self._remaining_table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
+        self._bom_tabs.addTab(self._remaining_table, "Remaining")
+        
+        layout.addWidget(self._bom_tabs)
+        
+        # Placeholder label when no BOM data
+        self._placeholder = QLabel("No BOM rollup data.\nSet crafting weights to enable.")
+        self._placeholder.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self._placeholder.setStyleSheet("color: #666; font-style: italic;")
+        layout.addWidget(self._placeholder)
+        
+        # Initially show placeholder
+        self._bom_tabs.hide()
+    
+    def clear(self) -> None:
+        """Clear all tables."""
+        self._crafted_table.setRowCount(0)
+        self._consumed_table.setRowCount(0)
+        self._remaining_table.setRowCount(0)
+        self._bom_tabs.hide()
+        self._placeholder.show()
+    
+    def set_rollup(self, rollup: Optional[RollupResult]) -> None:
+        """Populate tables from BOM rollup result."""
+        self.clear()
+        
+        if rollup is None:
+            return
+        
+        # Check if there's any data
+        has_data = (rollup.crafted or rollup.consumed or rollup.remaining)
+        if not has_data:
+            return
+        
+        self._placeholder.hide()
+        self._bom_tabs.show()
+        
+        # Populate crafted table
+        if rollup.crafted:
+            sorted_crafted = sorted(
+                [(art, qty) for art, qty in rollup.crafted.items() if qty > 0.001],
+                key=lambda x: -x[1]
+            )
+            self._crafted_table.setRowCount(len(sorted_crafted))
+            for row, (artifact, qty) in enumerate(sorted_crafted):
+                self._crafted_table.setItem(row, 0, QTableWidgetItem(artifact))
+                qty_item = QTableWidgetItem(f"{qty:.2f}")
+                qty_item.setTextAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+                self._crafted_table.setItem(row, 1, qty_item)
+        
+        # Populate consumed table
+        if rollup.consumed:
+            sorted_consumed = sorted(
+                [(art, qty) for art, qty in rollup.consumed.items() if qty > 0.001],
+                key=lambda x: -x[1]
+            )
+            self._consumed_table.setRowCount(len(sorted_consumed))
+            for row, (artifact, qty) in enumerate(sorted_consumed):
+                self._consumed_table.setItem(row, 0, QTableWidgetItem(artifact))
+                qty_item = QTableWidgetItem(f"{qty:.2f}")
+                qty_item.setTextAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+                self._consumed_table.setItem(row, 1, qty_item)
+        
+        # Populate remaining table
+        if rollup.remaining:
+            sorted_remaining = sorted(
+                [(art, qty) for art, qty in rollup.remaining.items() if qty > 0.001],
+                key=lambda x: -x[1]
+            )
+            self._remaining_table.setRowCount(len(sorted_remaining))
+            for row, (artifact, qty) in enumerate(sorted_remaining):
+                self._remaining_table.setItem(row, 0, QTableWidgetItem(artifact))
+                qty_item = QTableWidgetItem(f"{qty:.2f}")
+                qty_item.setTextAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+                self._remaining_table.setItem(row, 1, qty_item)
+
+
+class SummaryWidget(QWidget):
+    """
+    Summary panel showing solver status and key metrics.
+    Compact design - only 4-5 lines of text.
+    """
+    
+    def __init__(self, parent: Optional[QWidget] = None):
+        super().__init__(parent)
+        
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(4, 4, 4, 4)
+        layout.setSpacing(2)
         
         # Status
         self._status_label = QLabel("Status: Ready")
@@ -178,7 +305,8 @@ class SummaryWidget(QWidget):
         self._fuel_label = QLabel("Fuel Usage: -")
         layout.addWidget(self._fuel_label)
         
-        layout.addStretch()
+        # Set fixed height - only needs 4 lines of text
+        self.setMaximumHeight(90)
     
     def clear(self) -> None:
         """Reset to default state."""
@@ -223,10 +351,9 @@ class ResultsWidget(QWidget):
     """
     Combined results display widget.
     
-    Contains tabbed view of:
-    - Missions table
-    - Drops table
-    - Summary panel
+    Contains:
+    - Compact summary at top (fixed height)
+    - Tabs for missions, drops, and BOM rollup (expandable)
     """
     
     def __init__(self, parent: Optional[QWidget] = None):
@@ -234,12 +361,13 @@ class ResultsWidget(QWidget):
         
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(4)
         
-        # Summary at top
+        # Summary at top (compact, fixed height)
         self._summary = SummaryWidget()
-        layout.addWidget(self._summary)
+        layout.addWidget(self._summary, stretch=0)
         
-        # Tabs for details
+        # Tabs for details (gets all remaining space)
         self._tabs = QTabWidget()
         
         # Missions tab
@@ -248,15 +376,20 @@ class ResultsWidget(QWidget):
         
         # Drops tab
         self._drops_table = DropsTableWidget()
-        self._tabs.addTab(self._drops_table, "Expected Drops")
+        self._tabs.addTab(self._drops_table, "Drops")
         
-        layout.addWidget(self._tabs)
+        # BOM Rollup tab
+        self._bom_widget = BOMRollupWidget()
+        self._tabs.addTab(self._bom_widget, "BOM Rollup")
+        
+        layout.addWidget(self._tabs, stretch=1)
     
     def clear(self) -> None:
         """Clear all results."""
         self._summary.clear()
         self._missions_table.clear()
         self._drops_table.clear()
+        self._bom_widget.clear()
     
     def set_running(self) -> None:
         """Show solving state."""
@@ -267,3 +400,4 @@ class ResultsWidget(QWidget):
         self._summary.set_result(result, fuel_capacity)
         self._missions_table.set_results(result)
         self._drops_table.set_drops(result.total_drops)
+        self._bom_widget.set_rollup(result.bom_rollup)
