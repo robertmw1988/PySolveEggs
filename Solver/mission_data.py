@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import json
 import math
-import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor, Future
 from dataclasses import dataclass, field
@@ -115,11 +114,7 @@ FTL_SHIPS = {"MILLENIUM_CHICKEN","CORELLIHEN_CORVETTE", "GALEGGTICA", "CHICKFIAN
 
 def _load_drops_df_sync() -> pd.DataFrame:
     """Synchronous loading of drops DataFrame (internal use)."""
-    # Import here to avoid circular import at module load time
-    # Use resource path for PyInstaller compatibility
-    fetch_data_path = get_resource_path("FetchData")
-    sys.path.insert(0, str(fetch_data_path))
-    from sortJSONAlltoCSV import load_cleaned_drops  # type: ignore
+    from .drop_data import load_cleaned_drops
     return load_cleaned_drops()
 
 

@@ -28,16 +28,15 @@ pulp_datas = collect_data_files('pulp')
 pulp_hiddenimports = collect_submodules('pulp')
 
 a = Analysis(
-    ['Solver/gui_app.py'],
-    pathex=[],
+    ['launcher.py'],
+    pathex=['.'],
     binaries=[],
     datas=[
         # Wasmegg game data files
         ('Wasmegg/*.json', 'Wasmegg'),
         
-        # FetchData module and data
+        # Drop data (mission artifact statistics)
         ('FetchData/egginc_data_All.json', 'FetchData'),
-        ('FetchData/sortJSONAlltoCSV.py', 'FetchData'),
         
         # Solver configuration
         ('Solver/DefaultUserConfig.yaml', 'Solver'),
@@ -46,9 +45,6 @@ a = Analysis(
         *pulp_datas,
     ],
     hiddenimports=[
-        # Dynamic import in mission_data.py
-        'sortJSONAlltoCSV',
-        
         # PuLP solver APIs
         *pulp_hiddenimports,
         'pulp.apis.coin_api',
@@ -67,6 +63,19 @@ a = Analysis(
         'matplotlib',
         'notebook',
         'jupyter',
+        # Exclude test frameworks (not needed at runtime)
+        'pytest',
+        'pytest_cov',
+        '_pytest',
+        'coverage',
+        # Exclude development tools
+        'setuptools',
+        'pip',
+        'wheel',
+        # Exclude unused optional dependencies
+        'jinja2',
+        'IPython',
+        'ipykernel',
     ],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,

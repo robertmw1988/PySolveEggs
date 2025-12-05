@@ -1,0 +1,134 @@
+﻿pyinstaller : 186 INFO: PyInstaller: 6.17.0, contrib hooks: 2025.10
+At line:1 char:1
++ pyinstaller virtue_mission_solver.spec --noconfirm 2>&1 | Out-File -F ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (186 INFO: PyIns... hooks: 2025.10:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+187 INFO: Python: 3.13.2
+234 INFO: Platform: Windows-11-10.0.26200-SP0
+234 INFO: Python environment: c:\Users\RWallace\source\repos\EggShipLPSolver\.venv
+753 INFO: Module search paths (PYTHONPATH):
+['C:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Scripts\\pyinstaller.exe',
+ 'C:\\Users\\RWallace\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip',
+ 'C:\\Users\\RWallace\\AppData\\Local\\Programs\\Python\\Python313\\DLLs',
+ 'C:\\Users\\RWallace\\AppData\\Local\\Programs\\Python\\Python313\\Lib',
+ 'C:\\Users\\RWallace\\AppData\\Local\\Programs\\Python\\Python313',
+ 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv',
+ 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages',
+ '__editable__.virtue_mission_solver-0.1.0.finder.__path_hook__',
+ 'C:\\Users\\RWallace\\source\\repos\\EggShipLPSolver']
+1219 INFO: Appending 'datas' from .spec
+1223 INFO: checking Analysis
+1223 INFO: Building Analysis because Analysis-00.toc is non existent
+1223 INFO: Looking for Python shared library...
+1223 INFO: Using Python shared library: C:\Users\RWallace\AppData\Local\Programs\Python\Python313\python313.dll
+1223 INFO: Running Analysis Analysis-00.toc
+1223 INFO: Target bytecode optimization level: 0
+1223 INFO: Initializing module dependency graph...
+1225 INFO: Initializing module graph hook caches...
+1240 INFO: Analyzing modules for base_library.zip ...
+2504 INFO: Processing standard module hook 'hook-encodings.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+4253 INFO: Processing standard module hook 'hook-pickle.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+5158 INFO: Processing standard module hook 'hook-heapq.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+5582 INFO: Caching module dependency graph...
+5616 INFO: Analyzing C:\Users\RWallace\source\repos\EggShipLPSolver\Solver\gui_app.py
+5623 INFO: Processing standard module hook 'hook-PySide6.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+5830 INFO: Processing standard module hook 'hook-shiboken6.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+5987 INFO: Processing standard module hook 'hook-PySide6.QtNetwork.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+7706 INFO: Processing standard module hook 'hook-PySide6.QtCore.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+10478 INFO: Processing standard module hook 'hook-PySide6.QtWidgets.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+12968 INFO: Processing standard module hook 'hook-PySide6.QtGui.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+37906 INFO: Analyzing hidden import 'pulp'
+38012 INFO: Processing standard module hook 'hook-_ctypes.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+38048 INFO: Processing standard module hook 'hook-platform.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+38231 INFO: Processing standard module hook 'hook-xml.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+38265 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+38406 INFO: Processing standard module hook 'hook-numpy.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+39032 INFO: Processing standard module hook 'hook-difflib.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+39229 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+40295 INFO: Processing standard module hook 'hook-sysconfig.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+41750 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+41752 INFO: SetuptoolsInfo: initializing cached setuptools info...
+45710 INFO: Processing standard module hook 'hook-charset_normalizer.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+46008 INFO: Analyzing hidden import 'pulp.solverdir'
+46008 INFO: Analyzing hidden import 'pulp.tests'
+46114 INFO: Analyzing hidden import 'pulp.tests.test_lpdot'
+46116 INFO: Analyzing hidden import 'pandas._libs.tslibs.timedeltas'
+46120 INFO: Processing standard module hook 'hook-pandas.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+47906 INFO: Processing standard module hook 'hook-pytz.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+50998 INFO: Processing standard module hook 'hook-pandas.io.formats.style.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+53363 INFO: Processing standard module hook 'hook-pandas.plotting.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+54418 INFO: Processing standard module hook 'hook-sqlite3.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+54843 INFO: Processing standard module hook 'hook-pandas.io.clipboard.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+55114 INFO: Processing standard module hook 'hook-dateutil.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+55316 INFO: Processing pre-safe-import-module hook 'hook-six.moves.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+55616 INFO: Processing standard module hook 'hook-xml.dom.domreg.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+55952 INFO: Processing standard module hook 'hook-pytest.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+56194 INFO: Processing standard module hook 'hook-pygments.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+57875 INFO: Processing standard module hook 'hook-py.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+58142 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+58323 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+58324 INFO: Setuptools: 'tomli' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.tomli'!
+58331 INFO: Processing standard module hook 'hook-setuptools.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+58343 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+58372 INFO: Processing pre-safe-import-module hook 'hook-jaraco.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+58372 INFO: Setuptools: 'jaraco' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco'!
+58385 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+58385 INFO: Setuptools: 'more_itertools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.more_itertools'!
+58879 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+58881 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+58907 INFO: Processing pre-safe-import-module hook 'hook-backports.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+58908 INFO: Setuptools: 'backports' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.backports'!
+59096 INFO: Processing pre-safe-import-module hook 'hook-importlib_metadata.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+59097 INFO: Setuptools: 'importlib_metadata' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.importlib_metadata'!
+59122 INFO: Processing standard module hook 'hook-setuptools._vendor.importlib_metadata.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+59125 INFO: Processing pre-safe-import-module hook 'hook-zipp.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+59126 INFO: Setuptools: 'zipp' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.zipp'!
+59773 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+60656 INFO: Processing standard module hook 'hook-pkg_resources.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+61062 INFO: Processing pre-safe-import-module hook 'hook-platformdirs.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+61071 INFO: Processing standard module hook 'hook-platformdirs.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+61411 INFO: Processing module hooks (post-graph stage)...
+61509 WARNING: Hidden import "jinja2" not found!
+63701 INFO: Performing binary vs. data reclassification (767 entries)
+63882 INFO: Looking for ctypes DLLs
+63967 INFO: Analyzing run-time hooks ...
+63972 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+63975 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+63977 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+63979 INFO: Including run-time hook 'pyi_rth_setuptools.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+63981 INFO: Including run-time hook 'pyi_rth_pkgres.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+63985 INFO: Including run-time hook 'pyi_rth_pyside6.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+63987 INFO: Processing pre-find-module-path hook 'hook-_pyi_rth_utils.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+63989 INFO: Processing standard module hook 'hook-_pyi_rth_utils.py' from 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+64018 INFO: Creating base_library.zip...
+64040 INFO: Looking for dynamic libraries
+c:\Users\RWallace\source\repos\EggShipLPSolver\.venv\Lib\site-packages\PyInstaller\building\build_main.py:227: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The 
+pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  __import__(package)
+65399 INFO: Extra DLL search directories (AddDllDirectory): ['C:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\shiboken6', 
+'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\pandas.libs', 'c:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\numpy.libs']
+65400 INFO: Extra DLL search directories (PATH): ['C:\\Users\\RWallace\\source\\repos\\EggShipLPSolver\\.venv\\Lib\\site-packages\\PySide6']
+68031 INFO: Warnings written to C:\Users\RWallace\source\repos\EggShipLPSolver\build\virtue_mission_solver\warn-virtue_mission_solver.txt
+68143 INFO: Graph cross-reference written to C:\Users\RWallace\source\repos\EggShipLPSolver\build\virtue_mission_solver\xref-virtue_mission_solver.html
+68194 INFO: checking PYZ
+68194 INFO: Building PYZ because PYZ-00.toc is non existent
+68194 INFO: Building PYZ (ZlibArchive) C:\Users\RWallace\source\repos\EggShipLPSolver\build\virtue_mission_solver\PYZ-00.pyz
+69221 INFO: Building PYZ (ZlibArchive) C:\Users\RWallace\source\repos\EggShipLPSolver\build\virtue_mission_solver\PYZ-00.pyz completed successfully.
+69257 INFO: checking PKG
+69257 INFO: Building PKG because PKG-00.toc is non existent
+69257 INFO: Building PKG (CArchive) VirtueMissionSolver.pkg
+94599 INFO: Building PKG (CArchive) VirtueMissionSolver.pkg completed successfully.
+94614 INFO: Bootloader c:\Users\RWallace\source\repos\EggShipLPSolver\.venv\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+94614 INFO: checking EXE
+94614 INFO: Building EXE because EXE-00.toc is non existent
+94614 INFO: Building EXE from EXE-00.toc
+94615 INFO: Copying bootloader EXE to C:\Users\RWallace\source\repos\EggShipLPSolver\dist\VirtueMissionSolver.exe
+94630 INFO: Copying icon to EXE
+94639 INFO: Copying 0 resources to EXE
+94639 INFO: Embedding manifest in EXE
+94649 INFO: Appending PKG archive to EXE
+94721 INFO: Fixing EXE headers
+99594 INFO: Building EXE from EXE-00.toc completed successfully.
+99609 INFO: Build complete! The results are available in: C:\Users\RWallace\source\repos\EggShipLPSolver\dist
