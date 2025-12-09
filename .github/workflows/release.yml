@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 jobs:
   build-windows:
@@ -24,6 +25,43 @@ jobs:
 
       - name: Pull LFS files
         run: git lfs pull
+
+      - name: Download latest game data artifact
+        id: download-data
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          workflow: update-data.yml
+          name: egginc-game-data
+          path: FetchData/
+          if_no_artifact_found: warn
+
+      - name: Extract compressed game data
+        shell: pwsh
+        run: |
+          $gzFile = "FetchData/egginc_data_All.json.gz"
+          $jsonFile = "FetchData/egginc_data_All.json"
+          
+          if (Test-Path $gzFile) {
+            Write-Host "Found compressed game data artifact, extracting..."
+            # Use .NET to decompress gzip
+            $input = [System.IO.File]::OpenRead($gzFile)
+            $output = [System.IO.File]::Create($jsonFile)
+            $gzip = New-Object System.IO.Compression.GZipStream($input, [System.IO.Compression.CompressionMode]::Decompress)
+            $gzip.CopyTo($output)
+            $gzip.Close()
+            $output.Close()
+            $input.Close()
+            Remove-Item $gzFile
+            Write-Host "Game data extracted successfully"
+            Write-Host "File size: $((Get-Item $jsonFile).Length / 1MB) MB"
+          } else {
+            Write-Host "No compressed artifact found, using existing egginc_data_All.json from repository"
+            if (Test-Path $jsonFile) {
+              Write-Host "Using repository version of game data"
+            } else {
+              Write-Host "WARNING: No game data file found!" -ForegroundColor Yellow
+            }
+          }
 
       - name: Set up Python
         uses: actions/setup-python@v5

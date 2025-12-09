@@ -1,0 +1,66 @@
+# GitHub Actions workflow for updating Egg, Inc. game data
+# Manually triggered - fetches latest data and stores as compressed artifact
+
+name: Update Game Data
+
+on:
+  workflow_dispatch:
+    inputs:
+      description:
+        description: 'Optional description for this data update'
+        required: false
+        default: 'Manual data update'
+
+permissions:
+  contents: read
+
+jobs:
+  fetch-and-compress:
+    name: Fetch and Compress Game Data
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install FetchData dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r FetchData/requirements.txt
+
+      - name: Fetch latest game data
+        working-directory: FetchData
+        run: |
+          python FetchAllShipData.py --no-summary -o egginc_data_All.json
+          echo "Data fetch completed at $(date -u)"
+
+      - name: Compress data file
+        working-directory: FetchData
+        run: |
+          gzip -9 -k egginc_data_All.json
+          echo "Compressed file size: $(ls -lh egginc_data_All.json.gz | awk '{print $5}')"
+          echo "Original file size: $(ls -lh egginc_data_All.json | awk '{print $5}')"
+
+      - name: Upload compressed data artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: egginc-game-data
+          path: FetchData/egginc_data_All.json.gz
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Summary
+        run: |
+          echo "## Game Data Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Description**: ${{ github.event.inputs.description }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Triggered by**: ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp**: $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Artifact name**: egginc-game-data" >> $GITHUB_STEP_SUMMARY
+          echo "- **Retention**: 90 days" >> $GITHUB_STEP_SUMMARY
